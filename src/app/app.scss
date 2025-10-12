@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+// ========================================
+// MAIN APP LAYOUT STYLES
+// ========================================
+
+.main-content {
+  padding-top: $spacing-base;
+  min-height: calc(100vh - 8rem);
+}
+
+.content {
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: $spacing-base;
+}

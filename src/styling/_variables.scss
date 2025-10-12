@@ -1,0 +1,33 @@
+// ========================================
+// DESIGN SYSTEM VARIABLES
+// ========================================
+
+// Colors
+$bg-color: #FFF3FD;
+$main-color: #331926;
+$main-color-010: rgba(51, 25, 38, 0.1);
+$main-color-020: rgba(51, 25, 38, 0.2);
+$main-color-030: rgba(51, 25, 38, 0.3);
+$main-color-050: rgba(51, 25, 38, 0.05);
+$main-color-080: rgba(51, 25, 38, 0.08);
+
+// Spacing
+$spacing-base: 3.2rem;
+$spacing-small: 1.6rem;
+$spacing-xs: 0.8rem;
+$spacing-xxs: 0.4rem;
+$border-width: 0.1rem;
+$border-radius-pill: 5rem;
+
+// Typography
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$line-height-tight: 100%;
+
+// Transitions
+$transition-fast: all 0.2s ease;
+$transition-normal: all 0.3s ease;
+
+// Breakpoints
+$breakpoint-tablet: 1023px;
+$breakpoint-mobile: 767px;

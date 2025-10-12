@@ -1,0 +1,63 @@
+// ========================================
+// DESIGN SYSTEM MIXINS
+// ========================================
+
+@use 'variables' as *;
+
+// Flex center mixin
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Flex baseline mixin
+@mixin flex-baseline {
+  display: flex;
+  align-items: baseline;
+}
+
+// Button base styles
+@mixin button-base($width, $height, $padding) {
+  width: $width;
+  height: $height;
+  border: $border-width solid $main-color-020;
+  border-radius: $border-radius-pill;
+  background: transparent;
+  padding: $padding;
+  opacity: 1;
+  @include flex-center;
+  transition: $transition-fast;
+  cursor: pointer;
+
+  &:hover {
+    background: $main-color-050;
+    border-color: $main-color-030;
+  }
+
+  &:focus {
+    outline: 0.2rem solid $main-color-030;
+    outline-offset: 0.2rem;
+  }
+}
+
+// Typography base
+@mixin typography-base($weight, $size, $line-height: $line-height-tight) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  margin: 0;
+}
+
+// Media query mixins
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}

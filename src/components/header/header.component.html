@@ -1,0 +1,85 @@
+<header class="app-header">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <!-- Profile Image - Left Side -->
+      <div class="col-auto">
+        <div class="profile-image-wrapper">
+          <img 
+            [src]="profileImageUrl" 
+            alt="Zhenya Dobrovolska Profile" 
+            class="profile-image"
+          >
+        </div>
+      </div>
+
+      <!-- Name and Greeting - Center -->
+      <div class="col">
+        <div class="name-section">
+          <h1 class="header-name">{{ name }}</h1>
+          <p class="header-greeting">{{ greeting }}</p>
+        </div>
+      </div>
+
+      <!-- Menu Button - Right Side -->
+      <div class="col-auto">
+        <button 
+          class="menu-toggle"
+          (click)="toggleMenu()"
+          type="button"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="hamburger-icon">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Full Screen Menu Overlay -->
+    <div class="fullscreen-menu" [class.show]="isMenuOpen">
+      <!-- Menu Header -->
+      <div class="menu-header">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <!-- Name - Left Side -->
+            <div class="col">
+              <h1 class="menu-header-name">{{ name }}</h1>
+            </div>
+
+            <!-- Close Button - Right Side -->
+            <div class="col-auto">
+              <button 
+                class="menu-close-toggle"
+                (click)="toggleMenu()"
+                type="button"
+                aria-label="Close navigation menu"
+              >
+                <span class="close-icon">
+                  <span class="close-line close-line-1"></span>
+                  <span class="close-line close-line-2"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Navigation -->
+      <nav class="fullscreen-nav">
+        <div 
+          class="menu-item" 
+          *ngFor="let item of menuItems" 
+          (click)="toggleMenu()"
+        >
+          <div class="menu-content">
+            <h2 class="menu-title">{{ item.title }}</h2>
+            <span class="menu-number">{{ item.number }}</span>
+          </div>
+          <div class="menu-separator"></div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
