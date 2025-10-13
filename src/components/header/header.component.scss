@@ -11,12 +11,15 @@
 
 .app-header {
   background: $bg-color;
-  border-bottom: $border-width solid $main-color-010;
-  box-shadow: 0 0.2rem 0.8rem $main-color-080;
   position: sticky;
   top: 0;
   z-index: 1001;
-  padding: $spacing-base;
+  padding: $spacing-base $spacing-base 0 $spacing-base; // top, right, bottom=0, left
+
+  .container-fluid {
+    padding-bottom: $spacing-base; // 32px padding-bottom moved here
+    border-bottom: $border-width solid $main-color;
+  }
 
   .col-auto {
     padding: 0;
@@ -278,7 +281,11 @@
 // Header responsive adjustments
 @include tablet {
   .app-header {
-    padding: 2.4rem; // 24px padding for tablet
+    padding: 2.4rem 2.4rem 0 2.4rem; // top, right, bottom=0, left
+  }
+  
+  .app-header .container-fluid {
+    padding-bottom: 2.4rem; // 24px padding-bottom for tablet
   }
   
   .header-name {
@@ -317,7 +324,11 @@
 
 @include mobile {
   .app-header {
-    padding: 1.2rem; // 12px padding for mobile
+    padding: 1.2rem 1.2rem 0 1.2rem; // top, right, bottom=0, left
+  }
+  
+  .app-header .container-fluid {
+    padding-bottom: 1.2rem; // 12px padding-bottom for mobile
   }
   
   .header-name {

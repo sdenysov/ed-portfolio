@@ -1,0 +1,157 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// OVERVIEW SECTION
+// ========================================
+
+.overview {
+  min-height: 100vh;
+  @include flex-center;
+  align-items: flex-start;
+  padding-top: 28.1rem; // 281px desktop spacing
+
+  .container-fluid {
+    width: 100%;
+    padding: 0 $spacing-base; // 32px left/right padding to match header
+  }
+}
+
+.overview-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem; // 8px gap
+  justify-content: space-between; // Left column sticks left, right column sticks right
+  align-items: flex-start;
+  width: 100%;
+}
+
+// ========================================
+// OVERVIEW TEXT (LEFT SIDE)
+// ========================================
+
+.overview-text {
+  flex: 0 1 auto; // Don't grow, can shrink, auto size
+  max-width: 80rem; // Maximum width for readability
+  min-width: 60rem; // Minimum width before wrapping
+}
+
+.overview-title {
+  @include typography-base($font-weight-medium, 6.4rem, 9rem);
+  margin: 0;
+
+  .title-line {
+    display: block;
+    margin-bottom: 0.8rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ========================================
+// ABOUT SECTION (RIGHT SIDE)
+// ========================================
+
+.about-section {
+  flex: 0 0 auto;
+  max-width: 40rem;
+  min-width: 30rem; // Minimum width before wrapping
+  align-self: flex-start;
+  margin-top: 2rem;
+}
+
+.about-label {
+  @include typography-base($font-weight-regular, 1.6rem);
+  margin-bottom: 2.4rem;
+  opacity: 0.7;
+}
+
+.about-text {
+  @include typography-base($font-weight-medium, 2.4rem, 3.8rem);
+  margin: 0;
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@include tablet {
+  .overview {
+    padding-top: 12.8rem; // 128px tablet spacing
+
+    .container-fluid {
+      padding: 0 2.4rem; // 24px padding for tablet (match header)
+    }
+  }
+
+  .overview-content {
+    flex-direction: column;
+    gap: 6rem;
+    text-align: left;
+    justify-content: flex-start; // Reset justify for stacked layout
+  }
+
+  .overview-text {
+    min-width: unset;
+    max-width: unset;
+  }
+
+  .about-section {
+    min-width: unset;
+    max-width: 60rem;
+    margin-top: 0;
+  }
+
+  .overview-title {
+    @include typography-base($font-weight-medium, 4.8rem, 6.8rem);
+  }
+
+  .about-text {
+    @include typography-base($font-weight-medium, 2.4rem, 3.8rem);
+  }
+}
+
+@include mobile {
+  .overview {
+    padding-top: 7.6rem; // 76px mobile spacing
+
+    .container-fluid {
+      padding: 0 1.2rem; // 12px padding for mobile (match header)
+    }
+  }
+
+  .overview-content {
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: flex-start; // Reset justify for stacked layout
+  }
+
+  .overview-text {
+    min-width: unset;
+    max-width: unset;
+  }
+
+  .about-section {
+    min-width: unset;
+    max-width: 100%;
+  }
+
+  .overview-title {
+    @include typography-base($font-weight-medium, 4rem, 5.5rem);
+
+    .title-line {
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  .about-label {
+    @include typography-base($font-weight-regular, 1.4rem);
+    margin-bottom: 1.6rem;
+  }
+
+  .about-text {
+    @include typography-base($font-weight-medium, 2rem, 3.2rem);
+  }
+}
