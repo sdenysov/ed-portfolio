@@ -49,6 +49,74 @@
   margin: 0;
 }
 
+// Arrow button mixin
+@mixin arrow-button($background, $text-color, $hover-bg) {
+  @include flex-center;
+  background: $background;
+  color: $text-color;
+  border: $border-width solid $main-color;
+  width: 4rem; // 40px
+  height: 4rem; // 40px
+  opacity: 1;
+  border-radius: 9.6rem; // 96px
+  padding: 1.2rem; // 12px
+  gap: 0.8rem; // 8px
+  transition: $transition-fast;
+
+  &:hover {
+    background: $hover-bg;
+  }
+
+  &:focus {
+    outline: 0.2rem solid $main-color-030;
+    outline-offset: 0.2rem;
+  }
+}
+
+// Full-width extension mixin - for extending elements beyond parent padding
+@mixin full-width-extension($parent-padding) {
+  margin: auto (-$parent-padding) 0 (-$parent-padding);
+  width: calc(100% + #{$parent-padding * 2});
+}
+
+// Column padding reset mixin
+@mixin column-reset {
+  .col,
+  .col-auto {
+    padding: 0;
+  }
+}
+
+// Text button mixin - for consistent text buttons
+@mixin text-button($width: 13.8rem, $height: 4rem) {
+  @include flex-center;
+  background: $main-color;
+  color: $bg-color;
+  border: $border-width solid $main-color;
+  width: $width;
+  height: $height;
+  gap: 0.8rem;
+  opacity: 1;
+  border-radius: 10rem;
+  padding: 1.2rem 1.6rem;
+  transition: $transition-fast;
+
+  &:hover {
+    background: lighten($main-color, 10%);
+  }
+
+  &:focus {
+    outline: 0.2rem solid $main-color-030;
+    outline-offset: 0.2rem;
+  }
+}
+
+// Card layout mixin
+@mixin card-layout {
+  display: flex;
+  flex-direction: column;
+}
+
 // Media query mixins
 @mixin tablet {
   @media (max-width: #{$breakpoint-tablet}) {

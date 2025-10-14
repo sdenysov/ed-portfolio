@@ -109,6 +109,11 @@
   background: $bg-color;
   z-index: 1002;
   padding: $spacing-base;
+
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .menu-header-name {
@@ -199,6 +204,11 @@
 @include tablet {
   .menu-header {
     padding: $spacing-base;
+
+    .container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
   
   .menu-header-name {
@@ -235,6 +245,11 @@
 @include mobile {
   .menu-header {
     padding: 1.6rem;
+
+    .container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
   
   .menu-header-name {

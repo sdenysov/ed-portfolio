@@ -1,0 +1,337 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// WORKS SECTION
+// ========================================
+
+.works {
+  padding: 0 0 8rem 0; // No top spacing, overview component handles 100vh spacing
+
+  .container-fluid {
+    width: 100%;
+    padding: 0 $spacing-base; // 32px left/right padding to match other sections
+  }
+}
+
+// ========================================
+// WORKS HEADER
+// ========================================
+
+.works-header {
+  margin-bottom: 8rem; // 80px spacing before projects grid
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @include column-reset;
+  
+  .col-auto {
+    align-self: flex-end; // Align to bottom of parent
+  }
+}
+
+.title-section {
+  @include flex-center;
+  justify-content: unset;
+  text-align: left;
+}
+
+.works-title {
+  @include typography-base($font-weight-medium, 12.8rem, 10rem);
+  margin: 0;
+}
+
+.works-label {
+  @include typography-base($font-weight-regular, 1.6rem);
+  opacity: 0.7;
+  align-self: flex-start;
+}
+
+.view-all-group {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: 0; // No gap - buttons should be connected
+}
+
+.view-all-text-button {
+  @include text-button;
+
+  .button-text {
+    @include typography-base($font-weight-medium, 1.4rem, 1.2);
+    transform: rotate(0deg); // 0 degree angle
+  }
+}
+
+.view-all-arrow-button {
+  @include arrow-button($main-color, $bg-color, lighten($main-color, 10%));
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    transform: rotate(-90deg); // -90 degree angle
+  }
+}
+
+// ========================================
+// PROJECTS GRID
+// ========================================
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 67.2rem); // Fixed 672px width, wraps at 1500px
+  gap: $spacing-base; // 32px gap between project cards
+  justify-content: center; // Center cards when they wrap to single column
+
+  // For screens 1500px and above, stretch cards to full width
+  @media (min-width: 1500px) {
+    grid-template-columns: 1fr 1fr; // Two equal columns stretching to full width
+    justify-content: unset; // Remove centering for full-width stretching
+  }
+}
+
+.project-card {
+  background: transparent;
+  width: 100%; // Stretch to full width of grid column
+  height: 57.8rem; // 578px
+  opacity: 1;
+  border-radius: 3.2rem; // 32px border radius
+  border: 0.1rem solid $main-color; // 1px border width with #331926 color
+  padding: 4rem 4rem 0 4rem; // Remove bottom padding, handled by footer
+  transition: $transition-normal;
+  cursor: pointer;
+  @include card-layout;
+
+  // Ensure equal width above 1500px
+  @media (min-width: 1500px) {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  &:hover {
+    background: $main-color-050;
+    border-color: $main-color-020;
+    transform: translateY(-0.4rem) rotate(0deg);
+  }
+}
+
+
+// ========================================
+// PROJECT CONTENT
+// ========================================
+
+.project-image {
+  @include full-width-extension(4rem);
+  flex: 1; // Take up remaining space
+  border-radius: 2.4rem;
+  overflow: hidden;
+  @include flex-center;
+  padding: 0 11.2rem; // 72px minimum + 40px (4rem) from extended width = 112px
+}
+
+.project-preview {
+  border-radius: 2.4rem; // 24px border radius
+}
+
+.project-info {
+  @include full-width-extension(4rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; // Center text vertically with arrow button
+  padding: 2.4rem; // 24px padding for footer
+}
+
+.project-title {
+  @include typography-base($font-weight-medium, 3.2rem, $line-height-tight);
+  margin: 0;
+  flex: 1;
+  padding-right: $spacing-small;
+}
+
+.project-link {
+  @include arrow-button(transparent, $main-color, $main-color-050);
+  flex-shrink: 0;
+
+  .arrow-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    filter: brightness(0) saturate(100%) invert(18%) sepia(30%) saturate(1051%) hue-rotate(280deg) brightness(94%) contrast(94%);
+  }
+}
+
+// Screen reader only text
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@include tablet {
+  .works {
+    padding: 0 0 6rem 0; // No top spacing, overview component handles spacing
+
+    .container-fluid {
+      padding: 0 2.4rem; // 24px padding for tablet (match header)
+    }
+  }
+
+  .works-header {
+    margin-bottom: 6rem;
+  }
+
+  .works-title {
+    @include typography-base($font-weight-medium, 8rem, 8rem);
+  }
+
+  // view-all-text-button inherits desktop styles - no overrides needed
+
+  .view-all-arrow-button {
+    @include arrow-button($main-color, $bg-color, lighten($main-color, 10%));
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      transform: rotate(-90deg); // -90 degree angle
+    }
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+
+  .project-card {
+    padding: 3.2rem 3.2rem 0 3.2rem; // Remove bottom padding, handled by footer
+    @include card-layout;
+  }
+
+  .project-image {
+    @include full-width-extension(3.2rem);
+    flex: 1; // Take up remaining space
+    padding: 0 8.4rem; // 72px + 32px from extension = 104px
+  }
+
+  .project-info {
+    @include full-width-extension(3.2rem);
+    padding: 2.4rem; // 24px padding for footer
+  }
+}
+
+@include mobile {
+  .works {
+    padding: 0 0 4rem 0; // No top spacing, overview component handles spacing
+
+    .container-fluid {
+      padding: 0 1.2rem; // 12px padding for mobile (match header)
+    }
+  }
+
+  .works-header {
+    margin-bottom: 4rem;
+
+    .row {
+      flex-direction: column;
+      align-items: flex-start !important;
+      gap: 1.6rem;
+    }
+
+    @include column-reset;
+    
+    .col,
+    .col-auto {
+      width: 100%;
+    }
+  }
+
+  .title-section {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    width: fit-content;
+  }
+
+  .works-title {
+    @include typography-base($font-weight-medium, 4.8rem, 4.8rem);
+  }
+
+  .works-label {
+    @include typography-base($font-weight-regular, 1.4rem);
+    align-self: flex-end;
+  }
+
+  .view-all-group {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .view-all-text-button {
+    flex: 1;
+    border-radius: 4rem; // Fully rounded on all sides
+    padding: 1rem 1.6rem;
+    height: 4rem;
+
+    .button-text {
+      @include typography-base($font-weight-regular, 1.4rem);
+    }
+  }
+
+  .view-all-arrow-button {
+    width: 4rem;
+    height: 4rem;
+    flex-shrink: 0;
+
+    .arrow-icon {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, 34.3rem); // Fixed width columns for centering
+    gap: 2rem;
+    justify-content: center; // Center cards in mobile
+  }
+
+  .project-card {
+    width: 34.3rem; // 343px
+    height: 29.5rem; // 295px
+    opacity: 1;
+    padding: 2.4rem 2.4rem 0 2.4rem; // Remove bottom padding, handled by footer
+    @include card-layout;
+  }
+
+  .project-image {
+    @include full-width-extension(2.4rem);
+    flex: 1; // Take up remaining space
+    padding: 0 4.8rem; // 48px padding for mobile (reduced from 96px)
+  }
+
+  .project-preview {
+    max-width: 29.6rem; // Maximum width 296px
+    max-height: 16.5rem; // Maximum height 165px  
+    width: auto;
+    height: auto;
+    object-fit: contain; // Maintain aspect ratio while fitting within container
+  }
+
+  .project-info {
+    @include full-width-extension(2.4rem);
+    padding: 2.4rem; // 24px padding for footer
+  }
+
+  .project-title {
+    @include typography-base($font-weight-medium, 2rem, 2.4rem);
+  }
+}
