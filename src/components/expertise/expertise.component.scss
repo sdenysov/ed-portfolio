@@ -1,0 +1,83 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// EXPERTISE SECTION
+// ========================================
+
+.expertise {
+  margin: 36.6rem 0 25.6rem 0;
+
+  .container-fluid {
+    width: 100%;
+    padding: 0 $spacing-base; // 32px left/right padding to match other sections
+  }
+
+  .section-header {
+    margin-bottom: $spacing-base;
+  }
+}
+
+.expertise-container {
+  .expertise-item {
+    padding: $spacing-base 0;
+    border-bottom: $border-width solid $main-color;
+    align-items: center;
+
+    &.row > * {
+      padding: 0 $spacing-base 0 0;
+    }
+
+    .expertise-level {
+      padding-right: 0;
+    }
+
+    .expertise-level, .expertise-item-title {
+      @include typography-base($font-weight-regular, 1.8rem, 3rem);
+    }
+
+    .expertise-description {
+      @include typography-base($font-weight-medium, 2.4rem);
+    }
+  }
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@include tablet {
+  .expertise {
+    margin: 12.8rem 0;
+
+    .container-fluid {
+      padding: 0 2.4rem; // 24px padding for tablet (match header)
+    }
+  }
+
+  .expertise-container {
+    .expertise-item {
+      padding: 2.4rem;
+
+      .expertise-level, .expertise-item-title {
+        @include typography-base($font-weight-regular, 1.4rem, 2.4rem);
+      }
+    }
+  }
+}
+
+@include mobile {
+  .expertise {
+    margin: 6.4rem 0;
+
+    .container-fluid {
+      padding: 0 1.2rem; // 12px padding for mobile (match header)
+    }
+  }
+
+  .expertise-container {
+    .expertise-item {
+      gap: $spacing-xs;
+    }
+  }
+}

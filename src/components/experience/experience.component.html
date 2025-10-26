@@ -1,0 +1,20 @@
+<section class="experience">
+  <div class="container-fluid">
+    <app-section-header
+      [title]="headerConfig.title"
+      [label]="headerConfig.label"
+      [textButton]="headerConfig.textButton"
+    ></app-section-header>
+    <div class="experience-container row justify-content-end">
+      <div class="col col-lg-10">
+        @for (item of experience; track item.id) {
+          <div class="experience-item row">
+            <p class="col-md-5 experience-item-title">{{ item.title }}</p>
+            <h1 class="col-md-4 experience-job-title">{{ item.jobTitle }}</h1>
+            <p class="col-md-3 experience-period">{{ item.period }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

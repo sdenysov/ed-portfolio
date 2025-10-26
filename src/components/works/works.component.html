@@ -1,41 +1,22 @@
 <section class="works">
   <div class="container-fluid">
-    <!-- Works Header -->
-    <div class="works-header">
-      <div class="row align-items-center">
-        <!-- Title and Label - Left Side -->
-        <div class="col">
-          <div class="title-section">
-            <h2 class="works-title">{{ title }}</h2>
-            <div class="works-label">{{ label }}</div>
-          </div>
-        </div>
-
-        <!-- View All Button - Right Side -->
-        <div class="col-auto">
-          <div class="view-all-group">
-            <button class="view-all-text-button" type="button">
-              <span class="button-text">{{ viewAllText }}</span>
-            </button>
-            <button class="view-all-arrow-button" type="button">
-              <img src="images/arrow.svg" alt="" class="arrow-icon">
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-section-header
+      [title]="headerConfig.title"
+      [label]="headerConfig.label"
+      [textButton]="headerConfig.textButton"
+    ></app-section-header>
 
     <!-- Projects Grid -->
     <div class="projects-grid">
-      <div 
-        class="project-card" 
+      <div
+        class="project-card"
         *ngFor="let project of projects"
         [attr.data-type]="project.type"
       >
         <!-- Project Image/Preview -->
         <div class="project-image">
-          <img 
-            [src]="project.image" 
+          <img
+            [src]="project.image"
             [alt]="project.title + ' preview'"
             class="project-preview"
             loading="lazy"

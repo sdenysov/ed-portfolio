@@ -3,6 +3,7 @@
 // ========================================
 
 @use 'variables' as *;
+@use 'sass:color';
 
 // Flex center mixin
 @mixin flex-center {
@@ -88,7 +89,7 @@
 }
 
 // Text button mixin - for consistent text buttons
-@mixin text-button($width: 13.8rem, $height: 4rem) {
+@mixin text-button($width: fit-content, $height: 4rem) {
   @include flex-center;
   background: $main-color;
   color: $bg-color;
@@ -102,7 +103,7 @@
   transition: $transition-fast;
 
   &:hover {
-    background: lighten($main-color, 10%);
+    background: color.adjust($main-color, $lightness: +10%);
   }
 
   &:focus {

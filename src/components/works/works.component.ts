@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SectionHeaderComponent } from '../section-header/section-header.component';
+import { SectionHeaderConfig } from '../../models/section-header-config';
 
 @Component({
   selector: 'app-works',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SectionHeaderComponent],
   templateUrl: './works.component.html',
   styleUrl: './works.component.scss'
 })
 export class WorksComponent {
-  label = '(Case studies)';
-  title = 'Works';
-  viewAllText = 'View all projects';
+  @Input() headerConfig!: SectionHeaderConfig;
 
   projects = [
     {

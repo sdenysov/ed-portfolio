@@ -6,72 +6,13 @@
 // ========================================
 
 .works {
-  padding: 0 0 8rem 0; // No top spacing, overview component handles 100vh spacing
-
   .container-fluid {
     width: 100%;
     padding: 0 $spacing-base; // 32px left/right padding to match other sections
-  }
-}
 
-// ========================================
-// WORKS HEADER
-// ========================================
-
-.works-header {
-  margin-bottom: 8rem; // 80px spacing before projects grid
-
-  .row {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  @include column-reset;
-  
-  .col-auto {
-    align-self: flex-end; // Align to bottom of parent
-  }
-}
-
-.title-section {
-  @include flex-center;
-  justify-content: unset;
-  text-align: left;
-}
-
-.works-title {
-  @include typography-base($font-weight-medium, 12.8rem, 10rem);
-  margin: 0;
-}
-
-.works-label {
-  @include typography-base($font-weight-regular, 1.6rem);
-  opacity: 0.7;
-  align-self: flex-start;
-}
-
-.view-all-group {
-  @include flex-center;
-  justify-content: flex-start;
-  gap: 0; // No gap - buttons should be connected
-}
-
-.view-all-text-button {
-  @include text-button;
-
-  .button-text {
-    @include typography-base($font-weight-medium, 1.4rem, 1.2);
-    transform: rotate(0deg); // 0 degree angle
-  }
-}
-
-.view-all-arrow-button {
-  @include arrow-button($main-color, $bg-color, lighten($main-color, 10%));
-
-  svg {
-    width: 1.6rem;
-    height: 1.6rem;
-    transform: rotate(-90deg); // -90 degree angle
+    ::ng-deep.section-header {
+      margin-bottom: 6.4rem;
+    }
   }
 }
 
@@ -181,30 +122,8 @@
 
 @include tablet {
   .works {
-    padding: 0 0 6rem 0; // No top spacing, overview component handles spacing
-
     .container-fluid {
       padding: 0 2.4rem; // 24px padding for tablet (match header)
-    }
-  }
-
-  .works-header {
-    margin-bottom: 6rem;
-  }
-
-  .works-title {
-    @include typography-base($font-weight-medium, 8rem, 8rem);
-  }
-
-  // view-all-text-button inherits desktop styles - no overrides needed
-
-  .view-all-arrow-button {
-    @include arrow-button($main-color, $bg-color, lighten($main-color, 10%));
-
-    svg {
-      width: 1.6rem;
-      height: 1.6rem;
-      transform: rotate(-90deg); // -90 degree angle
     }
   }
 
@@ -232,69 +151,8 @@
 
 @include mobile {
   .works {
-    padding: 0 0 4rem 0; // No top spacing, overview component handles spacing
-
     .container-fluid {
       padding: 0 1.2rem; // 12px padding for mobile (match header)
-    }
-  }
-
-  .works-header {
-    margin-bottom: 4rem;
-
-    .row {
-      flex-direction: column;
-      align-items: flex-start !important;
-      gap: 1.6rem;
-    }
-
-    @include column-reset;
-    
-    .col,
-    .col-auto {
-      width: 100%;
-    }
-  }
-
-  .title-section {
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    width: fit-content;
-  }
-
-  .works-title {
-    @include typography-base($font-weight-medium, 4.8rem, 4.8rem);
-  }
-
-  .works-label {
-    @include typography-base($font-weight-regular, 1.4rem);
-    align-self: flex-end;
-  }
-
-  .view-all-group {
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .view-all-text-button {
-    flex: 1;
-    border-radius: 4rem; // Fully rounded on all sides
-    padding: 1rem 1.6rem;
-    height: 4rem;
-
-    .button-text {
-      @include typography-base($font-weight-regular, 1.4rem);
-    }
-  }
-
-  .view-all-arrow-button {
-    width: 4rem;
-    height: 4rem;
-    flex-shrink: 0;
-
-    .arrow-icon {
-      width: 1.2rem;
-      height: 1.2rem;
     }
   }
 
@@ -320,7 +178,7 @@
 
   .project-preview {
     max-width: 29.6rem; // Maximum width 296px
-    max-height: 16.5rem; // Maximum height 165px  
+    max-height: 16.5rem; // Maximum height 165px
     width: auto;
     height: auto;
     object-fit: contain; // Maintain aspect ratio while fitting within container

@@ -1,7 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-// Import Bootstrap using modern @use syntax
-@use 'bootstrap/scss/bootstrap';
+@use 'bootstrap/scss/bootstrap' with (
+  $grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 1023px,
+    xl: 1200px,
+    xxl: 1400px
+  )
+);
 
 // Import Helvetica Neue font from Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@100;200;300;400;500;600;700;800;900&display=swap');
@@ -28,4 +36,14 @@ body {
 :root {
   --bs-font-sans-serif: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
   --bs-body-font-size: 1.6rem; // 16px equivalent
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+
+  .col {
+    padding: 0;
+    margin: 0;
+  }
 }
