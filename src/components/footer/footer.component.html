@@ -1,0 +1,39 @@
+<section class="footer">
+  <div class="container-fluid">
+    <app-section-header [section]="SECTION.FOOTER">
+      <div slot="subtitle" class="footer-links-container">
+        <div class="footer-links-row">
+          <div class="footer-links-col">
+            <div class="footer-links-title">Socials</div>
+            <ul class="footer-links-list">
+              @for (social of socials; track social.name) {
+                <li>
+                  <a [href]="social.link" target="_blank" rel="noopener noreferrer">
+                    <img [src]="'images/footer/' + social.icon" [alt]="social.name + ' icon'" class="footer-social-icon" />
+                    <span>{{ social.name }}</span>
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <div class="footer-links-title">Pages</div>
+            <ul class="footer-links-list">
+              @for (page of pages; track page.name) {
+                <li>
+                  <a [routerLink]="page.route">{{ page.name }}</a>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </app-section-header>
+    <div class="footer-container row">
+      <div class="col footer-details">
+        <span>{{ footerContent.name }}</span>
+        <span class="footer-rights">{{ footerContent.rights }}</span>
+      </div>
+    </div>
+  </div>
+</section>

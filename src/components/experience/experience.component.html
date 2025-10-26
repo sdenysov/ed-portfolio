@@ -1,10 +1,11 @@
 <section class="experience">
   <div class="container-fluid">
-    <app-section-header
-      [title]="headerConfig.title"
-      [label]="headerConfig.label"
-      [textButton]="headerConfig.textButton"
-    ></app-section-header>
+    <app-section-header [section]="SECTION.EXPERIENCE">
+      <div slot="subtitle" class="section-header-subtitle-container">
+        <span class="section-subtitle-header">{{ subtitleHeader }}</span>
+        <span class="section-header-subtitle">{{ subtitleText }}</span>
+      </div>
+    </app-section-header>
     <div class="experience-container row justify-content-end">
       <div class="col col-lg-10">
         @for (item of experience; track item.id) {

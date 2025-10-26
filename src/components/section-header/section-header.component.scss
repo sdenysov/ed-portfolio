@@ -71,17 +71,10 @@
   min-height: 12.6rem;
 }
 
-.section-header-subtitle-container {
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-xs; // 0.8rem from variables
-  max-width: 67.2rem; // 672px
-  margin-top: 6.4rem;
-}
-
 .section-header-title {
   @include typography-base($font-weight-medium, 12.8rem, 'normal');
   margin: 0;
+  white-space: nowrap;
 }
 
 .section-header-label {
@@ -118,11 +111,6 @@
 
   .section-header-title-section {
     min-height: 10.7rem;
-  }
-
-  .section-header-subtitle-container {
-    margin-top: $spacing-base;
-    padding-right: $spacing-base;
   }
 
   .section-header-title {
@@ -176,14 +164,11 @@
     }
   }
 
-  .section-header-subtitle-container {
-    padding-right: 0;
-  }
-
   .section-header-title-section {
     flex-direction: column-reverse;
-    align-items: flex-start;
     width: fit-content;
+    gap: 0.8rem;
+    min-height: auto;
   }
 
   .section-header-title {

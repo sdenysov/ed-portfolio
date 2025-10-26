@@ -1,0 +1,100 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// VARIABLES
+// ========================================
+
+$footer-gradient-start: $bg-color;
+$footer-gradient-end: #331D19;
+
+// ========================================
+// FOOTER
+// ========================================
+
+.footer {
+  margin-top: 14.7rem;
+  background: linear-gradient(314.68deg, $footer-gradient-start -5.74%, $footer-gradient-end 58.12%);
+  color: $text-color-secondary;
+
+  .container-fluid {
+    width: 100%;
+    padding: 6.4rem $spacing-base $spacing-base;
+  }
+
+  .section-header {
+    margin-bottom: $spacing-base;
+  }
+}
+
+.footer-container {
+  margin-top: $spacing-base;
+  padding-top: $spacing-base;
+  border-top: $border-width solid $bg-color;
+
+  .footer-details {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-rights {
+    color: $text-color-primary;
+  }
+}
+
+.footer-links-container {
+  margin-top: $spacing-base;
+}
+
+.footer-links-row {
+  display: flex;
+  max-width: 63.5rem;
+  gap: 6.3rem;
+}
+
+.footer-links-col {
+  flex: 1 1 0;
+}
+
+.footer-links-title {
+  font-weight: $font-weight-medium;
+  margin-bottom: $spacing-xs;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+
+  a {
+    color: $text-color-secondary;
+    text-decoration: none;
+    transition: text-decoration 0.2s;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    .footer-social-icon {
+      margin-right: $spacing-xs;
+    }
+  }
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@include tablet {
+}
+
+@include mobile {
+  .footer-container {
+    padding-top: $spacing-small;
+    margin-top: 0;
+  }
+  .footer .container-fluid {
+    padding: $spacing-base $spacing-small;
+  }
+}

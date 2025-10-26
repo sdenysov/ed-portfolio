@@ -1,0 +1,16 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.contact {
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: transparent;
+
+  .container-fluid {
+    width: 100%;
+    padding: $spacing-base;
+  }
+}
+

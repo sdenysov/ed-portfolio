@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionHeaderComponent } from '../section-header/section-header.component';
-import { SectionHeaderConfig } from '../../models/section-header-config';
+import { SECTION } from '../section-header/section-header.config';
 
 @Component({
   selector: 'app-expertise',
@@ -11,7 +11,7 @@ import { SectionHeaderConfig } from '../../models/section-header-config';
   styleUrl: './expertise.component.scss'
 })
 export class ExpertiseComponent {
-  @Input() headerConfig!: SectionHeaderConfig;
+  SECTION = SECTION;
 
   expertise = [
     {

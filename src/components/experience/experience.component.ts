@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionHeaderComponent } from '../section-header/section-header.component';
-import { SectionHeaderConfig } from '../../models/section-header-config';
+import { SECTION } from '../section-header/section-header.config';
 
 @Component({
   selector: 'app-experience',
@@ -11,7 +11,7 @@ import { SectionHeaderConfig } from '../../models/section-header-config';
   styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent {
-  @Input() headerConfig!: SectionHeaderConfig;
+  SECTION = SECTION;
 
   experience = [
     {
@@ -33,4 +33,7 @@ export class ExperienceComponent {
       period: 'April, 2021 - April, 2022'
     }
   ];
+
+  subtitleHeader: string = '(My services)';
+  subtitleText: string = 'I specialize in creating intuitive, accessible digital experiences and enjoy building scalable design systems that bring clarity and consistency to complex products. With a strong focus on user-centered design, I collaborate closely with Agile teams and leverage AI-enhanced workflows to deliver thoughtful, seamless solutions.';
 }

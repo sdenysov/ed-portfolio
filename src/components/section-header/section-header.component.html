@@ -2,25 +2,22 @@
   <div class="row align-items-center">
     <div class="col">
       <div class="section-header-title-section">
-        <h2 class="section-header-title">{{ title }}</h2>
-        <div class="section-header-label">{{ label }}</div>
+        <h2 class="section-header-title">{{ config.title }}</h2>
+        <div class="section-header-label">{{ config.label }}</div>
       </div>
-      @if (subtitle) {
-        <div class="section-header-subtitle-container">
-          <span class="section-subtitle-header">{{ subtitleHeader }}</span>
-          <span class="section-header-subtitle">{{ subtitle }}</span>
+      <ng-content select="[slot=subtitle]"></ng-content>
+    </div>
+    @if (config.textButton) {
+      <div class="col-auto">
+        <div class="section-header-group" (click)="textButtonClick.emit()">
+          <button class="section-header-text-button" type="button">
+            <span class="button-text">{{ config.textButton }}</span>
+          </button>
+          <button class="section-header-arrow-button" type="button">
+            <img src="images/arrow.svg" alt="" class="arrow-icon">
+          </button>
         </div>
-      }
-    </div>
-    <div class="col-auto">
-      <div class="section-header-group" (click)="textButtonClick.emit()">
-        <button class="section-header-text-button" type="button">
-          <span class="button-text">{{ textButton }}</span>
-        </button>
-        <button class="section-header-arrow-button" type="button">
-          <img src="images/arrow.svg" alt="" class="arrow-icon">
-        </button>
       </div>
-    </div>
+    }
   </div>
 </div>

@@ -1,3 +1,4 @@
+@use 'variables' as *;
 /* You can add global styles to this file, and also import other style files */
 
 @use 'bootstrap/scss/bootstrap' with (
@@ -23,8 +24,8 @@ html {
 body {
   font-size: 1.6rem; // 16px equivalent
   line-height: 1.5;
-  color: #331926; // Main color for all text
-  background-color: #FFF3FD; // Global background color (light pink/purple tint)
+  color: $text-color-primary; // Main color for all text
+  background-color: $bg-color; // Global background color (light pink/purple tint)
 }
 
 // Set global font family to Helvetica Neue
