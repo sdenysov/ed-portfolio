@@ -86,9 +86,6 @@ $footer-gradient-end: #331D19;
 // RESPONSIVE DESIGN
 // ========================================
 
-@include tablet {
-}
-
 @include mobile {
   .footer-container {
     padding-top: $spacing-small;

@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SectionHeaderComponent } from '../section-header/section-header.component';
-import { SECTION } from '../section-header/section-header.config';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {SectionHeaderComponent} from '../section-header/section-header.component';
+import {SECTION} from '../section-header/section-header.config';
 
 @Component({
   selector: 'app-works',

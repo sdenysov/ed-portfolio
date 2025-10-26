@@ -1,6 +1,31 @@
 <section class="contact">
   <div class="container-fluid">
     <app-section-header [section]="SECTION.CONTACT"></app-section-header>
+    <div class="contact-container row">
+      <div class="col-lg-6 col-xl-7">
+        <h3 class="contact-title">{{ connectContent.title }}</h3>
+        <p class="contact-description">{{ connectContent.description }}</p>
+      </div>
+      <div class="col-lg-4 col-xl-3 col-md-5">
+        <h3 class="contact-info-title">{{ contactContent.title }}</h3>
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <img [src]="'images/' + contactContent.email.icon" alt="Email icon" class="contact-icon" />
+            <span>{{ contactContent.email.text }}</span>
+          </div>
+          <div class="contact-info-item">
+            <img [src]="'images/' + contactContent.location.icon" alt="Location icon" class="contact-icon" />
+            <span>{{ contactContent.location.text }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3">
+        <h3 class="contact-info-title">{{ workHoursContent.title }}</h3>
+        <div class="contact-info">
+          <div>{{ workHoursContent.days }}</div>
+          <div>{{ workHoursContent.hours }}</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-

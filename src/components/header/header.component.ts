@@ -1,11 +1,13 @@
 import { Component, Renderer2, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DOCUMENT } from '@angular/common';
+import { PAGES_CONFIG } from '../../app/app.routes';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [RouterLink, CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -15,13 +17,12 @@ export class HeaderComponent {
   greeting = '(Hi there)';
   isMenuOpen = false;
 
-  // Menu configuration
-  menuItems = [
-    { title: 'Home', number: '(01)' },
-    { title: 'Works', number: '(02)' },
-    { title: 'About', number: '(03)' },
-    { title: 'Contact', number: '(04)' }
-  ];
+  // Menu configuration combined with PAGES_CONFIG
+  menuItems = PAGES_CONFIG.map((page, idx) => ({
+    title: page.name,
+    number: `(0${idx + 1})`,
+    route: page.route
+  }));
 
   constructor(
     private renderer: Renderer2,
@@ -30,9 +31,9 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
-    
+
     // Prevent body scroll when menu is open using Renderer2
-    this.isMenuOpen 
+    this.isMenuOpen
       ? this.renderer.setStyle(this.document.body, 'overflow', 'hidden')
       : this.renderer.removeStyle(this.document.body, 'overflow');
   }

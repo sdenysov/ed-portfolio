@@ -2,15 +2,102 @@
 @use 'mixins' as *;
 
 .contact {
-  min-height: 60vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   background: transparent;
+  padding-top: 11.8rem;
+
+  ::ng-deep.section-header {
+    .section-header-label {
+      opacity: unset;
+      @include typography-base($font-weight-medium, 3.2rem, $line-height-tight);
+    }
+  }
 
   .container-fluid {
     width: 100%;
     padding: $spacing-base;
+
+    .contact-container {
+      margin-top: 6.4rem;
+
+      .contact-title {
+        @include typography-base($font-weight-medium, 3.2rem, 100%);
+        margin-bottom: 1.2rem;
+      }
+
+      .contact-description {
+        padding-right: 11.5rem;
+      }
+
+      .contact-info-title {
+        margin-bottom: $spacing-small;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+
+      .contact-icon {
+        margin-right: $spacing-xs;
+      }
+    }
   }
 }
 
+@include tablet {
+  .contact {
+    padding-top: 6.4rem;
+  }
+  .contact-container {
+    > *:first-child {
+      margin-bottom: 2.4rem;
+    }
+  }
+  .contact {
+    .container-fluid {
+      .contact-container {
+        .contact-info-title {
+          margin-bottom: $spacing-xs;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .contact {
+    padding-top: $spacing-base;
+
+    ::ng-deep.section-header {
+      .section-header-label {
+        @include typography-base($font-weight-medium, 1.6rem, $line-height-tight);
+      }
+    }
+
+    .container-fluid {
+      padding: 0 1.2rem; // 12px padding for mobile (match header)
+
+      .contact-container {
+        margin-top: $spacing-base;
+
+        .contact-info {
+          gap: $spacing-xs;
+        }
+
+        .contact-description {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  .contact-container {
+    > *:nth-child(2) {
+      margin-bottom: 2rem;
+    }
+  }
+}

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { SectionHeaderComponent } from '../section-header/section-header.component';
 import {SECTION} from "../section-header/section-header.config";
 import { RouterModule } from '@angular/router';
+import { PAGES_CONFIG } from '../../app/app.routes';
+import {PAGES} from "../../models/pages";
 
 @Component({
   selector: 'app-footer',
@@ -37,9 +39,5 @@ export class FooterComponent {
     }
   ];
 
-  pages = [
-    { name: 'Work', route: '/work' },
-    { name: 'About', route: '/about' },
-    { name: 'Contact', route: '/contact' }
-  ];
+  pages = PAGES_CONFIG.filter(page => page.route !== '/' + PAGES.HOME && page.route !== '/');
 }

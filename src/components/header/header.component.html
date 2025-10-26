@@ -4,9 +4,9 @@
       <!-- Profile Image - Left Side -->
       <div class="col-auto">
         <div class="profile-image-wrapper">
-          <img 
-            [src]="profileImageUrl" 
-            alt="Zhenya Dobrovolska Profile" 
+          <img
+            [src]="profileImageUrl"
+            alt="Zhenya Dobrovolska Profile"
             class="profile-image"
           >
         </div>
@@ -22,7 +22,7 @@
 
       <!-- Menu Button - Right Side -->
       <div class="col-auto">
-        <button 
+        <button
           class="menu-toggle"
           (click)="toggleMenu()"
           type="button"
@@ -50,7 +50,7 @@
 
             <!-- Close Button - Right Side -->
             <div class="col-auto">
-              <button 
+              <button
                 class="menu-close-toggle"
                 (click)="toggleMenu()"
                 type="button"
@@ -68,17 +68,15 @@
 
       <!-- Menu Navigation -->
       <nav class="fullscreen-nav">
-        <div 
-          class="menu-item" 
-          *ngFor="let item of menuItems" 
-          (click)="toggleMenu()"
-        >
-          <div class="menu-content">
-            <h2 class="menu-title">{{ item.title }}</h2>
-            <span class="menu-number">{{ item.number }}</span>
-          </div>
-          <div class="menu-separator"></div>
-        </div>
+        @for (item of menuItems; track item.title) {
+          <a class="menu-item" [routerLink]="item.route" (click)="toggleMenu()">
+            <div class="menu-content">
+              <h2 class="menu-title">{{ item.title }}</h2>
+              <span class="menu-number">{{ item.number }}</span>
+            </div>
+            <div class="menu-separator"></div>
+          </a>
+        }
       </nav>
     </div>
   </div>

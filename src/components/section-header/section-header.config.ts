@@ -30,7 +30,7 @@ export const SECTION_HEADER_CONFIG: Record<SECTION, SectionHeaderConfig> = {
     textButton: 'Contact',
   },
   [SECTION.CONTACT]: {
-    label: 'Get in touch',
+    label: '(Get in touch)',
     title: 'Contact'
   },
 };
