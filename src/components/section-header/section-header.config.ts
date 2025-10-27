@@ -6,7 +6,8 @@ export enum SECTION {
   EXPERTISE = 'EXPERTISE',
   FOOTER = 'FOOTER',
   CONTACT = 'CONTACT',
-  ABOUT = 'ABOUT'
+  ABOUT = 'ABOUT',
+  CORE_VALUES = 'CORE_VALUES'
 }
 
 export const SECTION_HEADER_CONFIG: Record<SECTION, SectionHeaderConfig> = {
@@ -37,5 +38,9 @@ export const SECTION_HEADER_CONFIG: Record<SECTION, SectionHeaderConfig> = {
   [SECTION.ABOUT]: {
     label: '(A bit more about me)',
     title: 'About'
+  },
+  [SECTION.CORE_VALUES]: {
+    label: '(Why choose me)',
+    title: 'Core values'
   },
 };

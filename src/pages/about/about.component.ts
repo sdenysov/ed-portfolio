@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import {ProfileComponent} from "../../components/profile/profile.component";
+import { ProfileComponent } from '../../components/profile/profile.component';
+import { CoreValuesComponent } from '../../components/core-values/core-values.component';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +8,8 @@ import {ProfileComponent} from "../../components/profile/profile.component";
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
   imports: [
-    ProfileComponent
+    ProfileComponent,
+    CoreValuesComponent
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

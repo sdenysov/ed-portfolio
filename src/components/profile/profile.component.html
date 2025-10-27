@@ -2,14 +2,14 @@
   <div class="container-fluid">
     <app-section-header [section]="SECTION.ABOUT"></app-section-header>
     <div class="profile-content row">
-      <div class="col-xl-5 col-lg-4">
+      <div class="profile-content-item col-xl-6 col-lg-4">
         <img
           [src]="isMobile ? profileMobileImageUrl : profileImageUrl"
           alt="Zhenya Dobrovolska Profile"
           class="profile-image img-fluid"
         >
       </div>
-      <div class="col-xl-5 col-lg-4">
+      <div class="profile-content-item col-xl-6 col-lg-4">
         <p class="profile-info card"> {{profileInfoText}} </p>
       </div>
     </div>

@@ -35,6 +35,10 @@
 
 @include tablet {
   .profile {
+    .container-fluid {
+      padding: 0 2.4rem;
+    }
+
     .profile-content {
       margin-top: $spacing-base;
     }
@@ -55,6 +59,10 @@
 
 @include mobile {
   .profile {
+    .container-fluid {
+      padding: 0 $spacing-small;
+    }
+
     .profile-info {
       min-height: unset;
       padding: 1.6rem;
@@ -79,6 +87,14 @@
       .section-header-label {
         @include typography-base($font-weight-regular, 3.2rem, $line-height-tight);
       }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .profile {
+    .profile-content-item {
+      width: 48%;
     }
   }
 }

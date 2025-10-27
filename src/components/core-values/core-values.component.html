@@ -1,0 +1,20 @@
+<section class="core-values">
+  <div class="container-fluid">
+    <app-section-header [section]="SECTION.CORE_VALUES">
+      <div slot="subtitle" class="section-header-subtitle-container">
+        <span class="section-header-subtitle">{{ coreValuesSubtitle }}</span>
+      </div>
+    </app-section-header>
+    <div class="core-values-container">
+      @for (coreValue of coreValueItems; track coreValue.title) {
+        <div class="core-value-item">
+          <div class="core-value-icon-container">
+            <img [src]="coreValue.img" [alt]="coreValue.title + ' Icon'" class="core-value-icon" />
+          </div>
+          <h3 class="core-value-title">{{ coreValue.title }}</h3>
+          <p class="core-value-description">{{ coreValue.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

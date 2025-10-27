@@ -1,0 +1,104 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.core-values {
+  margin-top: 12.5rem;
+
+  .container-fluid {
+    width: 100%;
+    padding: 0 $spacing-base; // 32px left/right padding to match other sections
+  }
+
+  .section-header-subtitle-container {
+    max-width: 65rem;
+    margin-top: $spacing-base;
+  }
+
+  .core-values-container {
+    margin-top: 6.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-base;
+    justify-content: space-between;
+  }
+
+  .core-value-item {
+    max-width: 48%;
+    padding-bottom: $spacing-base;
+    border-bottom: $border-width solid $main-color;
+  }
+
+  .core-value-title {
+    @include typography-base($font-weight-medium, 3.2rem, $line-height-tight);
+    margin-bottom: 1.2rem;
+  }
+
+  .core-value-description {
+    @include typography-base($font-weight-regular, 1.8rem, 3rem);
+  }
+
+  .core-value-icon-container {
+    width: 8.5rem;
+    height: 8.5rem;
+    margin-bottom: $spacing-base;
+    background: linear-gradient(113.36deg, #{$main-color} 32.78%, #{$bg-color} 157.87%);
+    border-radius: 1.6rem;
+    @include flex-center;
+  }
+
+  ::ng-deep.section-header {
+    .section-header-label {
+      @include typography-base($font-weight-regular, 2.4rem, $line-height-tight);
+    }
+  }
+}
+
+@include tablet {
+  .core-values {
+    .container-fluid {
+      padding: 0 2.4rem;
+    }
+
+    .core-values-container {
+      flex-wrap: unset;
+      flex-direction: column;
+      margin-top: $spacing-base;
+    }
+
+    .core-value-icon-container {
+      margin-bottom: 2.4rem;
+    }
+
+    .core-value-item {
+      max-width: unset;
+      padding-bottom: 2.4rem;
+    }
+
+    .core-value-title {
+      @include typography-base($font-weight-medium, 2.4rem, $line-height-tight);
+      margin-bottom: 1.2rem;
+    }
+  }
+}
+
+@include mobile {
+  .core-values {
+    .container-fluid {
+      padding: 0 $spacing-small;
+    }
+
+    ::ng-deep.section-header {
+      .section-header-label {
+        font-size: 1.6rem;
+      }
+    }
+
+    .core-value-icon-container {
+      margin-bottom: $spacing-small;
+    }
+
+    .core-value-description {
+      @include typography-base($font-weight-regular, 1.6rem, 2.6rem);
+    }
+  }
+}
