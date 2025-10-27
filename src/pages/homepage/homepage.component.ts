@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {OverviewComponent} from '../../components/overview/overview.component';
 import {WorksComponent} from '../../components/works/works.component';
@@ -10,6 +10,7 @@ import {ExpertiseComponent} from '../../components/expertise/expertise.component
   standalone: true,
   imports: [CommonModule, OverviewComponent, WorksComponent, ExperienceComponent, ExpertiseComponent],
   templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.scss'
+  styleUrl: './homepage.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomepageComponent {}

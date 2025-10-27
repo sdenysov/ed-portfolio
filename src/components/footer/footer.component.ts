@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionHeaderComponent } from '../section-header/section-header.component';
 import {SECTION} from "../section-header/section-header.config";
@@ -11,7 +11,8 @@ import {PAGES} from "../../models/pages";
   standalone: true,
   imports: [CommonModule, SectionHeaderComponent, RouterModule],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FooterComponent {
   SECTION = SECTION;

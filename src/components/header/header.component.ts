@@ -1,4 +1,4 @@
-import { Component, Renderer2, Inject } from '@angular/core';
+import { Component, Renderer2, Inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DOCUMENT } from '@angular/common';
 import { PAGES_CONFIG } from '../../app/app.routes';
@@ -9,10 +9,11 @@ import {RouterLink} from "@angular/router";
   standalone: true,
   imports: [RouterLink, CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
-  profileImageUrl = 'images/profile.png';
+  profileImageUrl = 'images/profile-header.png';
   name = 'Zhenya Dobrovolska';
   greeting = '(Hi there)';
   isMenuOpen = false;

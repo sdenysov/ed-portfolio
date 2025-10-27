@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {SectionHeaderComponent} from '../section-header/section-header.component';
 import {SECTION} from '../section-header/section-header.config';
@@ -8,7 +8,8 @@ import {SECTION} from '../section-header/section-header.config';
   standalone: true,
   imports: [CommonModule, SectionHeaderComponent],
   templateUrl: './works.component.html',
-  styleUrl: './works.component.scss'
+  styleUrl: './works.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WorksComponent {
   SECTION = SECTION;

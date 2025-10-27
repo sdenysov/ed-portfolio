@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionHeaderComponent } from '../section-header/section-header.component';
 import { SECTION } from '../section-header/section-header.config';
@@ -8,7 +8,8 @@ import { SECTION } from '../section-header/section-header.config';
   standalone: true,
   imports: [CommonModule, SectionHeaderComponent],
   templateUrl: './experience.component.html',
-  styleUrl: './experience.component.scss'
+  styleUrl: './experience.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExperienceComponent {
   SECTION = SECTION;

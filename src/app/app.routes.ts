@@ -6,14 +6,14 @@ export const routes: Routes = [
     path: '',
     loadComponent: () => import('../pages/homepage/homepage.component').then(m => m.HomepageComponent)
   },
-/*  {
+  {
     path: PAGES.WORK,
     loadComponent: () => import('../pages/work/work.component').then(m => m.WorkComponent)
   },
   {
     path: PAGES.ABOUT,
     loadComponent: () => import('../pages/about/about.component').then(m => m.AboutComponent)
-  },*/
+  },
   {
     path: PAGES.CONTACT,
     loadComponent: () => import('../pages/contact/contact.component').then(m => m.ContactComponent)
