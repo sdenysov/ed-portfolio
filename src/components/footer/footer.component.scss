@@ -18,7 +18,7 @@ $footer-gradient-end: #331D19;
   color: $text-color-secondary;
 
   .container-fluid {
-    width: 100%;
+    @include container-max;
     padding: 6.4rem $spacing-base $spacing-base;
   }
 

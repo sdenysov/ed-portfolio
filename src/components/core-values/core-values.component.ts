@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {SectionHeaderComponent} from "../section-header/section-header.component";
 import {SECTION} from "../section-header/section-header.config";
+import { SkillsComponent } from '../skills/skills.component';
 
 @Component({
   selector: 'app-core-values',
@@ -8,7 +9,8 @@ import {SECTION} from "../section-header/section-header.config";
   templateUrl: './core-values.component.html',
   styleUrl: './core-values.component.scss',
   imports: [
-    SectionHeaderComponent
+    SectionHeaderComponent,
+    SkillsComponent
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

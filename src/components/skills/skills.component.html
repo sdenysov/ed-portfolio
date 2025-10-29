@@ -1,0 +1,15 @@
+<section class="skills">
+  <h3 class="skills-section-title">{{ skillsSectionTitle }}</h3>
+  <div class="g-md-5 g-0 skills-container row">
+    @for (skillType of skillsTypes; track skillType.type) {
+      <div class="col-lg-6 col-xxl-4 col-xl-5 col-md-5">
+        <h1 class="skills-type-title">{{ skillType.title }}</h1>
+        <ul class="skills-list">
+          @for (skill of skillsData[skillType.type]; track skill) {
+            <li class="skill-item"><span>{{ skill }}</span></li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</section>

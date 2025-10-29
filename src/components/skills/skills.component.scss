@@ -1,0 +1,70 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.skills {
+  margin-top: 15.3rem;
+}
+
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: $spacing-base;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-base; // 3.2rem
+}
+
+.skills-section-title {
+  @include typography-base($font-weight-medium, 6.4rem, 100%);
+}
+
+.skills-container {
+  margin-top: 6.4rem;
+}
+
+.skill-item {
+  border: $border-width solid $main-color;
+  border-radius: 10rem;
+  text-align: center;
+  min-width: 41.1rem;
+  vertical-align: middle;
+  padding: $spacing-base 2rem;
+  @include typography-base($font-weight-medium, 3.2rem);
+}
+
+@include tablet {
+  .skills {
+    margin-top: 6.4rem;
+  }
+
+  .skills-container {
+    margin-top: $spacing-base;
+  }
+
+  .skills-list {
+    margin-top: 2.4rem;
+  }
+
+  .skill-item {
+    text-align: center;
+    min-width: 24.6rem;
+    padding: 1.5rem 2rem;
+    font-size: 2.4rem;
+    min-height: 7.7rem;
+    @include flex-center;
+  }
+}
+
+@include mobile {
+  .skills {
+    margin-top: 4rem;
+  }
+
+  .skills-section-title {
+    @include typography-base($font-weight-medium, 3.2rem, 100%);
+  }
+
+  .skills-list {
+    margin-top: $spacing-small; // 1.6rem
+  }
+}

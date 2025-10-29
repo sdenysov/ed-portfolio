@@ -1,1 +1,13 @@
+@use 'variables' as *;
+@use 'mixins' as *;
 
+:host {
+  ::ng-deep.experience {
+    ::ng-deep.section-header {
+      .section-header-label {
+        opacity: unset;
+        @include typography-base($font-weight-medium, 2.4rem, $line-height-tight);
+      }
+    }
+  }
+}

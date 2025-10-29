@@ -14,12 +14,8 @@
   position: sticky;
   top: 0;
   z-index: 1001;
-  padding: $spacing-base $spacing-base 0 $spacing-base; // top, right, bottom=0, left
-
-  .container-fluid {
-    padding-bottom: $spacing-base; // 32px padding-bottom moved here
-    border-bottom: $border-width solid $main-color;
-  }
+  padding: $spacing-base;
+  border-bottom: $border-width solid $main-color;
 
   .col-auto {
     padding: 0;
@@ -32,8 +28,8 @@
 }
 
 .profile-image {
-  width: 12.8rem;
-  height: 12.8rem;
+  width: 9.6rem;
+  height: 9.6rem;
   border-radius: 2.4rem;
   border: 0.2rem solid #f8f9fa;
   object-fit: cover;
@@ -109,6 +105,7 @@
   background: $bg-color;
   z-index: 1002;
   padding: $spacing-base;
+  border-bottom: $border-width solid $main-color;
 
   .container-fluid {
     padding-left: 0;
@@ -118,7 +115,6 @@
 
 .menu-header-name {
   @include typography-base($font-weight-medium, 3.2rem);
-  // leading-trim: none;
 }
 
 .menu-close-toggle {
@@ -151,6 +147,7 @@
 
 .fullscreen-nav {
   min-height: calc(100vh - 10.4rem);
+  @include container-max;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -301,11 +298,7 @@
 // Header responsive adjustments
 @include tablet {
   .app-header {
-    padding: 2.4rem 2.4rem 0 2.4rem; // top, right, bottom=0, left
-  }
-
-  .app-header .container-fluid {
-    padding-bottom: 2.4rem; // 24px padding-bottom for tablet
+    padding: 2.4rem;
   }
 
   .header-name {
@@ -344,11 +337,7 @@
 
 @include mobile {
   .app-header {
-    padding: 1.2rem 1.2rem 0 1.2rem; // top, right, bottom=0, left
-  }
-
-  .app-header .container-fluid {
-    padding-bottom: 1.2rem; // 12px padding-bottom for mobile
+    padding: 1.2rem;
   }
 
   .header-name {

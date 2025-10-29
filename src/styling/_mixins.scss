@@ -130,3 +130,11 @@
     @content;
   }
 }
+
+// Container max mixin
+@mixin container-max {
+  max-width: $container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
