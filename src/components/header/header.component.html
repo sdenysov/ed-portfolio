@@ -1,13 +1,14 @@
-<header class="app-header">
+<header class="app-header" [class.non-home-page]="!isHomePage">
   <div class="container-fluid">
     <div class="row align-items-center">
       <!-- Profile Image - Left Side -->
       <div class="col-auto">
-        <div class="profile-image-wrapper">
+        <div class="profile-image-wrapper" (click)="navigateToHome()" >
           <img
             [src]="profileImageUrl"
             alt="Zhenya Dobrovolska Profile"
             class="profile-image"
+            [class.small-profile]="!isHomePage"
           >
         </div>
       </div>
@@ -16,7 +17,7 @@
       <div class="col">
         <div class="name-section">
           <h1 class="header-name">{{ name }}</h1>
-          <p class="header-greeting">{{ greeting }}</p>
+          <p class="header-greeting" [class.hidden]="!isHomePage">{{ greeting }}</p>
         </div>
       </div>
 
@@ -66,16 +67,20 @@
         </div>
       </div>
 
-      <!-- Menu Navigation -->
+      <!-- Full Screen Navigation -->
       <nav class="fullscreen-nav">
-        @for (item of menuItems; track item.title) {
-          <a class="menu-item" [routerLink]="item.route" (click)="toggleMenu()">
+        @for (item of menuItems; track item.route) {
+          <a
+            [routerLink]="item.route"
+            class="menu-item"
+            (click)="toggleMenu()"
+          >
             <div class="menu-content">
-              <h2 class="menu-title">{{ item.title }}</h2>
               <span class="menu-number">{{ item.number }}</span>
+              <h2 class="menu-title">{{ item.title }}</h2>
             </div>
-            <div class="menu-separator"></div>
           </a>
+          <div class="menu-separator"></div>
         }
       </nav>
     </div>

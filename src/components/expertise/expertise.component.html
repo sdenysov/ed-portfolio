@@ -1,8 +1,44 @@
 <section class="expertise">
   <div class="container-fluid">
-    <app-section-header [section]="SECTION.EXPERTISE"></app-section-header>
-    <div class="expertise-container row justify-content-end">
+    <app-section-header [section]="SECTION.EXPERTISE">
+      <div slot="subtitle" class="section-header-subtitle-container">
+        <span class="section-subtitle-header">{{ subtitleHeader }}</span>
+        <span class="section-header-subtitle">{{ subtitleText }}</span>
+      </div>
+    </app-section-header>
+    <div class="expertise-container row">
       <div class="col">
+        <div class="accordion" id="expertiseAccordion">
+          @for (item of expertise; track item.id; let i = $index) {
+            <div class="accordion-item">
+              <h2 class="accordion-header" [id]="'heading-' + item.id">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  [attr.data-bs-toggle]="'collapse'"
+                  [attr.data-bs-target]="'#collapse-' + item.id"
+                  [attr.aria-expanded]="i === 0 ? 'true' : 'false'"
+                  [attr.aria-controls]="'collapse-' + item.id">
+                  <img [src]="item.img" [alt]="item.title" class="accordion-icon">
+                  <span class="accordion-title">{{ item.title }}</span>
+                </button>
+              </h2>
+              <div
+                [id]="'collapse-' + item.id"
+                class="accordion-collapse collapse"
+                [attr.aria-labelledby]="'heading-' + item.id"
+                data-bs-parent="#expertiseAccordion">
+                <div class="accordion-body">
+                  <ul class="expertise-list">
+                    @for (point of item.descriptionPoints; track point) {
+                      <li class="expertise-point">{{ point }}</li>
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
       </div>
     </div>
   </div>

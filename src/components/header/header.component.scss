@@ -25,6 +25,7 @@
 .profile-image-wrapper {
   position: relative;
   display: inline-block;
+  cursor: pointer;
 }
 
 .profile-image {
@@ -157,27 +158,11 @@
 
 .menu-item {
   cursor: pointer;
-  transition: $transition-normal;
-  opacity: 0;
-}
-
-// Animate menu items in when menu is shown
-.fullscreen-menu.show {
-  .menu-item {
-    opacity: 1;
-    transform: translateY(0);
-
-    // Stagger animation for each item
-    &:nth-child(1) { transition-delay: 0.1s; }
-    &:nth-child(2) { transition-delay: 0.2s; }
-    &:nth-child(3) { transition-delay: 0.3s; }
-    &:nth-child(4) { transition-delay: 0.4s; }
-  }
-}
-
-.menu-item {
   text-decoration: none;
   color: $text-color-primary;
+  opacity: 0;
+  transform: translateY(-3rem);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .menu-content {
@@ -200,6 +185,21 @@
   width: 100%;
   height: $border-width;
   background: $main-color-020;
+}
+
+// Animate menu items in when menu is shown
+.fullscreen-menu.show {
+  .menu-item {
+    opacity: 1;
+    transform: translateY(0);
+
+    // Stagger animation for each item with longer delays for better effect
+    &:nth-child(1) { transition-delay: 0.1s; }
+    &:nth-child(3) { transition-delay: 0.2s; }  // Skip separator (nth-child 2)
+    &:nth-child(5) { transition-delay: 0.3s; }  // Skip separator (nth-child 4)
+    &:nth-child(7) { transition-delay: 0.4s; }  // Skip separator (nth-child 6)
+    &:nth-child(9) { transition-delay: 0.5s; }  // Skip separator (nth-child 8)
+  }
 }
 
 // Responsive adjustments for fullscreen menu
@@ -375,5 +375,31 @@
     border-top: 0.1rem solid $main-color; // 1px border-width
     opacity: 1; // Fully opaque
     transform: rotate(0deg); // 0 degree angle (horizontal)
+  }
+}
+// ========================================
+// CONDITIONAL STYLES FOR NON-HOME PAGES
+// ========================================
+// When not on home page, hide greeting and resize profile image
+.app-header.non-home-page {
+  padding-top: $spacing-small; // 1.6rem
+  padding-bottom: $spacing-small; // 1.6rem
+
+  .name-section {
+    min-height: unset;
+  }
+
+  .profile-image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.8rem;
+  }
+
+  .header-greeting {
+    display: none;
+  }
+
+  .header-name {
+    font-size: 4rem;
   }
 }

@@ -43,18 +43,6 @@
 }
 
 // ========================================
-// SUBTITLE STYLES
-// ========================================
-
-.section-header-subtitle-container {
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-xs; // 0.8rem from variables
-  max-width: 67.2rem; // 672px
-  margin-top: 6.4rem;
-}
-
-// ========================================
 // RESPONSIVE DESIGN
 // ========================================
 
@@ -69,11 +57,6 @@
 
   .experience-header {
     margin-bottom: 4rem;
-  }
-
-  .section-header-subtitle-container {
-    margin-top: $spacing-base;
-    padding-right: $spacing-base;
   }
 
   .experience-container {
@@ -117,9 +100,5 @@
     .experience-item {
       gap: $spacing-xs;
     }
-  }
-
-  .section-header-subtitle-container {
-    padding-right: 0;
   }
 }

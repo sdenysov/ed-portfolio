@@ -6,7 +6,7 @@
 // ========================================
 
 .expertise {
-  margin: 36.6rem 0 25.6rem 0;
+  margin: 36.6rem 0 12.8rem 0;
 
   .container-fluid {
     width: 100%;
@@ -16,6 +16,35 @@
   .section-header {
     margin-bottom: $spacing-base;
   }
+
+  @include tablet {
+    margin-top: 12.8rem;
+  }
+
+  @include mobile {
+    margin: 7.2rem 0;
+  }
+}
+
+.expertise-container {
+  margin-top: 6.4rem;
+  border-top: $border-width solid $main-color;
+
+  @include mobile {
+    margin-top: $spacing-base;
+  }
+}
+
+// ========================================
+// SUBTITLE STYLES
+// ========================================
+
+.section-header-subtitle-container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs; // 0.8rem from variables
+  max-width: 67.2rem; // 672px
+  margin-top: 6.4rem;
 }
 
 .expertise-container {
@@ -47,6 +76,12 @@
 // ========================================
 
 @include tablet {
+
+  .section-header-subtitle-container {
+    margin-top: $spacing-base;
+    padding-right: $spacing-base;
+  }
+
   .expertise {
     margin: 12.8rem 0;
 
@@ -78,6 +113,129 @@
   .expertise-container {
     .expertise-item {
       gap: $spacing-xs;
+    }
+  }
+
+  .section-header-subtitle-container {
+    padding-right: 0;
+  }
+}
+
+// ========================================
+// ACCORDION STYLES
+// ========================================
+
+.accordion {
+  .accordion-item {
+    border: none;
+    border-bottom: $border-width solid $main-color;
+    background: transparent;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  .accordion-header {
+    .accordion-button {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: $spacing-base 0;
+      display: flex;
+      align-items: center;
+      gap: $spacing-base;
+      color: $main-color;
+      @include typography-base($font-weight-medium, 3.2rem, 100%);
+
+      @include mobile {
+        font-size: 2.4rem;
+        padding: 2.4rem 0;
+        gap: 2.4rem;
+      }
+
+      &:not(.collapsed) {
+        background: transparent;
+        color: $main-color;
+        box-shadow: none;
+      }
+
+      &:focus {
+        box-shadow: none;
+        border: none;
+      }
+
+      &::after {
+        background-image: url('../../images/plus.png');
+        background-size: contain;
+        width: 4rem;
+        height: 4rem;
+      }
+
+      &:not(.collapsed)::after {
+        transform: rotate(45deg);
+      }
+
+      .accordion-icon {
+        width: 6.4rem;
+        height: 6.4rem;
+        object-fit: contain;
+        transition: transform 0.6s ease;
+
+        @include mobile {
+          width: 3.2rem;
+          height: 3.2rem;
+        }
+      }
+
+      &:hover .accordion-icon {
+        transform: rotate(180deg);
+      }
+
+      .accordion-title {
+        flex: 1;
+        text-align: left;
+      }
+    }
+  }
+
+  .accordion-body {
+    padding: 0 $spacing-base $spacing-base $spacing-base;
+
+    @include mobile {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .expertise-list {
+      list-style: none;
+      padding: 0;
+      margin-left: 6.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-small;
+
+      @include mobile {
+        margin-left: 0;
+      }
+
+      .expertise-point {
+        position: relative;
+        padding-left: $spacing-base;
+        font-size: 1.8rem;
+
+        &::before {
+          content: '•';
+          position: absolute;
+          left: 0;
+          color: $main-color;
+        }
+      }
     }
   }
 }

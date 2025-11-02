@@ -13,7 +13,6 @@ import {SECTION} from '../section-header/section-header.config';
 })
 export class ExperienceComponent {
   SECTION = SECTION;
-  @Input() hideHeaderSubtitle: boolean = false;
 
   experience = [
     {
@@ -35,7 +34,4 @@ export class ExperienceComponent {
       period: 'April, 2021 - April, 2022'
     }
   ];
-
-  subtitleHeader: string = '(My services)';
-  subtitleText: string = 'I specialize in creating intuitive, accessible digital experiences and enjoy building scalable design systems that bring clarity and consistency to complex products. With a strong focus on user-centered design, I collaborate closely with Agile teams and leverage AI-enhanced workflows to deliver thoughtful, seamless solutions.';
 }
