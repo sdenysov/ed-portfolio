@@ -2,16 +2,26 @@
 @use 'mixins' as *;
 
 // ========================================
-// WORKS SECTION
+// CASE STUDIES SECTION
 // ========================================
 
-.works {
+.case-studies {
+  margin-top: 6.4rem;
+
   .container-fluid {
-    width: 100%;
-    padding: 0 $spacing-base; // 32px left/right padding to match other sections
+    @include container-max;
+    padding: 0 $spacing-base;
 
     ::ng-deep.section-header {
       margin-bottom: 6.4rem;
+
+      .section-header-label {
+        font-size: 3.2rem;
+
+        @include mobile {
+          font-size: 1.6rem;
+        }
+      }
     }
   }
 }
@@ -21,7 +31,7 @@
 // ========================================
 
 @include tablet {
-  .works {
+  .case-studies {
     .container-fluid {
       padding: 0 2.4rem; // 24px padding for tablet (match header)
     }
@@ -29,7 +39,7 @@
 }
 
 @include mobile {
-  .works {
+  .case-studies {
     .container-fluid {
       padding: 0 1.2rem; // 12px padding for mobile (match header)
     }

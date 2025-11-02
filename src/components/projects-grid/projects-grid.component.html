@@ -1,0 +1,32 @@
+<!-- Projects Grid -->
+<div class="projects-grid">
+  @for (project of projects; track project.id) {
+    <div
+      class="project-card"
+      [attr.data-type]="project.type"
+      (click)="onProjectClick(project)"
+    >
+      <!-- Project Image/Preview -->
+      <div class="project-image">
+        <img
+          [src]="project.image"
+          [alt]="project.title + ' preview'"
+          class="project-preview"
+          loading="lazy"
+        >
+      </div>
+
+      <!-- Project Info -->
+      <div class="project-info">
+        <h3 class="project-title">{{ project.title }}</h3>
+        <button
+          class="project-link"
+          type="button"
+          (click)="onProjectClick(project)"
+        >
+          <img src="images/arrow.svg" alt="" class="arrow-icon">
+        </button>
+      </div>
+    </div>
+  }
+</div>

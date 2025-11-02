@@ -1,0 +1,208 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// PROJECT DETAIL SECTION
+// ========================================
+
+.project-detail {
+  padding: $spacing-base 0;
+
+  .container-fluid {
+    width: 100%;
+    padding: 0 $spacing-base;
+    @include container-max;
+  }
+}
+
+.project-header {
+  margin-bottom: 6.4rem;
+  text-align: center;
+
+  .project-title {
+    @include typography-base($font-weight-medium, 6.4rem, 100%);
+    margin-bottom: $spacing-small;
+  }
+
+  .project-type {
+    @include typography-base($font-weight-regular, 2.4rem);
+    color: $main-color-020;
+    text-transform: capitalize;
+  }
+}
+
+.project-image-container {
+  margin-bottom: 6.4rem;
+  @include flex-center;
+
+  .project-main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2.4rem;
+    box-shadow: 0 0.8rem 3.2rem rgba(51, 25, 38, 0.1);
+  }
+}
+
+.project-content {
+  max-width: 80rem;
+  margin: 0 auto;
+
+  .project-description,
+  .project-details {
+    margin-bottom: 4.8rem;
+
+    h2, h3 {
+      @include typography-base($font-weight-medium, 4rem, 100%);
+      margin-bottom: $spacing-base;
+    }
+
+    p {
+      @include typography-base($font-weight-regular, 1.8rem, 150%);
+      margin-bottom: $spacing-small;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        @include typography-base($font-weight-regular, 1.8rem, 150%);
+        margin-bottom: $spacing-xs;
+        padding-left: $spacing-base;
+        position: relative;
+
+        &::before {
+          content: '•';
+          position: absolute;
+          left: 0;
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+// ========================================
+// PROJECT NOT FOUND
+// ========================================
+
+.project-not-found {
+  padding: $spacing-base 0;
+  text-align: center;
+
+  .container-fluid {
+    width: 100%;
+    padding: 0 $spacing-base;
+    @include container-max;
+  }
+
+  h1 {
+    @include typography-base($font-weight-medium, 4.8rem, 100%);
+    margin-bottom: $spacing-base;
+  }
+
+  p {
+    @include typography-base($font-weight-regular, 2.4rem, 150%);
+    margin-bottom: $spacing-base;
+  }
+
+  .back-link {
+    @include typography-base($font-weight-medium, 1.8rem);
+    color: $main-color;
+    text-decoration: none;
+    padding: $spacing-small $spacing-base;
+    border: $border-width solid $main-color;
+    border-radius: $border-radius-pill;
+    transition: $transition-fast;
+
+    &:hover {
+      background: $main-color-050;
+    }
+  }
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@include tablet {
+  .project-detail {
+    .container-fluid {
+      padding: 0 2.4rem;
+    }
+  }
+
+  .project-header {
+    margin-bottom: 4.8rem;
+
+    .project-title {
+      @include typography-base($font-weight-medium, 4.8rem, 100%);
+    }
+
+    .project-type {
+      @include typography-base($font-weight-regular, 2rem);
+    }
+  }
+
+  .project-image-container {
+    margin-bottom: 4.8rem;
+  }
+
+  .project-content {
+    .project-description,
+    .project-details {
+      h2, h3 {
+        @include typography-base($font-weight-medium, 3.2rem, 100%);
+      }
+    }
+  }
+}
+
+@include mobile {
+  .project-detail {
+    .container-fluid {
+      padding: 0 1.2rem;
+    }
+  }
+
+  .project-header {
+    margin-bottom: 3.2rem;
+
+    .project-title {
+      @include typography-base($font-weight-medium, 3.2rem, 100%);
+    }
+
+    .project-type {
+      @include typography-base($font-weight-regular, 1.6rem);
+    }
+  }
+
+  .project-image-container {
+    margin-bottom: 3.2rem;
+  }
+
+  .project-content {
+    .project-description,
+    .project-details {
+      margin-bottom: 3.2rem;
+
+      h2, h3 {
+        @include typography-base($font-weight-medium, 2.4rem, 100%);
+      }
+
+      p, li {
+        @include typography-base($font-weight-regular, 1.6rem, 150%);
+      }
+    }
+  }
+
+  .project-not-found {
+    h1 {
+      @include typography-base($font-weight-medium, 3.2rem, 100%);
+    }
+
+    p {
+      @include typography-base($font-weight-regular, 1.8rem, 150%);
+    }
+  }
+}

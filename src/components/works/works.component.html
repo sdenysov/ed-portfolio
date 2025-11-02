@@ -1,33 +1,6 @@
 <section class="works">
   <div class="container-fluid">
     <app-section-header [section]="SECTION.WORKS"></app-section-header>
-
-    <!-- Projects Grid -->
-    <div class="projects-grid">
-      <div
-        class="project-card"
-        *ngFor="let project of projects"
-        [attr.data-type]="project.type"
-      >
-        <!-- Project Image/Preview -->
-        <div class="project-image">
-          <img
-            [src]="project.image"
-            [alt]="project.title + ' preview'"
-            class="project-preview"
-            loading="lazy"
-          >
-        </div>
-
-        <!-- Project Info -->
-        <div class="project-info">
-          <h3 class="project-title">{{ project.title }}</h3>
-          <button class="project-link" type="button">
-            <span class="sr-only">View {{ project.title }}</span>
-            <img src="images/arrow.svg" alt="" class="arrow-icon">
-          </button>
-        </div>
-      </div>
-    </div>
+    <app-projects-grid></app-projects-grid>
   </div>
 </section>

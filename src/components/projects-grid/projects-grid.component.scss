@@ -1,0 +1,160 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// PROJECTS GRID
+// ========================================
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 67.2rem); // Fixed 672px width, wraps at 1500px
+  gap: $spacing-base; // 32px gap between project cards
+  justify-content: center; // Center cards when they wrap to single column
+
+  // For screens 1500px and above, stretch cards to full width
+  @media (min-width: 1500px) {
+    grid-template-columns: 1fr 1fr; // Two equal columns stretching to full width
+    justify-content: unset; // Remove centering for full-width stretching
+  }
+}
+
+.project-card {
+  background: transparent;
+  width: 100%; // Stretch to full width of grid column
+  height: 57.8rem; // 578px
+  opacity: 1;
+  border-radius: 3.2rem; // 32px border radius
+  border: 0.1rem solid $main-color; // 1px border width with #331926 color
+  padding: 4rem 4rem 0 4rem; // Remove bottom padding, handled by footer
+  transition: $transition-normal;
+  cursor: pointer;
+  @include card-layout;
+
+  // Ensure equal width above 1500px
+  @media (min-width: 1500px) {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  &:hover {
+    background: $main-color-050;
+    border-color: $main-color-020;
+    transform: translateY(-0.4rem) rotate(0deg);
+  }
+}
+
+// ========================================
+// PROJECT CONTENT
+// ========================================
+
+.project-image {
+  @include full-width-extension(4rem);
+  flex: 1; // Take up remaining space
+  border-radius: 2.4rem;
+  overflow: hidden;
+  @include flex-center;
+  padding: 0 11.2rem; // 72px minimum + 40px (4rem) from extended width = 112px
+}
+
+.project-preview {
+  border-radius: 2.4rem; // 24px border radius
+}
+
+.project-info {
+  @include full-width-extension(4rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; // Center text vertically with arrow button
+  padding: 2.4rem; // 24px padding for footer
+}
+
+.project-title {
+  @include typography-base($font-weight-medium, 3.2rem, $line-height-tight);
+  margin: 0;
+  flex: 1;
+  padding-right: $spacing-small;
+}
+
+.project-link {
+  @include arrow-button(transparent, $main-color, $main-color-050);
+  flex-shrink: 0;
+
+  .arrow-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(18%) sepia(30%) saturate(1051%) hue-rotate(280deg) brightness(94%) contrast(94%);
+  }
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@include tablet {
+  .projects-grid {
+    grid-template-columns: 1fr; // Single column on tablet
+    gap: 2.4rem; // 24px gap for tablet
+    justify-content: center;
+  }
+
+  .project-card {
+    height: 48rem; // 480px height for tablet
+    padding: 2.4rem 2.4rem 0 2.4rem; // 24px padding for tablet
+  }
+
+  .project-image {
+    @include full-width-extension(2.4rem);
+    padding: 0 7.2rem; // Adjusted for tablet padding
+  }
+
+  .project-info {
+    @include full-width-extension(2.4rem);
+    padding: 2rem; // 20px padding for tablet footer
+  }
+
+  .project-title {
+    @include typography-base($font-weight-medium, 2.8rem, $line-height-tight);
+  }
+}
+
+@include mobile {
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, 34.3rem); // Fixed width columns for centering
+    gap: 2rem;
+    justify-content: center; // Center cards in mobile
+  }
+
+  .project-card {
+    width: 34.3rem; // 343px
+    height: 29.5rem; // 295px
+    opacity: 1;
+    padding: 2.4rem 2.4rem 0 2.4rem; // Remove bottom padding, handled by footer
+    @include card-layout;
+  }
+
+  .project-image {
+    @include full-width-extension(2.4rem);
+    flex: 1; // Take up remaining space
+    padding: 0 4.8rem; // 48px padding for mobile (reduced from 96px)
+  }
+
+  .project-preview {
+    max-width: 29.6rem; // Maximum width 296px
+    max-height: 16.5rem; // Maximum height 165px
+    width: auto;
+    height: auto;
+    object-fit: contain; // Maintain aspect ratio while fitting within container
+  }
+
+  .project-info {
+    @include full-width-extension(2.4rem);
+    padding: 2.4rem; // 24px padding for footer
+  }
+
+  .project-title {
+    @include typography-base($font-weight-medium, 2rem, 2.4rem);
+  }
+}

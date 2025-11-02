@@ -5,13 +5,13 @@ import {ProjectsGridComponent} from '../projects-grid/projects-grid.component';
 import {SECTION} from '../section-header/section-header.config';
 
 @Component({
-  selector: 'app-works',
+  selector: 'app-case-studies',
   standalone: true,
   imports: [CommonModule, SectionHeaderComponent, ProjectsGridComponent],
-  templateUrl: './works.component.html',
-  styleUrl: './works.component.scss',
+  templateUrl: './case-studies.component.html',
+  styleUrl: './case-studies.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WorksComponent {
+export class CaseStudiesComponent {
   SECTION = SECTION;
 }
