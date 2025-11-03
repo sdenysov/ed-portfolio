@@ -1,0 +1,62 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// PROJECT MANAGEMENT DESIGN SYSTEM COMPONENT
+// ========================================
+
+.project-management-design-system {
+}
+
+.project-title {
+  @include typography-base($font-weight-medium, 12.8rem);
+  margin-bottom: 6.4rem;
+}
+
+.project-subtitile {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6.4rem;
+}
+
+.project-overview {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  max-width: 50%;
+}
+
+.project-subtitile-items {
+  display: flex;
+  flex-direction: column;
+  min-width: 40%;
+  gap: 2.4rem;
+  font-size: 1.6rem;
+}
+
+.project-subtitle-item {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2.4rem;
+  border-bottom: $border-width solid $main-color;
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@include tablet {
+  .project-management-design-system {
+    .container-fluid {
+      padding: 0 2.4rem; // 24px padding for tablet
+    }
+  }
+}
+
+@include mobile {
+  .project-management-design-system {
+    .container-fluid {
+      padding: 0 1.2rem; // 12px padding for mobile
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<section class="project-management-design-system">
+  <h1 class="project-title">{{ projectTitle }}</h1>
+  <div class="project-subtitile">
+    <div class="project-overview">
+      <span>{{ overviewSubtitleItem.text }}</span>
+      <p>{{ overviewSubtitleItem.value }}</p>
+    </div>
+    <div class="project-subtitile-items">
+      @for (item of subtitleItems; track item.text) {
+        <div class="project-subtitle-item">
+          <span>{{ item.text }}</span>
+          <span>{{ item.value }}</span>
+        </div>
+      }
+    </div>
+  </div>
+  <img [src]="overviewImageSrc" alt='' class="overview-image img-fluid" />
+  <app-problems></app-problems>
+  <app-goals></app-goals>
+</section>

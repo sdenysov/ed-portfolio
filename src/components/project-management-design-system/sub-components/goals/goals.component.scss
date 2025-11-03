@@ -1,0 +1,63 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// GOALS COMPONENT
+// ========================================
+
+.goals {
+  margin-top: 12.8rem;
+
+  ::ng-deep.section-header-title {
+    @include typography-base($font-weight-medium, 9.6rem);
+  }
+}
+
+.goals-subtitle {
+  margin-top: $spacing-base;
+
+  .goals-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    max-width: 70%;
+
+    .goal-item {
+      @include typography-base($font-weight-regular, 1.8rem, 150%);
+      color: $main-color;
+    }
+  }
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@include tablet {
+  .goals-subtitle {
+    margin-top: 4.8rem;
+
+    .goals-list {
+      gap: 2.4rem;
+      max-width: 100%;
+
+      .goal-item {
+        @include typography-base($font-weight-regular, 1.6rem, 150%);
+      }
+    }
+  }
+}
+
+@include mobile {
+  .goals-subtitle {
+    margin-top: 3.2rem;
+
+    .goals-list {
+      gap: $spacing-small;
+
+      .goal-item {
+        @include typography-base($font-weight-regular, 1.4rem, 150%);
+      }
+    }
+  }
+}

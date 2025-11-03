@@ -7,16 +7,13 @@
       </div>
       <ng-content select="[slot=subtitle]"></ng-content>
     </div>
+    <ng-content select="[slot=right-section]"></ng-content>
     @if (config.textButton) {
       <div class="col-auto">
-        <div class="section-header-group" (click)="textButtonClick.emit()">
-          <button class="section-header-text-button" type="button">
-            <span class="button-text">{{ config.textButton }}</span>
-          </button>
-          <button class="section-header-arrow-button" type="button">
-            <img src="images/arrow.svg" alt="" class="arrow-icon">
-          </button>
-        </div>
+        <app-text-arrow-button
+          [buttonText]="config.textButton"
+          (buttonClick)="textButtonClick.emit()">
+        </app-text-arrow-button>
       </div>
     }
   </div>

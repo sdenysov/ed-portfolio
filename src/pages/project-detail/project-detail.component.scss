@@ -1,18 +1,49 @@
 @use 'variables' as *;
 @use 'mixins' as *;
+@use 'sass:color';
 
 // ========================================
 // PROJECT DETAIL SECTION
 // ========================================
 
 .project-detail {
-  padding: $spacing-base 0;
+  padding: 6.4rem 0;
 
   .container-fluid {
     width: 100%;
     padding: 0 $spacing-base;
     @include container-max;
   }
+
+  ::ng-deep.text-arrow-button-group {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: fit-content;
+
+    &:hover {
+      .text-button, .arrow-button {
+        background: color.adjust($main-color-050, $lightness: +10%);
+      }
+    }
+
+    .text-button {
+      background: transparent;
+      color: $text-color-primary;
+    }
+
+    .arrow-button {
+      transform: rotate(180deg);
+      background: transparent;
+
+      .arrow-icon {
+        filter: brightness(0) saturate(100%) invert(18%) sepia(30%) saturate(1051%) hue-rotate(280deg) brightness(94%) contrast(94%);
+      }
+    }
+  }
+}
+
+.project-container {
+  margin-top: $spacing-base;
 }
 
 .project-header {
@@ -114,10 +145,6 @@
     border: $border-width solid $main-color;
     border-radius: $border-radius-pill;
     transition: $transition-fast;
-
-    &:hover {
-      background: $main-color-050;
-    }
   }
 }
 

@@ -1,0 +1,14 @@
+<section class="goals">
+  <app-section-header [section]="SECTION.GOALS">
+    <div slot="subtitle" class="goals-subtitle">
+      <ul class="goals-list">
+        @for (goal of config.goals; track goal.description) {
+          <li class="goal-item">
+            {{ goal.description }}
+          </li>
+        }
+      </ul>
+    </div>
+  </app-section-header>
+</section>
+

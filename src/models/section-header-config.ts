@@ -1,5 +1,5 @@
 export interface SectionHeaderConfig {
-  label: string;
+  label?: string;
   title: string;
   textButton?: string;
 }

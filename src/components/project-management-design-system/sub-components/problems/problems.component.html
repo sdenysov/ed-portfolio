@@ -1,0 +1,21 @@
+<section class="problems">
+  <app-section-header [section]="SECTION.PROBLEMS">
+    <div slot="subtitle" class="problems-subtitle">
+      <p class="problems-intro">{{ config.intro }}</p>
+      <ul class="problems-list">
+        @for (problem of config.problems; track problem.title) {
+          <li class="problem-item">
+            <strong>{{ problem.title }}</strong> – {{ problem.description }}
+          </li>
+        }
+      </ul>
+    </div>
+  </app-section-header>
+
+  <!-- Problems image -->
+  <img
+    [src]="config.imageSrc"
+    [alt]="config.imageAlt"
+    class="problems-image img-fluid"
+  >
+</section>

@@ -1,6 +1,5 @@
 @use 'variables' as *;
 @use 'mixins' as *;
-@use 'sass:color';
 
 // ========================================
 // DESKTOP STYLES (DEFAULT)
@@ -23,47 +22,6 @@
   text-align: left;
 }
 
-.button-text {
-  // Placeholder for button text styling
-}
-
-.section-header-group {
-  @include flex-center;
-  justify-content: flex-start;
-  gap: 0; // No gap - buttons should be connected
-  cursor: pointer;
-
-  &:hover {
-    .section-header-text-button {
-      background: color.adjust($main-color, $lightness: +10%);
-    }
-
-    .section-header-arrow-button {
-      background: color.adjust($main-color, $lightness: +10%);
-    }
-  }
-}
-
-.section-header-arrow-button {
-  @include arrow-button($main-color, $bg-color, color.adjust($main-color, $lightness: +10%));
-  transition: $transition-fast;
-
-  .arrow-icon, svg {
-    width: 1.6rem;
-    height: 1.6rem;
-    transform: rotate(0deg);
-  }
-
-  // Remove individual hover state since group handles it
-  &:hover {
-    background: $main-color; // Keep original background on individual hover
-  }
-}
-
-.arrow-icon {
-  transform: rotate(0deg);
-}
-
 .section-header-title-section {
   @include flex-center;
   justify-content: unset;
@@ -82,32 +40,11 @@
   align-self: flex-start;
 }
 
-.section-header-text-button {
-  @include text-button;
-
-  .button-text {
-    @include typography-base($font-weight-medium, 1.4rem, 1.2);
-    transform: rotate(0deg);
-  }
-
-  // Remove individual hover state since group handles it
-  &:hover {
-    background: $main-color; // Keep original background on individual hover
-  }
-}
-
 // ========================================
-// TABLET RESPONSIVE STYLES
+// RESPONSIVE DESIGN
 // ========================================
 
 @include tablet {
-  .section-header-arrow-button {
-    .arrow-icon, svg {
-      width: 1.4rem;
-      height: 1.4rem;
-    }
-  }
-
   .section-header-title-section {
     min-height: 10.7rem;
   }
@@ -119,21 +56,7 @@
   .section-header-label {
     @include typography-base($font-weight-regular, 1.4rem);
   }
-
-  .section-header-text-button {
-    .button-text {
-      @include typography-base($font-weight-regular, 1.4rem);
-    }
-  }
-
-  .section-header-group {
-    // No overrides needed for tablet, but placeholder for future
-  }
 }
-
-// ========================================
-// MOBILE RESPONSIVE STYLES
-// ========================================
 
 @include mobile {
   .section-header {
@@ -150,16 +73,7 @@
     .col,
     .col-auto {
       width: 100%;
-    }
-  }
-
-  .section-header-arrow-button {
-    width: 4rem;
-    height: 4rem;
-
-    .arrow-icon, svg {
-      width: 1.2rem;
-      height: 1.2rem;
+      align-self: stretch;
     }
   }
 
@@ -177,19 +91,5 @@
   .section-header-label {
     @include typography-base($font-weight-regular, 1.4rem);
     align-self: flex-end;
-  }
-
-  .section-header-text-button {
-    flex: 1;
-    border-radius: 4rem;
-
-    .button-text {
-      @include typography-base($font-weight-regular, 1.4rem);
-    }
-  }
-
-  .section-header-group {
-    justify-content: space-between;
-    width: 100%;
   }
 }

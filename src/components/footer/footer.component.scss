@@ -89,9 +89,9 @@ $footer-gradient-end: #331D19;
 @include mobile {
   .footer-container {
     padding-top: $spacing-small;
-    margin-top: 0;
   }
   .footer .container-fluid {
     padding: $spacing-base $spacing-small;
   }
 }
+

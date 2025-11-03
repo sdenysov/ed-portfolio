@@ -1,36 +1,48 @@
 <section class="project-detail" *ngIf="project">
   <div class="container-fluid">
-    <!-- Project Header -->
-    <header class="project-header">
-      <h1 class="project-title">{{ project.title }}</h1>
-      <span class="project-type">{{ project.type }}</span>
-    </header>
+    <app-text-arrow-button
+      [buttonText]="backButtonText"
+      (buttonClick)="onBackButtonClick()">
+    </app-text-arrow-button>
+    <div class="project-container">
+      <!-- Show ProjectManagementDesignSystemComponent if project ID matches -->
+      @if (project.id === ProjectId.PROJECT_MANAGEMENT) {
+        <app-project-management-design-system></app-project-management-design-system>
+      } @else {
+        <!-- Default project content for other projects -->
+          <!-- Project Header -->
+        <header class="project-header">
+          <h1 class="project-title">{{ project.title }}</h1>
+          <span class="project-type">{{ project.type }}</span>
+        </header>
 
-    <!-- Project Image -->
-    <div class="project-image-container">
-      <img
-        [src]="project.image"
-        [alt]="project.title + ' preview'"
-        class="project-main-image"
-      >
-    </div>
+        <!-- Project Image -->
+        <div class="project-image-container">
+          <img
+            [src]="project.image"
+            [alt]="project.title + ' preview'"
+            class="project-main-image"
+          >
+        </div>
 
-    <!-- Project Content -->
-    <div class="project-content">
-      <div class="project-description">
-        <h2>Project Overview</h2>
-        <p>This is where the detailed description of {{ project.title }} would go.
-           You can add more content, images, and details about this project here.</p>
-      </div>
+        <!-- Project Content -->
+        <div class="project-content">
+          <div class="project-description">
+            <h2>Project Overview</h2>
+            <p>This is where the detailed description of {{ project.title }} would go.
+              You can add more content, images, and details about this project here.</p>
+          </div>
 
-      <!-- Add more sections as needed -->
-      <div class="project-details">
-        <h3>Project Details</h3>
-        <ul>
-          <li><strong>Type:</strong> {{ project.type }}</li>
-          <li><strong>ID:</strong> {{ project.id }}</li>
-        </ul>
-      </div>
+          <!-- Add more sections as needed -->
+          <div class="project-details">
+            <h3>Project Details</h3>
+            <ul>
+              <li><strong>Type:</strong> {{ project.type }}</li>
+              <li><strong>ID:</strong> {{ project.id }}</li>
+            </ul>
+          </div>
+        </div>
+      }
     </div>
   </div>
 </section>

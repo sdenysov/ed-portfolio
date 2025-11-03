@@ -2,13 +2,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { PAGES } from '../../models/pages';
-
-export interface Project {
-  id: string;
-  title: string;
-  image: string;
-  type: string;
-}
+import {Project, projects} from './projects.config';
 
 @Component({
   selector: 'app-projects-grid',
@@ -19,20 +13,7 @@ export interface Project {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectsGridComponent {
-  @Input() projects: Project[] = [
-    {
-      id: 'project-management',
-      title: 'Project management design system',
-      image: 'images/project-management-preview.png',
-      type: 'design-system'
-    },
-    {
-      id: 'esports-tracker',
-      title: 'Esports games tracker web app',
-      image: 'images/esports-tracker-preview.png',
-      type: 'web-app'
-    }
-  ];
+  projects: Project[] = projects;
 
   constructor(private router: Router) {}
 
