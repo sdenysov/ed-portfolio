@@ -1,0 +1,61 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// STYLES TOKENS COMPONENT
+// ========================================
+
+.styles-tokens {
+  margin-top: 12.8rem;
+  padding-bottom: 12.8rem;
+  border-bottom: $border-width solid $main-color;
+
+  .styles-tokens-image {
+    margin-bottom: 6.4rem;
+  }
+
+  ::ng-deep.section-header-title {
+    @include typography-base($font-weight-medium, 6.4rem);
+  }
+
+  .styles-tokens-content {
+    margin-top: 11.5rem;
+    // Add your styles here
+  }
+
+  .colors-subtitle {
+    max-width: 75%;
+  }
+
+  .color-item {
+    margin-top: $spacing-base;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .color-item-header {
+
+    @include typography-base($font-weight-large, 2.4rem);
+  }
+
+  .header-right-section {
+    align-self: end;
+  }
+
+  // ========================================
+  // RESPONSIVE DESIGN
+  // ========================================
+
+  @include tablet {
+    .styles-tokens {
+      // Add tablet styles here
+    }
+  }
+
+  @include mobile {
+    .styles-tokens {
+      // Add mobile styles here
+    }
+  }
+}

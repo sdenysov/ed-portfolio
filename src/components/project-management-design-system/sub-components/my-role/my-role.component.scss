@@ -1,0 +1,152 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// MY ROLE COMPONENT
+// ========================================
+
+.my-role {
+  margin-top: 12.8rem;
+  padding-bottom: 12.8rem;
+  border-bottom: $border-width solid $main-color;
+
+  ::ng-deep.section-header-title {
+    @include typography-base($font-weight-medium, 9.6rem);
+  }
+}
+
+.my-role-right-section {
+  align-self: end;
+  max-width: 40%;
+
+  .role-description {
+    @include typography-base($font-weight-regular, 1.8rem, 150%);
+    color: $main-color;
+  }
+
+  .roles-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-base;
+
+    .role-item {
+      .role-header {
+        display: flex;
+        align-items: center;
+        gap: $spacing-small;
+        margin-bottom: $spacing-xs;
+
+        .role-title {
+          @include typography-base($font-weight-medium, 1.8rem, 150%);
+          color: $main-color;
+        }
+
+        .role-name {
+          @include typography-base($font-weight-medium, 1.8rem, 150%);
+          color: $main-color;
+        }
+      }
+
+      .role-description-text {
+        @include typography-base($font-weight-regular, 1.8rem, 150%);
+        color: $main-color;
+        margin: 0;
+        padding-left: 3.2rem; // Indent description
+      }
+    }
+  }
+}
+
+.roles-container {
+  display: flex;
+  gap: $spacing-base;
+  margin-top: 11.5rem;
+}
+
+.role-row {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-base;
+  max-width: 25%;
+}
+
+.role-circle {
+  width: 22.4rem;
+  height: 22.4rem;
+  background-color: $main-color;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  align-self: center;
+}
+
+.role-title {
+  color: $text-color-secondary;
+  font-size: 9.6rem;
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@include tablet {
+  .my-role-right-section {
+    .role-description {
+      @include typography-base($font-weight-regular, 1.6rem, 150%);
+    }
+
+    .roles-list {
+      gap: 2.4rem;
+
+      .role-item {
+        .role-header {
+          gap: 1.2rem;
+          margin-bottom: $spacing-xs;
+
+          .role-title,
+          .role-name {
+            @include typography-base($font-weight-medium, 1.6rem, 150%);
+          }
+        }
+
+        .role-description-text {
+          @include typography-base($font-weight-regular, 1.6rem, 150%);
+          padding-left: 2.4rem;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .my-role-right-section {
+    .role-description {
+      @include typography-base($font-weight-regular, 1.4rem, 150%);
+    }
+
+    .roles-list {
+      gap: $spacing-small;
+
+      .role-item {
+        .role-header {
+          gap: $spacing-xs;
+          margin-bottom: $spacing-xs;
+
+          .role-title,
+          .role-name {
+            @include typography-base($font-weight-medium, 1.4rem, 150%);
+          }
+        }
+
+        .role-description-text {
+          @include typography-base($font-weight-regular, 1.4rem, 150%);
+          padding-left: $spacing-small;
+        }
+      }
+    }
+  }
+}

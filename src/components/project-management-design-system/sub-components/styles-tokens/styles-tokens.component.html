@@ -1,0 +1,35 @@
+<section class="styles-tokens">
+  <img
+    [src]="sectionImgSrc"
+    [alt]=""
+    class="img-fluid styles-tokens-image"
+  >
+
+  <!--COLORS-->
+
+  <app-section-header [section]="SECTION.COLORS">
+    <div slot="subtitle" class="colors-subtitle">
+      <p class="colors-intro">{{ configColors.subtitle }}</p>
+      <p class="colors-intro">{{ configColors.description }}</p>
+    </div>
+    <div slot="right-section" class="header-right-section col-auto">
+      <img
+        [src]="configColors.headerImgSrc"
+        [alt]=""
+        class="img-fluid"
+      >
+    </div>
+  </app-section-header>
+    @for (color of configColors.colors; track color.name) {
+      <div class="color-item">
+        <h3 class="color-item-header">{{ color.name }}</h3>
+        @for (image of color.images; track image) {
+          <img
+            [src]="image"
+            [alt]=""
+            class="img-fluid color-image"
+          >
+        }
+      </div>
+    }
+</section>

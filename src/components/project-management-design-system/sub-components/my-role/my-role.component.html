@@ -1,0 +1,19 @@
+<section class="my-role">
+  <app-section-header [section]="SECTION.MY_ROLE">
+    <div slot="right-section" class="my-role-right-section col-auto">
+      <p class="role-description">{{ config.roleDescription }}</p>
+    </div>
+  </app-section-header>
+  <div class="roles-container">
+    @for (role of config.roles; track role.title) {
+      <div class="role-row">
+        <div class="role-circle">
+          <span class="role-title">{{ role.title }}</span>
+        </div>
+        <div class="role-content">
+          <p class="role-name"><strong>{{ role.name }}</strong> {{ role.description }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>
