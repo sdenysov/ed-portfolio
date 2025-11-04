@@ -20,27 +20,52 @@
 
   .styles-tokens-content {
     margin-top: 11.5rem;
-    // Add your styles here
   }
 
-  .colors-subtitle {
+  .header-subtitle {
     max-width: 75%;
   }
 
-  .color-item {
+  .content-item {
     margin-top: $spacing-base;
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
   }
 
-  .color-item-header {
-
-    @include typography-base($font-weight-large, 2.4rem);
+  .content-item-header {
+    @include typography-base($font-weight-medium, 2.4rem);
   }
 
   .header-right-section {
     align-self: end;
+  }
+
+  .accessibility-image,
+  .typography-container,
+  .spacing-system-container,
+  .shadows-container,
+  .icons-container {
+    margin-top: 6.4rem;
+  }
+
+  .styles-tokens-image,
+  .accessibility-image {
+    width: 100%;
+  }
+
+  .typography-subtitle,
+  .spacing-system-subtitle,
+  .shadows-subtitle,
+  .icons-subtitle {
+    @include typography-base($font-weight-regular, 1.8rem, 3rem);
+  }
+
+  .spacing-system-image,
+  .shadows-image,
+  .icons-image {
+    width: 100%;
+    margin-top: $spacing-base;
   }
 
   // ========================================

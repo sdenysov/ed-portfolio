@@ -12,7 +12,11 @@ export enum SECTION {
   PROBLEMS = 'PROBLEMS',
   GOALS = 'GOALS',
   MY_ROLE = 'MY_ROLE',
-  COLORS = 'COLORS'
+  COLORS = 'COLORS',
+  TYPOGRAPHY = 'TYPOGRAPHY',
+  SPACING_SYSTEM = 'SPACING_SYSTEM',
+  SHADOWS = 'SHADOWS',
+  ICONS = 'ICONS'
 }
 
 export const SECTION_HEADER_CONFIG: Record<SECTION, SectionHeaderConfig> = {
@@ -63,5 +67,17 @@ export const SECTION_HEADER_CONFIG: Record<SECTION, SectionHeaderConfig> = {
   },
   [SECTION.COLORS]: {
     title: '01. Colors'
+  },
+  [SECTION.TYPOGRAPHY]: {
+    title: '03. Typography'
+  },
+  [SECTION.SPACING_SYSTEM]: {
+    title: '04. Spacing system'
+  },
+  [SECTION.SHADOWS]: {
+    title: '05. Shadows'
+  },
+  [SECTION.ICONS]: {
+    title: '06. Icons'
   },
 };

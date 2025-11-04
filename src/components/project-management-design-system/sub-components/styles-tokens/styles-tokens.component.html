@@ -1,35 +1,74 @@
 <section class="styles-tokens">
-  <img
-    [src]="sectionImgSrc"
-    [alt]=""
-    class="img-fluid styles-tokens-image"
-  >
+  <img [src]="sectionImgSrc" [alt]="" class="img-fluid styles-tokens-image">
 
   <!--COLORS-->
-
   <app-section-header [section]="SECTION.COLORS">
-    <div slot="subtitle" class="colors-subtitle">
+    <div slot="subtitle" class="header-subtitle">
       <p class="colors-intro">{{ configColors.subtitle }}</p>
       <p class="colors-intro">{{ configColors.description }}</p>
     </div>
     <div slot="right-section" class="header-right-section col-auto">
-      <img
-        [src]="configColors.headerImgSrc"
-        [alt]=""
-        class="img-fluid"
-      >
+      <img [src]="configColors.headerImgSrc" [alt]="" class="img-fluid">
     </div>
   </app-section-header>
-    @for (color of configColors.colors; track color.name) {
-      <div class="color-item">
-        <h3 class="color-item-header">{{ color.name }}</h3>
-        @for (image of color.images; track image) {
-          <img
-            [src]="image"
-            [alt]=""
-            class="img-fluid color-image"
-          >
-        }
+
+  @for (item of configColors.colors; track item.name) {
+    <ng-container [ngTemplateOutlet]="contentItemTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
+  }
+
+  <img [src]="accessibilityImgSrc" [alt]="" class="img-fluid accessibility-image">
+
+  <!--TYPOGRAPHY-->
+  <div class="typography-container">
+    <app-section-header [section]="SECTION.TYPOGRAPHY">
+      <p slot="subtitle" class="header-subtitle typography-subtitle">{{ configTypography.subtitle }}</p>
+      <div slot="right-section" class="header-right-section col-auto">
+        <img [src]="configTypography.headerImgSrc" [alt]="" class="img-fluid">
       </div>
+    </app-section-header>
+
+    @for (item of configTypography.typographyItems; track item.name) {
+      <ng-container [ngTemplateOutlet]="contentItemTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
     }
+  </div>
+
+  <!--SPACING SYSTEM-->
+  <div class="spacing-system-container">
+    <app-section-header [section]="SECTION.SPACING_SYSTEM">
+      <p slot="subtitle" class="header-subtitle spacing-system-subtitle">{{ configSpacingSystem.subtitle }}</p>
+      <div slot="right-section" class="header-right-section col-auto">
+        <img [src]="configSpacingSystem.headerImgSrc" [alt]="" class="img-fluid">
+      </div>
+    </app-section-header>
+    <img [src]="configSpacingSystem.contentImgSrc" [alt]="" class="img-fluid spacing-system-image">
+  </div>
+
+  <!--SHADOWS-->
+  <div class="shadows-container">
+    <app-section-header [section]="SECTION.SHADOWS">
+      <p slot="subtitle" class="header-subtitle shadows-subtitle">{{ configShadows.subtitle }}</p>
+      <div slot="right-section" class="header-right-section col-auto">
+        <img [src]="configShadows.headerImgSrc" [alt]="" class="img-fluid">
+      </div>
+    </app-section-header>
+    <img [src]="configShadows.contentImgSrc" [alt]="" class="img-fluid shadows-image">
+  </div>
+
+  <!--ICONS-->
+  <div class="icons-container">
+    <app-section-header [section]="SECTION.ICONS">
+      <p slot="subtitle" class="header-subtitle icons-subtitle">{{ configIcons.subtitle }}</p>
+    </app-section-header>
+    <img [src]="configIcons.contentImgSrc" [alt]="" class="img-fluid icons-image">
+  </div>
+
+  <!-- REUSABLE TEMPLATE -->
+  <ng-template #contentItemTemplate let-item="item">
+    <div class="content-item">
+      <h3 class="content-item-header">{{ item.name }}</h3>
+      @for (image of item.images; track image) {
+        <img [src]="image" [alt]="" class="img-fluid content-item-image">
+      }
+    </div>
+  </ng-template>
 </section>
