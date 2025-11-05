@@ -4,6 +4,7 @@ import {ProblemsComponent} from "./sub-components/problems/problems.component";
 import {GoalsComponent} from "./sub-components/goals/goals.component";
 import {MyRoleComponent} from "./sub-components/my-role/my-role.component";
 import {StylesTokensComponent} from "./sub-components/styles-tokens/styles-tokens.component";
+import {ComponentsComponent} from "./sub-components/components-section/components.component";
 
 interface SubtitleItem {
   text: string;
@@ -13,7 +14,7 @@ interface SubtitleItem {
 @Component({
   selector: 'app-project-management-design-system',
   standalone: true,
-  imports: [CommonModule, ProblemsComponent, GoalsComponent, MyRoleComponent, StylesTokensComponent],
+  imports: [CommonModule, ProblemsComponent, GoalsComponent, MyRoleComponent, StylesTokensComponent, ComponentsComponent],
   templateUrl: './project-management-design-system.component.html',
   styleUrl: './project-management-design-system.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

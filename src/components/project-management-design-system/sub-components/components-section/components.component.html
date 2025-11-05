@@ -1,0 +1,104 @@
+<section class="components">
+  <img [src]="sectionImgSrc" [alt]="" class="img-fluid components-image">
+
+  <!--Alerts-->
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.ALERTS">
+      <div slot="subtitle" class="header-subtitle">
+        <p>{{ configAlerts.subtitle }}</p>
+        <p>{{ configAlerts.description }}</p>
+      </div>
+    </app-section-header>
+    <img [src]="configAlerts.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+
+  <!--Avatar-->
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.AVATAR">
+      <p slot="subtitle" class="header-subtitle">{{ configAvatar.subtitle }}</p>
+    </app-section-header>
+    <img [src]="configAvatar.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+
+  <!--BUTTON-->
+  <div class="button-container subsection-container">
+    <app-section-header [section]="SECTION.BUTTON">
+      <p slot="subtitle" class="header-subtitle button-subtitle">{{ configButton.subtitle }}</p>
+      <div slot="right-section" class="header-right-section col-auto">
+        <img [src]="configButton.headerImgSrc" [alt]="" class="img-fluid">
+      </div>
+    </app-section-header>
+
+    @for (item of configButton.buttonItems; track item.name) {
+      <ng-container [ngTemplateOutlet]="contentItemTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
+    }
+  </div>
+
+  <!--CONTROLS-->
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.CONTROLS">
+      <p slot="subtitle" class="header-subtitle controls-subtitle">{{ configButton.subtitle }}</p>
+    </app-section-header>
+
+    @for (item of configControls.controlsItems; track item.name) {
+      <ng-container [ngTemplateOutlet]="contentItemTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
+    }
+  </div>
+
+  <!--INPUT-->
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.INPUT">
+      <div slot="subtitle" class="header-subtitle">
+        <p>{{ configInput.subtitle }}</p>
+        <p>{{ configInput.description }}</p>
+      </div>
+    </app-section-header>
+    <img [src]="configInput.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+
+  <!--MODAL-->
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.MODAL">
+      <p slot="subtitle" class="header-subtitle">{{ configModal.subtitle }}</p>
+    </app-section-header>
+    <img [src]="configModal.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+
+  <!--TABLE-->
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.TABLE">
+      <div slot="subtitle" class="header-subtitle">
+        <p>{{ configTable.subtitle }}</p>
+        <p>{{ configTable.description }}</p>
+      </div>
+    </app-section-header>
+
+    @for (item of configTable.tableItems; track item.name) {
+      <ng-container [ngTemplateOutlet]="contentItemTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
+    }
+  </div>
+
+
+  <!--TOAST-->
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.TOAST">
+      <p slot="subtitle" class="header-subtitle">{{ configToast.subtitle }}</p>
+    </app-section-header>
+    <img [src]="configToast.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+</section>
+
+<!-- REUSABLE TEMPLATE -->
+<ng-template #contentItemTemplate let-item="item">
+  <div class="content-item">
+    <div class="content-item-header-container">
+      <h3 class="content-item-header">{{ item.name }}</h3>
+      @if (item.itemTitle) {
+        <p class="content-item-title">{{ item.itemTitle }}</p>
+      }
+    </div>
+    @for (image of item.images; track image) {
+      <img [src]="image" [alt]="" class="img-fluid content-item-image">
+    }
+  </div>
+</ng-template>

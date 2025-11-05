@@ -1,0 +1,82 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// COMPONENTS COMPONENT
+// ========================================
+
+.components {
+  margin-top: 12.8rem;
+  padding-bottom: 12.8rem;
+  border-bottom: $border-width solid $main-color;
+
+  ::ng-deep.section-header-title {
+    @include typography-base($font-weight-medium, 6.4rem);
+  }
+}
+
+.components-image {
+  width: 100%;
+}
+
+.header-subtitle {
+  max-width: 50%;
+  gap: $spacing-small;
+  @include typography-base($font-weight-regular, 1.8rem, 3rem);
+}
+
+.content-item {
+  margin-top: $spacing-base;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.content-item-header {
+  @include typography-base($font-weight-medium, 2.4rem);
+}
+
+.subsection-container {
+  margin-top: 6.4rem;
+}
+
+.subsection-image {
+  width: 100%;
+  margin-top: $spacing-base;
+}
+
+.button-container {
+  ::ng-deep.section-header {
+    .row {
+      :first-child {
+        align-self: start;
+      }
+    }
+  }
+}
+
+.content-item-header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-item-title {
+  max-width: 40%;
+  @include typography-base($font-weight-regular, 1.6rem, 2.4rem);
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@include tablet {
+  .components {
+    // Add tablet styles here
+  }
+}
+
+@include mobile {
+  .components {
+    // Add mobile styles here
+  }
+}

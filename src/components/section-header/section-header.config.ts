@@ -16,7 +16,15 @@ export enum SECTION {
   TYPOGRAPHY = 'TYPOGRAPHY',
   SPACING_SYSTEM = 'SPACING_SYSTEM',
   SHADOWS = 'SHADOWS',
-  ICONS = 'ICONS'
+  ICONS = 'ICONS',
+  ALERTS = 'ALERTS',
+  AVATAR = 'AVATAR',
+  BUTTON = 'BUTTON',
+  CONTROLS = 'CONTROLS',
+  INPUT = ' INPUT',
+  MODAL = ' MODAL',
+  TABLE = ' TABLE',
+  TOAST = ' TOAST'
 }
 
 export const SECTION_HEADER_CONFIG: Record<SECTION, SectionHeaderConfig> = {
@@ -79,5 +87,29 @@ export const SECTION_HEADER_CONFIG: Record<SECTION, SectionHeaderConfig> = {
   },
   [SECTION.ICONS]: {
     title: '06. Icons'
+  },
+  [SECTION.ALERTS]: {
+    title: '01. Alerts'
+  },
+  [SECTION.AVATAR]: {
+    title: '02. Avatar'
+  },
+  [SECTION.BUTTON]: {
+    title: '03. Button'
+  },
+  [SECTION.CONTROLS]: {
+    title: '04. Controls'
+  },
+  [SECTION.INPUT]: {
+    title: '05. Input'
+  },
+  [SECTION.MODAL]: {
+    title: '06. Modal window'
+  },
+  [SECTION.TABLE]: {
+    title: '07. Table'
+  },
+  [SECTION.TOAST]: {
+    title: '08. Toast'
   },
 };
