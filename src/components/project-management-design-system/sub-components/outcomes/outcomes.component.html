@@ -1,0 +1,19 @@
+<section class="outcomes">
+  <app-section-header [section]="SECTION.OUTCOMES"></app-section-header>
+
+  <div class="outcomes-title">
+    <h2 class="outcomes-title__main">{{ outcomesConfig.title }}</h2>
+    <p class="outcomes-title__subtitle">{{ outcomesConfig.subTitle }}</p>
+  </div>
+
+  <div class="outcomes-content">
+    <p class="outcomes-intro">{{ outcomesConfig.intro }}</p>
+    <ul class="outcomes-list">
+      @for (outcome of outcomesConfig.outcomes; track outcome.title) {
+        <li class="outcome-item">
+          <strong>{{ outcome.title }}</strong> – {{ outcome.description }}
+        </li>
+      }
+    </ul>
+  </div>
+</section>

@@ -11,16 +11,31 @@
 .project-title {
   @include typography-base($font-weight-medium, 12.8rem);
   margin-bottom: 6.4rem;
+
+  @include tablet {
+    @include typography-base($font-weight-medium, 9.6rem);
+    margin-bottom: $spacing-base;
+  }
 }
 
 .overview-image {
   width: 100%;
+
+  @include tablet {
+    margin-top: $spacing-base;
+  }
 }
 
 .project-subtitile {
   display: flex;
   justify-content: space-between;
   margin-bottom: 6.4rem;
+
+  @include tablet {
+    flex-direction: column;
+    @include typography-base($font-weight-regular, 1.6rem, 2.6rem);
+    gap: $spacing-base;
+  }
 }
 
 .project-overview {
@@ -28,6 +43,10 @@
   flex-direction: column;
   gap: $spacing-xs;
   max-width: 50%;
+
+  @include tablet {
+    max-width: 90%;
+  }
 }
 
 .project-subtitile-items {

@@ -10,8 +10,16 @@
   padding-bottom: 12.8rem;
   border-bottom: $border-width solid $main-color;
 
+  @include tablet {
+    padding-bottom: 6.4rem;
+  }
+
   ::ng-deep.section-header-title {
     @include typography-base($font-weight-medium, 9.6rem);
+
+    @include tablet {
+      @include typography-base($font-weight-medium, 6.4rem);
+    }
   }
 }
 
@@ -64,13 +72,17 @@
   display: flex;
   gap: $spacing-base;
   margin-top: 11.5rem;
+
+  @include tablet {
+    margin-top: $spacing-base;
+    flex-wrap: wrap;
+  }
 }
 
 .role-row {
   display: flex;
   flex-direction: column;
   gap: $spacing-base;
-  max-width: 25%;
 }
 
 .role-circle {
@@ -87,6 +99,10 @@
 .role-title {
   color: $text-color-secondary;
   font-size: 9.6rem;
+}
+
+.role-name {
+  max-width: 32rem;
 }
 
 // ========================================
