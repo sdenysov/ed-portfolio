@@ -16,6 +16,10 @@
 
   ::ng-deep.section-header-title {
     @include typography-base($font-weight-medium, 6.4rem);
+
+    @include tablet {
+      @include typography-base($font-weight-medium, 4rem);
+    }
   }
 
   .styles-tokens-content {
@@ -24,6 +28,10 @@
 
   .header-subtitle {
     max-width: 75%;
+
+    @include tablet {
+      max-width: 90%;
+    }
   }
 
   .content-item {
@@ -35,6 +43,10 @@
 
   .content-item-header {
     @include typography-base($font-weight-medium, 2.4rem);
+
+    @include tablet {
+      @include typography-base($font-weight-medium, 1.8rem);
+    }
   }
 
   .header-right-section {
@@ -61,6 +73,12 @@
     @include typography-base($font-weight-regular, 1.8rem, 3rem);
   }
 
+  .icons-subtitle {
+    @include tablet {
+      max-width: 60%;
+    }
+  }
+
   .spacing-system-image,
   .shadows-image,
   .icons-image {
@@ -73,9 +91,8 @@
   // ========================================
 
   @include tablet {
-    .styles-tokens {
-      // Add tablet styles here
-    }
+      margin-top: 6.4rem;
+    padding-bottom: 6.4rem;
   }
 
   @include mobile {

@@ -1,4 +1,4 @@
-<header class="app-header" [class.non-home-page]="!isHomePage">
+<header class="app-header" [class.non-home-page]="!isHomePage || isMenuOpen">
   <div class="container-fluid">
     <div class="row align-items-center">
       <!-- Profile Image - Left Side -->
@@ -8,7 +8,7 @@
             [src]="profileImageUrl"
             alt="Zhenya Dobrovolska Profile"
             class="profile-image"
-            [class.small-profile]="!isHomePage"
+            [class.small-profile]="!isHomePage || isMenuOpen"
           >
         </div>
       </div>
@@ -17,12 +17,12 @@
       <div class="col">
         <div class="name-section">
           <h1 class="header-name">{{ name }}</h1>
-          <p class="header-greeting" [class.hidden]="!isHomePage">{{ greeting }}</p>
+          <p class="header-greeting" [class.hidden]="!isHomePage || isMenuOpen">{{ greeting }}</p>
         </div>
       </div>
 
-      <!-- Menu Button - Right Side -->
-      <div class="col-auto">
+      <!-- Menu Button - Right Side (show when menu is closed) -->
+      <div class="col-auto" [class.hidden]="isMenuOpen">
         <button
           class="menu-toggle"
           (click)="toggleMenu()"
@@ -36,53 +36,41 @@
           </span>
         </button>
       </div>
-    </div>
 
-    <!-- Full Screen Menu Overlay -->
-    <div class="fullscreen-menu" [class.show]="isMenuOpen">
-      <!-- Menu Header -->
-      <div class="menu-header">
-        <div class="container-fluid">
-          <div class="row align-items-center">
-            <!-- Name - Left Side -->
-            <div class="col">
-              <h1 class="menu-header-name">{{ name }}</h1>
-            </div>
-
-            <!-- Close Button - Right Side -->
-            <div class="col-auto">
-              <button
-                class="menu-close-toggle"
-                (click)="toggleMenu()"
-                type="button"
-                aria-label="Close navigation menu"
-              >
-                <span class="close-icon">
-                  <span class="close-line close-line-1"></span>
-                  <span class="close-line close-line-2"></span>
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
+      <!-- Close Button - Right Side (show when menu is open) -->
+      <div class="col-auto" [class.hidden]="!isMenuOpen">
+        <button
+          class="menu-close-toggle"
+          (click)="toggleMenu()"
+          type="button"
+          aria-label="Close navigation menu"
+        >
+          <span class="close-icon">
+            <span class="close-line close-line-1"></span>
+            <span class="close-line close-line-2"></span>
+          </span>
+        </button>
       </div>
-
-      <!-- Full Screen Navigation -->
-      <nav class="fullscreen-nav">
-        @for (item of menuItems; track item.route) {
-          <a
-            [routerLink]="item.route"
-            class="menu-item"
-            (click)="toggleMenu()"
-          >
-            <div class="menu-content">
-              <span class="menu-number">{{ item.number }}</span>
-              <h2 class="menu-title">{{ item.title }}</h2>
-            </div>
-          </a>
-          <div class="menu-separator"></div>
-        }
-      </nav>
     </div>
+  </div>
+
+  <!-- Full Screen Menu Overlay -->
+  <div class="fullscreen-menu" [class.show]="isMenuOpen">
+    <!-- Full Screen Navigation -->
+    <nav class="fullscreen-nav">
+      @for (item of menuItems; track item.route) {
+        <a
+          [routerLink]="item.route"
+          class="menu-item"
+          (click)="toggleMenu()"
+        >
+          <div class="menu-content">
+            <span class="menu-number">{{ item.number }}</span>
+            <h2 class="menu-title">{{ item.title }}</h2>
+          </div>
+        </a>
+        <div class="menu-separator"></div>
+      }
+    </nav>
   </div>
 </header>

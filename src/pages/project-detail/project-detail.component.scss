@@ -7,7 +7,7 @@
 // ========================================
 
 .project-detail {
-  padding: 6.4rem 0;
+  padding: 6.4rem 0 0;
 
   .container-fluid {
     width: 100%;
@@ -22,7 +22,12 @@
 
     &:hover {
       .text-button, .arrow-button {
-        background: color.adjust($main-color-050, $lightness: +10%);
+        background: $main-color;
+        color: $text-color-secondary;
+
+        .arrow-icon {
+          filter: none !important;
+        }
       }
     }
 

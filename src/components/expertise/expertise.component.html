@@ -1,6 +1,8 @@
 <section class="expertise">
   <div class="container-fluid">
-    <app-section-header [section]="SECTION.EXPERTISE">
+    <app-section-header
+      [section]="SECTION.EXPERTISE"
+      (textButtonClick)="onLearnMoreClick()">
       <div slot="subtitle" class="section-header-subtitle-container">
         <span class="section-subtitle-header">{{ subtitleHeader }}</span>
         <span class="section-header-subtitle">{{ subtitleText }}</span>

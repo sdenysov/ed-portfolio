@@ -2,6 +2,8 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionHeaderComponent } from '../section-header/section-header.component';
 import { SECTION } from '../section-header/section-header.config';
+import { Router } from '@angular/router';
+import { PAGES } from '../../models/pages';
 
 @Component({
   selector: 'app-expertise',
@@ -13,6 +15,8 @@ import { SECTION } from '../section-header/section-header.config';
 })
 export class ExpertiseComponent {
   SECTION = SECTION;
+
+  constructor(private router: Router) {}
 
   expertise = [
     {
@@ -58,4 +62,8 @@ export class ExpertiseComponent {
 
   subtitleHeader: string = '(My services)';
   subtitleText: string = 'I specialize in creating intuitive, accessible digital experiences and enjoy building scalable design systems that bring clarity and consistency to complex products. With a strong focus on user-centered design, I collaborate closely with Agile teams and leverage AI-enhanced workflows to deliver thoughtful, seamless solutions.';
+
+  onLearnMoreClick() {
+    this.router.navigate([PAGES.ABOUT]);
+  }
 }

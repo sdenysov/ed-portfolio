@@ -18,6 +18,9 @@ export class ProjectsGridComponent {
   constructor(private router: Router) {}
 
   onProjectClick(project: Project) {
-    this.router.navigate([PAGES.WORK, project.id]);
+    // Pass the current URL as state to the project detail page
+    this.router.navigate([PAGES.WORK, project.id], {
+      state: { previousUrl: this.router.url }
+    });
   }
 }

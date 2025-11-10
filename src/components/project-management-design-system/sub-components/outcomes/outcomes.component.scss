@@ -11,6 +11,10 @@
       @include typography-base($font-weight-medium, 6.4rem);
     }
   }
+
+  @include tablet {
+    margin-top: 6.4rem;
+  }
 }
 
 .outcomes-title {
@@ -38,6 +42,10 @@
 .outcomes-content {
   margin-top: $spacing-base;
   max-width: 60%;
+
+  @include tablet {
+    max-width: 100%;
+  }
 
   .outcomes-intro {
     @include typography-base($font-weight-medium, 1.8rem, 3rem);

@@ -16,7 +16,6 @@ export class SectionHeaderComponent {
   @Input() label: string = '';
   @Input() textButton: string = '';
   @Output() textButtonClick = new EventEmitter<void>();
-  @Output() arrowButtonClick = new EventEmitter<void>();
 
   get config() {
     if (this.section) {

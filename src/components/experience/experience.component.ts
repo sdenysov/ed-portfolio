@@ -1,7 +1,8 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {SectionHeaderComponent} from '../section-header/section-header.component';
 import {SECTION} from '../section-header/section-header.config';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-experience',
@@ -13,6 +14,7 @@ import {SECTION} from '../section-header/section-header.config';
 })
 export class ExperienceComponent {
   SECTION = SECTION;
+  resumeLink: string = 'pdf/ed-resume.pdf';
 
   experience = [
     {
@@ -34,4 +36,17 @@ export class ExperienceComponent {
       period: 'April, 2021 - April, 2022'
     }
   ];
+
+  downloadResume() {
+    fetch(this.resumeLink)
+      .then(response => response.blob())
+      .then(blob => {
+        saveAs(blob, 'ed-resume.pdf');
+      })
+      .catch(error => {
+        console.error('Error downloading resume:', error);
+        // Fallback to direct link
+        window.open(this.resumeLink, '_blank');
+      });
+  }
 }

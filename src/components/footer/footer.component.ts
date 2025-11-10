@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionHeaderComponent } from '../section-header/section-header.component';
 import {SECTION} from "../section-header/section-header.config";
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { PAGES_CONFIG } from '../../app/app.routes';
 import {PAGES} from "../../models/pages";
 
@@ -16,6 +16,8 @@ import {PAGES} from "../../models/pages";
 })
 export class FooterComponent {
   SECTION = SECTION;
+
+  constructor(private router: Router) {}
 
   footerContent = {
     name: 'Zhenya Dobrovolska',
@@ -41,4 +43,8 @@ export class FooterComponent {
   ];
 
   pages = PAGES_CONFIG.filter(page => page.route !== '/' + PAGES.HOME && page.route !== '/');
+
+  onContactClick() {
+    this.router.navigate([PAGES.CONTACT]);
+  }
 }

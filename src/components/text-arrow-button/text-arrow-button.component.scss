@@ -14,11 +14,17 @@
 
   &:hover {
     .text-button {
-      background: color.adjust($main-color, $lightness: +10%);
+      background: $bg-color;
+      color: $text-color-primary;
     }
 
     .arrow-button {
-      background: color.adjust($main-color, $lightness: +10%);
+      background: $bg-color;
+    }
+
+    .arrow-button .arrow-icon {
+      transform: rotate(360deg);
+      filter: brightness(0) saturate(100%) invert(13%) sepia(13%) saturate(1234%) hue-rotate(285deg) brightness(97%) contrast(93%);
     }
   }
 }
@@ -28,7 +34,6 @@
 
   .button-text {
     @include typography-base($font-weight-medium, 1.4rem, 1.2);
-    transform: rotate(0deg);
   }
 
   // Remove individual hover state since group handles it
@@ -45,6 +50,9 @@
     width: 1.6rem;
     height: 1.6rem;
     transform: rotate(0deg);
+    transition: transform 0.6s ease-in-out;
+    display: block;
+    transform-origin: center center;
   }
 
   // Remove individual hover state since group handles it

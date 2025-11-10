@@ -7,7 +7,7 @@
       <p class="colors-intro">{{ configColors.subtitle }}</p>
       <p class="colors-intro">{{ configColors.description }}</p>
     </div>
-    <div slot="right-section" class="header-right-section col-auto">
+    <div slot="right-section" class="header-right-section col-auto col-md-4">
       <img [src]="configColors.headerImgSrc" [alt]="" class="img-fluid">
     </div>
   </app-section-header>
@@ -22,7 +22,7 @@
   <div class="typography-container">
     <app-section-header [section]="SECTION.TYPOGRAPHY">
       <p slot="subtitle" class="header-subtitle typography-subtitle">{{ configTypography.subtitle }}</p>
-      <div slot="right-section" class="header-right-section col-auto">
+      <div slot="right-section" class="header-right-section col-auto col-md-4">
         <img [src]="configTypography.headerImgSrc" [alt]="" class="img-fluid">
       </div>
     </app-section-header>
@@ -36,7 +36,7 @@
   <div class="spacing-system-container">
     <app-section-header [section]="SECTION.SPACING_SYSTEM">
       <p slot="subtitle" class="header-subtitle spacing-system-subtitle">{{ configSpacingSystem.subtitle }}</p>
-      <div slot="right-section" class="header-right-section col-auto">
+      <div slot="right-section" class="header-right-section col-auto col-md-4">
         <img [src]="configSpacingSystem.headerImgSrc" [alt]="" class="img-fluid">
       </div>
     </app-section-header>
@@ -47,7 +47,7 @@
   <div class="shadows-container">
     <app-section-header [section]="SECTION.SHADOWS">
       <p slot="subtitle" class="header-subtitle shadows-subtitle">{{ configShadows.subtitle }}</p>
-      <div slot="right-section" class="header-right-section col-auto">
+      <div slot="right-section" class="header-right-section col-auto col-md-4">
         <img [src]="configShadows.headerImgSrc" [alt]="" class="img-fluid">
       </div>
     </app-section-header>

@@ -12,6 +12,15 @@
 
   ::ng-deep.section-header-title {
     @include typography-base($font-weight-medium, 6.4rem);
+
+    @include tablet {
+      @include typography-base($font-weight-medium, 4rem);
+    }
+  }
+
+  @include tablet {
+    margin-top: 6.4rem;
+    padding-bottom: 6.4rem;
   }
 }
 
@@ -23,6 +32,16 @@
   max-width: 50%;
   gap: $spacing-small;
   @include typography-base($font-weight-regular, 1.8rem, 3rem);
+
+  @include tablet {
+    max-width: 60%;
+  }
+}
+
+.button-subtitle {
+  @include tablet {
+    max-width: 80%;
+  }
 }
 
 .content-item {
@@ -34,6 +53,10 @@
 
 .content-item-header {
   @include typography-base($font-weight-medium, 2.4rem);
+
+  @include tablet {
+    @include typography-base($font-weight-medium, 1.8rem);
+  }
 }
 
 .subsection-container {
@@ -63,6 +86,10 @@
 .content-item-title {
   max-width: 40%;
   @include typography-base($font-weight-regular, 1.6rem, 2.4rem);
+
+  @include tablet {
+    @include typography-base($font-weight-medium, 1.4rem);
+  }
 }
 
 // ========================================
@@ -70,9 +97,6 @@
 // ========================================
 
 @include tablet {
-  .components {
-    // Add tablet styles here
-  }
 }
 
 @include mobile {

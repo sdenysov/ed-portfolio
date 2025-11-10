@@ -41,6 +41,15 @@
     background: $main-color-050;
     border-color: $main-color-020;
     transform: translateY(-0.4rem) rotate(0deg);
+
+    .project-link {
+      background: $main-color;
+
+      .arrow-icon {
+        transform: rotate(360deg);
+        filter: none;
+      }
+    }
   }
 }
 
@@ -79,12 +88,25 @@
 .project-link {
   @include arrow-button(transparent, $main-color, $main-color-050);
   flex-shrink: 0;
+  cursor: pointer;
 
   .arrow-icon {
     width: 1.6rem;
     height: 1.6rem;
     object-fit: contain;
     filter: brightness(0) saturate(100%) invert(18%) sepia(30%) saturate(1051%) hue-rotate(280deg) brightness(94%) contrast(94%);
+    display: block;
+    transition: transform 0.6s ease-in-out;
+    transform-origin: center center;
+  }
+
+  &:hover {
+    background: $main-color;
+
+    .arrow-icon {
+      transform: rotate(360deg) !important;
+      filter: none;
+    }
   }
 }
 
