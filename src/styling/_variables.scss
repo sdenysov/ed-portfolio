@@ -36,3 +36,86 @@ $breakpoint-tablet: 1023px;
 $breakpoint-mobile: 767px;
 
 $container-max-width: 1920px;
+
+// ========================================
+// SCROLL ANIMATION MIXINS
+// ========================================
+
+@mixin scroll-animation-base {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition-delay: var(--animation-delay, 0s);
+
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin scroll-animation-fade {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition-delay: var(--animation-delay, 0s);
+
+  &.animate-in {
+    opacity: 1;
+  }
+}
+
+@mixin scroll-animation-slide-up {
+  opacity: 0;
+  transform: translateY(4rem);
+  transition: all 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition-delay: var(--animation-delay, 0s);
+
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin scroll-animation-slide-left {
+  opacity: 0;
+  transform: translateX(4rem);
+  transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition-delay: var(--animation-delay, 0s);
+
+  &.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@mixin scroll-animation-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition-delay: var(--animation-delay, 0s);
+
+  &.animate-in {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Apply mixins to classes that the directive will use
+.scroll-animation-base {
+  @include scroll-animation-base;
+}
+
+.scroll-animation-fade {
+  @include scroll-animation-fade;
+}
+
+.scroll-animation-slide-up {
+  @include scroll-animation-slide-up;
+}
+
+.scroll-animation-slide-left {
+  @include scroll-animation-slide-left;
+}
+
+.scroll-animation-scale {
+  @include scroll-animation-scale;
+}

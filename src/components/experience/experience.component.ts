@@ -3,11 +3,12 @@ import {CommonModule} from '@angular/common';
 import {SectionHeaderComponent} from '../section-header/section-header.component';
 import {SECTION} from '../section-header/section-header.config';
 import { saveAs } from 'file-saver';
+import {ScrollAnimationDirective} from "../../directives/scroll-animation.directive";
 
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [CommonModule, SectionHeaderComponent],
+  imports: [CommonModule, SectionHeaderComponent, ScrollAnimationDirective],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

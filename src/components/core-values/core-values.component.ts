@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {SectionHeaderComponent} from "../section-header/section-header.component";
 import {SECTION} from "../section-header/section-header.config";
 import { SkillsComponent } from '../skills/skills.component';
+import {ScrollAnimationDirective} from "../../directives/scroll-animation.directive";
 
 @Component({
   selector: 'app-core-values',
@@ -10,7 +11,8 @@ import { SkillsComponent } from '../skills/skills.component';
   styleUrl: './core-values.component.scss',
   imports: [
     SectionHeaderComponent,
-    SkillsComponent
+    SkillsComponent,
+    ScrollAnimationDirective
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

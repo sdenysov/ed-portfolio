@@ -5,11 +5,12 @@ import {ProjectsGridComponent} from '../projects-grid/projects-grid.component';
 import {SECTION} from '../section-header/section-header.config';
 import { Router } from '@angular/router';
 import { PAGES } from '../../models/pages';
+import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
 @Component({
   selector: 'app-works',
   standalone: true,
-  imports: [CommonModule, SectionHeaderComponent, ProjectsGridComponent],
+  imports: [CommonModule, SectionHeaderComponent, ProjectsGridComponent, ScrollAnimationDirective],
   templateUrl: './works.component.html',
   styleUrl: './works.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

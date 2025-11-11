@@ -1,9 +1,13 @@
 <section class="works">
   <div class="container-fluid">
-    <app-section-header
-      [section]="SECTION.WORKS"
-      (textButtonClick)="onViewAllProjectsClick()">
-    </app-section-header>
-    <app-projects-grid></app-projects-grid>
+    <div appScrollAnimation animationDelay="0.1s">
+      <app-section-header
+        [section]="SECTION.WORKS"
+        (textButtonClick)="onViewAllProjectsClick()">
+      </app-section-header>
+    </div>
+    <div appScrollAnimation animationType="fade" animationDelay="0.3s">
+      <app-projects-grid></app-projects-grid>
+    </div>
   </div>
 </section>

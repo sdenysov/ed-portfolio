@@ -2,11 +2,12 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
 import { SECTION } from '../../components/section-header/section-header.config';
+import {ScrollAnimationDirective} from "../../directives/scroll-animation.directive";
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, SectionHeaderComponent],
+  imports: [CommonModule, SectionHeaderComponent, ScrollAnimationDirective],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

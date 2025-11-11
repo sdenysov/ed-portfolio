@@ -1,7 +1,8 @@
 <section class="experience">
-  <div class="container-fluid">
-    <app-section-header [section]="SECTION.EXPERIENCE" (textButtonClick)="downloadResume()"></app-section-header>
-    <div class="experience-container row justify-content-end">
+  <div class="container-fluid" >
+    <app-section-header [section]="SECTION.EXPERIENCE" (textButtonClick)="downloadResume()"
+                        appScrollAnimation  animationDelay="0.1s"></app-section-header>
+    <div class="experience-container row justify-content-end"  appScrollAnimation animationType="slide-left">
       <div class="col col-lg-10">
         @for (item of experience; track item.id) {
           <div class="experience-item row">

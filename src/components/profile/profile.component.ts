@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
 import {SectionHeaderComponent} from "../section-header/section-header.component";
 import { SECTION } from '../section-header/section-header.config';
+import {ScrollAnimationDirective} from "../../directives/scroll-animation.directive";
 
 @Component({
   selector: 'app-profile',
@@ -8,7 +9,8 @@ import { SECTION } from '../section-header/section-header.config';
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
   imports: [
-    SectionHeaderComponent
+    SectionHeaderComponent,
+    ScrollAnimationDirective
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

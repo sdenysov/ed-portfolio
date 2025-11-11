@@ -4,11 +4,12 @@ import { SectionHeaderComponent } from '../section-header/section-header.compone
 import { SECTION } from '../section-header/section-header.config';
 import { Router } from '@angular/router';
 import { PAGES } from '../../models/pages';
+import {ScrollAnimationDirective} from "../../directives/scroll-animation.directive";
 
 @Component({
   selector: 'app-expertise',
   standalone: true,
-  imports: [CommonModule, SectionHeaderComponent],
+  imports: [CommonModule, SectionHeaderComponent, ScrollAnimationDirective],
   templateUrl: './expertise.component.html',
   styleUrl: './expertise.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
