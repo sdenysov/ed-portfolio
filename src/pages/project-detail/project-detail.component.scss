@@ -17,8 +17,11 @@
 
   ::ng-deep.text-arrow-button-group {
     flex-direction: row-reverse;
-    justify-content: flex-end;
-    width: fit-content;
+
+    @include min-tablet {
+      justify-content: flex-end;
+      width: fit-content;
+    }
 
     &:hover {
       .text-button, .arrow-button {

@@ -6,7 +6,7 @@
 // ========================================
 
 .my-role {
-  margin-top: 12.8rem;
+  @include design-system-section;
   padding-bottom: 12.8rem;
   border-bottom: $border-width solid $main-color;
 
@@ -14,12 +14,12 @@
     padding-bottom: 6.4rem;
   }
 
-  ::ng-deep.section-header-title {
-    @include typography-base($font-weight-medium, 9.6rem);
+  @include mobile {
+    padding-bottom: 4rem;
+  }
 
-    @include tablet {
-      @include typography-base($font-weight-medium, 6.4rem);
-    }
+  ::ng-deep.section-header-title {
+    @include design-system-section-title;
   }
 }
 
@@ -77,12 +77,21 @@
     margin-top: $spacing-base;
     flex-wrap: wrap;
   }
+
+  @include mobile {
+    gap: $spacing-small;
+  }
 }
 
 .role-row {
   display: flex;
   flex-direction: column;
   gap: $spacing-base;
+
+  @include mobile {
+    width: 100%;
+    gap: $spacing-small;
+  }
 }
 
 .role-circle {
@@ -94,15 +103,28 @@
   justify-content: center;
   display: flex;
   align-self: center;
+
+  @include mobile {
+    width: 17.2rem;
+    height: 17.2rem;
+  }
 }
 
 .role-title {
   color: $text-color-secondary;
   font-size: 9.6rem;
+
+  @include mobile {
+    font-size: 6.4rem;
+  }
 }
 
 .role-name {
   max-width: 32rem;
+
+  @include mobile {
+    font-size: 1.6rem;
+  }
 }
 
 // ========================================
@@ -140,6 +162,9 @@
 
 @include mobile {
   .my-role-right-section {
+    align-self: unset;
+    max-width: unset;
+
     .role-description {
       @include typography-base($font-weight-regular, 1.4rem, 150%);
     }

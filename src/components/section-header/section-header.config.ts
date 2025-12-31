@@ -69,13 +69,13 @@ export const SECTION_HEADER_CONFIG: Record<SECTION, SectionHeaderConfig> = {
     title: 'Problems'
   },
   [SECTION.GOALS]: {
-    title: 'Goals:'
+    title: 'Goals'
   },
   [SECTION.MY_ROLE]: {
-    title: 'My role:'
+    title: 'My role'
   },
   [SECTION.OUTCOMES]: {
-    title: 'Outcomes & impact:'
+    title: 'Outcomes & impact'
   },
   [SECTION.COLORS]: {
     title: '01. Colors'
