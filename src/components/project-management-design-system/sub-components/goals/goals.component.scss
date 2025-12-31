@@ -6,14 +6,10 @@
 // ========================================
 
 .goals {
-  margin-top: 12.8rem;
+  @include design-system-section;
 
   ::ng-deep.section-header-title {
-    @include typography-base($font-weight-medium, 9.6rem);
-
-    @include tablet {
-      @include typography-base($font-weight-medium, 6.4rem);
-    }
+    @include design-system-section-title;
   }
 }
 

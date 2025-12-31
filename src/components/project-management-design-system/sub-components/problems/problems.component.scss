@@ -7,14 +7,10 @@
 
 .problems {
   // Component styles will go here
-  margin-top: 12.8rem;
+  @include design-system-section;
 
   ::ng-deep.section-header-title {
-    @include typography-base($font-weight-medium, 9.6rem);
-
-    @include tablet {
-      @include typography-base($font-weight-medium, 6.4rem);
-    }
+    @include design-system-section-title;
   }
 }
 
@@ -52,6 +48,10 @@
   @include tablet {
     margin-top: $spacing-base;
   }
+
+  @include mobile {
+    margin-top: 0;
+  }
 }
 
 // ========================================
@@ -76,8 +76,16 @@
 }
 
 @include mobile {
+  .problems {
+    margin-top: 7.2rem;
+
+    ::ng-deep.section-header {
+      margin-bottom: 2.4rem;
+    }
+  }
+
   .problems-subtitle {
-    margin-top: 3.2rem;
+    margin-top: $spacing-base;
 
     .problems-intro {
       @include typography-base($font-weight-medium, 1.4rem, 150%);
@@ -86,6 +94,7 @@
 
     .problems-list {
       gap: $spacing-small;
+      max-width: unset;
 
       .problem-item {
         @include typography-base($font-weight-regular, 1.4rem, 150%);

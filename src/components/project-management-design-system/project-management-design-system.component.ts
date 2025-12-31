@@ -21,7 +21,7 @@ interface SubtitleItem {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectManagementDesignSystemComponent {
-  projectTitle: string = 'Task management web app design system';
+  projectTitle: string = 'SaaS platform design system';
   overviewSubtitleItem: SubtitleItem= {
     text: '(Overview)',
     value: 'As our product scaled across web and mobile, inconsistencies in UI slowed development and impacted user experience. I led the design system effort to create reusable foundations with tokens, accessibility baked in, and clear documentation for adoption.'
