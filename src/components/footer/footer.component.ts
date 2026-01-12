@@ -28,17 +28,17 @@ export class FooterComponent {
     {
       name: 'LinkedIn',
       icon: 'linkedin.png',
-      link: 'https://www.linkedin.com/in/zhenyadobrovolska/'
+      link: 'https://www.linkedin.com/in/yevheniia-dobrovolska-02b6a91b0/'
     },
     {
       name: 'Behance',
       icon: 'behance.png',
-      link: 'https://www.behance.net/zhenyadobrovolska'
+      link: 'https://www.behance.net/ydobrovolska'
     },
     {
       name: 'Dribbble',
       icon: 'dribbble.png',
-      link: 'https://dribbble.com/zhenyadobrovolska'
+      link: 'https://dribbble.com/ZhenyaD'
     }
   ];
 
