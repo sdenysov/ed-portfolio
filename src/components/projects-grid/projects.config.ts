@@ -13,7 +13,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: ProjectId.PROJECT_MANAGEMENT,
-    title: 'Project management design system',
+    title: 'SaaS platform design system',
     image: 'images/project-management-preview.png',
     type: 'design-system'
   },
