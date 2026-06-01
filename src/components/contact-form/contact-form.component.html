@@ -1,0 +1,65 @@
+<section class="contact-form-section">
+  <div class="contact-form-content">
+    <div class="contact-form-header">
+      <h2 class="contact-form-title">Ready to collaborate?</h2>
+      <h2 class="contact-form-subtitle">Drop me a line</h2>
+    </div>
+    
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+      <div class="form-group">
+        <label for="fullName" class="form-label">Your full name</label>
+        <input
+          type="text"
+          id="fullName"
+          formControlName="fullName"
+          placeholder="Full name"
+          class="form-input"
+          [class.invalid]="contactForm.get('fullName')?.invalid && contactForm.get('fullName')?.touched"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Your email address</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Email address"
+          class="form-input"
+          [class.invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="phone" class="form-label">Your phone number (optional)</label>
+        <input
+          type="tel"
+          id="phone"
+          formControlName="phone"
+          placeholder="Phone number"
+          class="form-input"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="message" class="form-label">Your message</label>
+        <textarea
+          id="message"
+          formControlName="message"
+          placeholder="Message"
+          rows="5"
+          class="form-textarea"
+          [class.invalid]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+        ></textarea>
+      </div>
+
+      <div class="submit-button-wrapper">
+        <app-text-arrow-button
+          [buttonText]="'Send message'"
+          [disabled]="contactForm.invalid"
+          (buttonClick)="onSubmit()"
+        ></app-text-arrow-button>
+      </div>
+    </form>
+  </div>
+</section>

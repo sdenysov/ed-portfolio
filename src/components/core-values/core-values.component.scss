@@ -38,11 +38,9 @@
   }
 
   .core-value-icon-container {
-    width: 8.5rem;
-    height: 8.5rem;
+    width: 6.4rem;
+    height: 6.4rem;
     margin-bottom: $spacing-base;
-    background: linear-gradient(113.36deg, #{$main-color} 32.78%, #{$bg-color} 157.87%);
-    border-radius: 1.6rem;
     @include flex-center;
   }
 

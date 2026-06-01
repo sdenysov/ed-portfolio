@@ -42,7 +42,7 @@ export const SECTION_HEADER_CONFIG: Record<SECTION, SectionHeaderConfig> = {
   [SECTION.EXPERTISE]: {
     label: '(4)',
     title: 'Expertise',
-    textButton: 'Learn more',
+    textButton: 'See how I work',
   },
   [SECTION.FOOTER]: {
     label: '(Let’s collaborate)',
@@ -58,7 +58,7 @@ export const SECTION_HEADER_CONFIG: Record<SECTION, SectionHeaderConfig> = {
     title: 'About'
   },
   [SECTION.CORE_VALUES]: {
-    label: '(Why choose me)',
+    label: '(How I work)',
     title: 'Core values'
   },
   [SECTION.CASE_STUDIES]: {

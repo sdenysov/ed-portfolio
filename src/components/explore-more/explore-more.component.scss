@@ -1,0 +1,20 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// EXPLORE MORE SECTION
+// ========================================
+
+.explore-more {
+  @include design-system-section;
+}
+
+.explore-more-title {
+  @include design-system-section-title;
+  
+  @include mobile {
+    margin-bottom: 4rem;
+  }
+  
+  margin-bottom: 6.4rem;
+}

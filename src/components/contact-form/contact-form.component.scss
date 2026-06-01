@@ -1,0 +1,161 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.contact-form-section {
+  margin-top: 6.4rem;
+  background: $main-color;
+  border-radius: 3.2rem;
+  padding: 6.4rem;
+  
+  @include mobile {
+    margin-top: 4rem;
+    padding: 4rem 2.4rem;
+    border-radius: 2.4rem;
+  }
+}
+
+.contact-form-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6.4rem;
+  
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+  }
+  
+  @include mobile {
+    gap: 2.4rem;
+  }
+}
+
+.contact-form-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+  @include tablet {
+    margin-bottom: 0;
+  }
+}
+
+.contact-form-title,
+.contact-form-subtitle {
+  @include typography-base($font-weight-medium, 6.4rem, 100%);
+  color: $bg-color;
+  margin: 0;
+  
+  @include tablet {
+    @include typography-base($font-weight-medium, 4.8rem, 100%);
+  }
+  
+  @include mobile {
+    @include typography-base($font-weight-medium, 3.2rem, 100%);
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  
+  @include mobile {
+    gap: 2rem;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  
+  @include mobile {
+    gap: 0.6rem;
+  }
+}
+
+.form-label {
+  @include typography-base($font-weight-regular, 1.4rem, 100%);
+  color: $bg-color;
+  opacity: 0.8;
+  
+  @include mobile {
+    @include typography-base($font-weight-regular, 1.2rem, 100%);
+  }
+}
+
+.form-input,
+.form-textarea {
+  background: transparent;
+  border: 0.1rem solid rgba(255, 243, 253, 0.3);
+  border-radius: 10rem;
+  padding: 1.6rem 2.4rem;
+  color: $bg-color;
+  @include typography-base($font-weight-regular, 1.6rem, 100%);
+  transition: $transition-fast;
+  
+  &::placeholder {
+    color: rgba(255, 243, 253, 0.5);
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: rgba(255, 243, 253, 0.6);
+    background: rgba(255, 243, 253, 0.05);
+  }
+  
+  &.invalid {
+    border-color: rgba(255, 100, 100, 0.6);
+  }
+  
+  @include mobile {
+    padding: 1.4rem 2rem;
+    @include typography-base($font-weight-regular, 1.4rem, 100%);
+  }
+}
+
+.form-textarea {
+  border-radius: 2.4rem;
+  resize: vertical;
+  min-height: 12rem;
+  font-family: inherit;
+  
+  @include tablet {
+    min-height: 10rem;
+  }
+  
+  @include mobile {
+    min-height: 9rem;
+  }
+}
+
+.submit-button-wrapper {
+  width: 100%;
+  
+  ::ng-deep .text-arrow-button-group {
+    width: 100%;
+    
+    .text-button {
+      flex: 1;
+      background: $bg-color;
+      color: $main-color;
+      
+      &:hover {
+        background: rgba(255, 243, 253, 0.9);
+      }
+    }
+    
+    .arrow-button {
+      background: $bg-color;
+      border-color: $main-color;
+      
+      &:hover {
+        background: rgba(255, 243, 253, 0.9);
+      }
+      
+      .arrow-icon {
+        filter: brightness(0) saturate(100%) invert(18%) sepia(30%) saturate(1051%) hue-rotate(280deg) brightness(94%) contrast(94%);
+      }
+    }
+  }
+}

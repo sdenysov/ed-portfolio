@@ -2,7 +2,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { PAGES } from '../../models/pages';
-import {Project, projects} from './projects.config';
+import {Project, projects, ProjectId} from './projects.config';
 
 @Component({
   selector: 'app-projects-grid',
@@ -13,7 +13,14 @@ import {Project, projects} from './projects.config';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectsGridComponent {
-  projects: Project[] = projects;
+  @Input() excludeProjectId?: ProjectId;
+  
+  get projects(): Project[] {
+    if (this.excludeProjectId) {
+      return projects.filter(project => project.id !== this.excludeProjectId);
+    }
+    return projects;
+  }
 
   constructor(private router: Router) {}
 

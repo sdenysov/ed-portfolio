@@ -1,8 +1,8 @@
-<div class="text-arrow-button-group" (click)="onButtonClick()">
-  <button class="text-button" type="button">
+<div class="text-arrow-button-group" [class.disabled]="disabled" (click)="onButtonClick()">
+  <button class="text-button" type="button" [disabled]="disabled">
     <span class="button-text">{{ buttonText }}</span>
   </button>
-  <button class="arrow-button" type="button">
+  <button class="arrow-button" type="button" [disabled]="disabled">
     <img src="images/arrow.svg" alt="" class="arrow-icon">
   </button>
 </div>

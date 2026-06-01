@@ -1,9 +1,8 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
-enum SkillType {
-  Tools = 'Tools',
-  Skills = 'Skills',
-  Methods = 'Methods'
+enum SkillCategory {
+  WhatIDo = 'WhatIDo',
+  HowIThink = 'HowIThink'
 }
 
 @Component({
@@ -14,31 +13,26 @@ enum SkillType {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkillsComponent {
-  skillsSectionTitle = 'Skills'
-  skillsTypes = [
-    { title: '(Tools)', type: SkillType.Tools },
-    { title: '(Skills)', type: SkillType.Skills },
-    { title: '(Methods)', type: SkillType.Methods }
+  skillsSectionTitle = 'Skills';
+  skillsDescription = 'I work across the full design process — from research and wireframes through to polished UI and developer handoff — using methods grounded in user-centered design and accessibility.';
+  
+  skillsCategories = [
+    { title: '(What I do)', type: SkillCategory.WhatIDo },
+    { title: '(How I think)', type: SkillCategory.HowIThink }
   ];
+  
   skillsData = {
-    [SkillType.Tools]: [
-      'Figma',
-      'FigJam',
-      'Jira',
-      'Confluence',
-      'AI tools'
-    ],
-    [SkillType.Skills]: [
+    [SkillCategory.WhatIDo]: [
       'Wireframing',
       'Prototyping',
       'UX Research',
       'Design systems',
       'Accessibility standards'
     ],
-    [SkillType.Methods]: [
+    [SkillCategory.HowIThink]: [
       'Agile',
-      'Design Thinking',
-      'User-centered Design',
+      'Design thinking',
+      'User-centered design',
       'Cross-team collaboration',
       'Design critique'
     ]

@@ -6,6 +6,8 @@ import {MyRoleComponent} from "./sub-components/my-role/my-role.component";
 import {StylesTokensComponent} from "./sub-components/styles-tokens/styles-tokens.component";
 import {ComponentsComponent} from "./sub-components/components-section/components.component";
 import {OutcomesComponent} from "./sub-components/outcomes/outcomes.component";
+import {ExploreMoreComponent} from "../explore-more/explore-more.component";
+import {ProjectId} from "../projects-grid/projects.config";
 
 interface SubtitleItem {
   text: string;
@@ -15,12 +17,13 @@ interface SubtitleItem {
 @Component({
   selector: 'app-project-management-design-system',
   standalone: true,
-  imports: [CommonModule, ProblemsComponent, GoalsComponent, MyRoleComponent, StylesTokensComponent, ComponentsComponent, OutcomesComponent],
+  imports: [CommonModule, ProblemsComponent, GoalsComponent, MyRoleComponent, StylesTokensComponent, ComponentsComponent, OutcomesComponent, ExploreMoreComponent],
   templateUrl: './project-management-design-system.component.html',
   styleUrl: './project-management-design-system.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectManagementDesignSystemComponent {
+  currentProjectId = ProjectId.PROJECT_MANAGEMENT;
   projectTitle: string = 'SaaS platform design system';
   overviewSubtitleItem: SubtitleItem= {
     text: '(Overview)',

@@ -31,6 +31,8 @@
                 [attr.aria-labelledby]="'heading-' + item.id"
                 data-bs-parent="#expertiseAccordion">
                 <div class="accordion-body">
+                  <p class="expertise-description">{{ item.description }}</p>
+                  <h4 class="expertise-list-title">{{ whatsIncludedLabel }}</h4>
                   <ul class="expertise-list">
                     @for (point of item.descriptionPoints; track point) {
                       <li class="expertise-point">{{ point }}</li>

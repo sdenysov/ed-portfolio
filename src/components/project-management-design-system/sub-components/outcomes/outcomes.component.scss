@@ -2,7 +2,9 @@
 @use 'mixins' as *;
 
 .outcomes {
- margin: 12.8rem 0;
+ margin: 12.8rem 0 0;
+ padding-bottom: 12.8rem;
+ border-bottom: $border-width solid $main-color;
 
   ::ng-deep.section-header-title {
     @include design-system-section-title;

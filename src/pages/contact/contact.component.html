@@ -9,14 +9,12 @@
       <div class="col-lg-4 col-xl-3 col-md-5">
         <h3 class="contact-info-title">{{ contactContent.title }}</h3>
         <div class="contact-info">
-          <div class="contact-info-item">
-            <img [src]="'images/' + contactContent.email.icon" alt="Email icon" class="contact-icon" />
-            <span>{{ contactContent.email.text }}</span>
-          </div>
-          <div class="contact-info-item">
-            <img [src]="'images/' + contactContent.location.icon" alt="Location icon" class="contact-icon" />
-            <span>{{ contactContent.location.text }}</span>
-          </div>
+          @for (item of contactContent.items; track item.text) {
+            <div class="contact-info-item">
+              <img [src]="'images/' + item.icon" [alt]="item.alt" class="contact-icon" />
+              <span>{{ item.text }}</span>
+            </div>
+          }
         </div>
       </div>
       <div class="col-lg-2 col-md-3">
@@ -27,5 +25,6 @@
         </div>
       </div>
     </div>
+    <app-contact-form></app-contact-form>
   </div>
 </section>

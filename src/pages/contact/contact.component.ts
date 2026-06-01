@@ -1,13 +1,14 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
+import { ContactFormComponent } from '../../components/contact-form/contact-form.component';
 import { SECTION } from '../../components/section-header/section-header.config';
 import {ScrollAnimationDirective} from "../../directives/scroll-animation.directive";
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, SectionHeaderComponent, ScrollAnimationDirective],
+  imports: [CommonModule, SectionHeaderComponent, ContactFormComponent, ScrollAnimationDirective],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -22,14 +23,23 @@ export class ContactComponent {
 
   contactContent = {
     title: 'Contact',
-    email: {
-      icon: 'contact/e-mail.png',
-      text: 'yevheniia.dobrovolska@gmail.com'
-    },
-    location: {
-      icon: 'contact/location.png',
-      text: 'Calgary, AB, Canada'
-    }
+    items: [
+      {
+        icon: 'contact/e-mail.svg',
+        text: 'yevheniia.dobrovolska@gmail.com',
+        alt: 'Email icon'
+      },
+      {
+        icon: 'contact/phone.svg',
+        text: '+1 (825) 945 9390',
+        alt: 'Phone icon'
+      },
+      {
+        icon: 'contact/location.svg',
+        text: 'Calgary, AB, Canada',
+        alt: 'Location icon'
+      }
+    ]
   };
 
   workHoursContent = {
