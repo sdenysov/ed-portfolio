@@ -5,12 +5,22 @@
       <h2 class="contact-form-subtitle">Drop me a line</h2>
     </div>
     
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+    <form
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit()"
+      class="contact-form"
+      name="contact"
+      method="POST">
+      
+      <!-- Hidden field to identify the form -->
+      <input type="hidden" name="form-name" value="contact" />
+
       <div class="form-group">
         <label for="fullName" class="form-label">Your full name</label>
         <input
           type="text"
           id="fullName"
+          name="fullName"
           formControlName="fullName"
           placeholder="Full name"
           class="form-input"
@@ -23,6 +33,7 @@
         <input
           type="email"
           id="email"
+          name="email"
           formControlName="email"
           placeholder="Email address"
           class="form-input"
@@ -35,6 +46,7 @@
         <input
           type="tel"
           id="phone"
+          name="phone"
           formControlName="phone"
           placeholder="Phone number"
           class="form-input"
@@ -45,6 +57,7 @@
         <label for="message" class="form-label">Your message</label>
         <textarea
           id="message"
+          name="message"
           formControlName="message"
           placeholder="Message"
           rows="5"
@@ -55,11 +68,17 @@
 
       <div class="submit-button-wrapper">
         <app-text-arrow-button
-          [buttonText]="'Send message'"
-          [disabled]="contactForm.invalid"
+          [buttonText]="submitButtonText"
+          [disabled]="contactForm.invalid || isSubmitting"
           (buttonClick)="onSubmit()"
         ></app-text-arrow-button>
       </div>
+
+      @if (submitMessage) {
+        <div class="submit-message" [class.success]="submitSuccess" [class.error]="!submitSuccess">
+          {{ submitMessage }}
+        </div>
+      }
     </form>
   </div>
 </section>

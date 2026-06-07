@@ -158,4 +158,30 @@
       }
     }
   }
+
+.submit-message {
+  margin-top: 2.4rem;
+  padding: 1.6rem;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  text-align: center;
+  transition: $transition-normal;
+
+  &.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+    border: 0.1rem solid rgba(76, 175, 80, 0.3);
+  }
+
+  &.error {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+    border: 0.1rem solid rgba(244, 67, 54, 0.3);
+  }
+
+  @include mobile {
+    font-size: 1.4rem;
+    padding: 1.4rem;
+  }
+}
 }
