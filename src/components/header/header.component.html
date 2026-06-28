@@ -1,4 +1,4 @@
-<header class="app-header" [class.non-home-page]="!isHomePage || isMenuOpen">
+<header class="app-header" [class.non-home-page]="!isHomePage || isMenuOpen || isScrolled">
   <div class="container-fluid">
     <div class="row align-items-center">
       <!-- Profile Image - Left Side -->
@@ -8,7 +8,7 @@
             [src]="profileImageUrl"
             alt="Zhenya Dobrovolska Profile"
             class="profile-image"
-            [class.small-profile]="!isHomePage || isMenuOpen"
+            [class.small-profile]="!isHomePage || isMenuOpen || isScrolled"
           >
         </div>
       </div>
@@ -17,7 +17,7 @@
       <div class="col">
         <div class="name-section">
           <h1 class="header-name">{{ name }}</h1>
-          <p class="header-greeting" [class.hidden]="!isHomePage || isMenuOpen">{{ greeting }}</p>
+          <p class="header-greeting" [class.hidden]="!isHomePage || isMenuOpen || isScrolled">{{ greeting }}</p>
         </div>
       </div>
 

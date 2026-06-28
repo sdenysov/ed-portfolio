@@ -16,8 +16,7 @@ import {ScrollAnimationDirective} from "../../directives/scroll-animation.direct
 })
 export class ProfileComponent {
   profileImageUrl = 'images/profile/profile.png';
-  profileMobileImageUrl = 'images/profile/profile-mobile.png';
-  profileInfoText = "Hi, I'm Zhenya. I'm a product designer who's spent 5 years working inside fast-moving teams — which means I know exactly what breaks down when design and development aren't aligned. Now I work directly with businesses to fix that.";
+  profileInfoText = "Hi, I'm Zhenya. I'm a product designer who's spent 5 years working inside fast-moving teams which means I know exactly what breaks down when design and development aren't aligned. Now I work directly with businesses to fix that.";
   SECTION = SECTION;
   isMobile = window.innerWidth <= 767;
 

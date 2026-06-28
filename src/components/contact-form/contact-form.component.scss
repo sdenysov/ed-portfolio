@@ -37,6 +37,10 @@
   @include tablet {
     margin-bottom: 0;
   }
+
+  h2 {
+    line-height: 7.4rem;
+  }
 }
 
 .contact-form-title,
@@ -72,6 +76,17 @@
   @include mobile {
     gap: 0.6rem;
   }
+
+  .error-message {
+    @include typography-base($font-weight-regular, 1.4rem, 2.4rem);
+    color: rgba(255, 182, 193, 0.8);
+    display: block;
+    
+    @include mobile {
+      @include typography-base($font-weight-regular, 1.2rem, 2rem);
+      margin-top: 0.6rem;
+    }
+  }
 }
 
 .form-label {
@@ -89,7 +104,7 @@
   background: transparent;
   border: 0.1rem solid rgba(255, 243, 253, 0.3);
   border-radius: 10rem;
-  padding: 1.6rem 2.4rem;
+  padding: 0.8rem 1.2rem;
   color: $bg-color;
   @include typography-base($font-weight-regular, 1.6rem, 100%);
   transition: $transition-fast;
@@ -105,7 +120,7 @@
   }
   
   &.invalid {
-    border-color: rgba(255, 100, 100, 0.6);
+    border-color: rgba(255, 182, 193, 0.8);
   }
   
   @include mobile {
@@ -158,30 +173,4 @@
       }
     }
   }
-
-.submit-message {
-  margin-top: 2.4rem;
-  padding: 1.6rem;
-  border-radius: 0.8rem;
-  font-size: 1.6rem;
-  text-align: center;
-  transition: $transition-normal;
-
-  &.success {
-    background-color: rgba(76, 175, 80, 0.1);
-    color: #4caf50;
-    border: 0.1rem solid rgba(76, 175, 80, 0.3);
-  }
-
-  &.error {
-    background-color: rgba(244, 67, 54, 0.1);
-    color: #f44336;
-    border: 0.1rem solid rgba(244, 67, 54, 0.3);
-  }
-
-  @include mobile {
-    font-size: 1.4rem;
-    padding: 1.4rem;
-  }
-}
 }

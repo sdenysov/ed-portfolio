@@ -20,7 +20,7 @@
 .overview-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem; // 8px gap
+  gap: 1.6rem;
   justify-content: space-between; // Left column sticks left, right column sticks right
   align-items: flex-start;
   width: 100%;
@@ -88,7 +88,7 @@
 
   .overview-content {
     flex-direction: column;
-    gap: 6rem;
+    gap: 3.2rem;
     text-align: left;
     justify-content: flex-start; // Reset justify for stacked layout
   }

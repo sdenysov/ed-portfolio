@@ -1,0 +1,13 @@
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ToastService } from '../../services/toast.service';
+
+@Component({
+  selector: 'app-toast',
+  standalone: true,
+  templateUrl: './app-toast.component.html',
+  styleUrl: './app-toast.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class AppToastComponent {
+  constructor(public toastService: ToastService) {}
+}

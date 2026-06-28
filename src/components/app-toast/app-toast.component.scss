@@ -1,0 +1,60 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.validation-toast {
+  position: fixed;
+  top: 2.4rem;
+  right: 6.4rem;
+  z-index: 9999;
+  background: $main-color;
+  border-radius: $spacing-small;
+  padding: $spacing-small 2.6rem $spacing-small $spacing-small;
+  max-width: 33rem;
+  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.3);
+  animation: slideInRight $transition-normal;
+
+  .toast-content {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .toast-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    flex-shrink: 0;
+  }
+
+  .toast-text {
+    flex: 1;
+  }
+
+  .toast-title {
+    @include typography-base($font-weight-medium, 1.6rem, 2.4rem);
+    color: $text-color-secondary;
+    margin-bottom: $spacing-xxs;
+  }
+
+  .toast-message {
+    @include typography-base($font-weight-regular, 1.4rem, 2rem);
+    color: $text-color-secondary;
+  }
+  
+  @include mobile {
+    top: 2rem;
+    right: 2rem;
+    left: 2rem;
+    max-width: none;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

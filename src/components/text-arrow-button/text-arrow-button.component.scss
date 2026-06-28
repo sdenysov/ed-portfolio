@@ -65,9 +65,27 @@
     transform-origin: center center;
   }
 
+  .loader-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    display: block;
+    transform-origin: center center;
+    animation: spin 1s linear infinite;
+    will-change: transform;
+  }
+
   // Remove individual hover state since group handles it
   &:hover {
     background: $main-color; // Keep original background on individual hover
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 

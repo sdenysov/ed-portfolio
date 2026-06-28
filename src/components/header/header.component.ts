@@ -1,4 +1,4 @@
-import {Component, Renderer2, Inject, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
+import {Component, Renderer2, Inject, ChangeDetectionStrategy, ChangeDetectorRef, HostListener} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DOCUMENT } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
@@ -19,9 +19,10 @@ import {UntilDestroy, untilDestroyed} from "@ngneat/until-destroy";
 export class HeaderComponent {
   profileImageUrl = 'images/profile-header.png';
   name = 'Zhenya Dobrovolska';
-  greeting = '(Hi there)';
+  greeting = '(Hey there)';
   isMenuOpen = false;
   isHomePage = true;
+  isScrolled = false;
 
   // Menu configuration combined with PAGES_CONFIG
   menuItems = PAGES_CONFIG.map((page, idx) => ({
@@ -48,6 +49,20 @@ export class HeaderComponent {
 
     // Set initial state
     this.isHomePage = this.router.url === '/';
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    // Only track scroll on homepage
+    if (this.isHomePage) {
+      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      const newScrollState = scrollPosition > 0;
+      
+      if (this.isScrolled !== newScrollState) {
+        this.isScrolled = newScrollState;
+        this.cdr.detectChanges();
+      }
+    }
   }
 
   toggleMenu() {

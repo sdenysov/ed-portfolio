@@ -12,10 +12,11 @@ import { CommonModule } from '@angular/common';
 export class TextArrowButtonComponent {
   @Input() buttonText: string = '';
   @Input() disabled: boolean = false;
+  @Input() isLoading: boolean = false;
   @Output() buttonClick = new EventEmitter<void>();
 
   onButtonClick() {
-    if (!this.disabled) {
+    if (!this.disabled && !this.isLoading) {
       this.buttonClick.emit();
     }
   }

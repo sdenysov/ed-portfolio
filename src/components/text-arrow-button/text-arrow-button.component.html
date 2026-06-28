@@ -1,9 +1,13 @@
-<div class="text-arrow-button-group" [class.disabled]="disabled" (click)="onButtonClick()">
-  <button class="text-button" type="button" [disabled]="disabled">
+<div class="text-arrow-button-group" [class.disabled]="disabled" [class.loading]="isLoading" (click)="onButtonClick()">
+  <button class="text-button" type="button" [disabled]="disabled || isLoading">
     <span class="button-text">{{ buttonText }}</span>
   </button>
-  <button class="arrow-button" type="button" [disabled]="disabled">
-    <img src="images/arrow.svg" alt="" class="arrow-icon">
+  <button class="arrow-button" type="button" [disabled]="disabled || isLoading">
+    @if (isLoading) {
+      <img src="images/loader.svg" alt="Loading" class="loader-icon">
+    } @else {
+      <img src="images/arrow.svg" alt="" class="arrow-icon">
+    }
   </button>
 </div>
 

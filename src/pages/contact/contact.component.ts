@@ -18,7 +18,7 @@ export class ContactComponent {
 
   connectContent = {
     title: 'Let’s connect',
-    description: 'I’m always open to new opportunities, meaningful projects, and creative collaborations. Whether you\'re building a product, refining an experience, or looking for a thoughtful designer to join your team — let’s connect and see how we can work together.'
+    description: 'I’m always open to new opportunities, meaningful projects, and creative collaborations. Whether you\'re building a product, refining an experience, or looking for a thoughtful designer to join your team. Let\’s connect and see how we can work together.'
   };
 
   contactContent = {
@@ -26,7 +26,7 @@ export class ContactComponent {
     items: [
       {
         icon: 'contact/e-mail.svg',
-        text: 'yevheniia.dobrovolska@gmail.com',
+        text: 'heyzhenyad@gmail.com',
         alt: 'Email icon'
       },
       {

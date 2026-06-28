@@ -22,7 +22,7 @@
 @mixin button-base($width, $height, $padding) {
   width: $width;
   height: $height;
-  border: $border-width solid $main-color-020;
+  border: $border-width solid $main-color;
   border-radius: $border-radius-pill;
   background: transparent;
   padding: $padding;
@@ -32,8 +32,8 @@
   cursor: pointer;
 
   &:hover {
-    background: $main-color-050;
-    border-color: $main-color-030;
+    background-color: $main-color;
+    border-color: $main-color;
   }
 
   &:focus {

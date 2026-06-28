@@ -16,16 +16,19 @@
       <input type="hidden" name="form-name" value="contact" />
 
       <div class="form-group">
-        <label for="fullName" class="form-label">Your full name</label>
+        <label for="fullName" class="form-label">Your name</label>
         <input
           type="text"
           id="fullName"
           name="fullName"
           formControlName="fullName"
-          placeholder="Full name"
+          placeholder="Your name"
           class="form-input"
           [class.invalid]="contactForm.get('fullName')?.invalid && contactForm.get('fullName')?.touched"
         />
+        @if (contactForm.get('fullName')?.invalid && contactForm.get('fullName')?.touched) {
+          <span class="error-message">Please enter your name</span>
+        }
       </div>
 
       <div class="form-group">
@@ -39,6 +42,9 @@
           class="form-input"
           [class.invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
         />
+        @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+          <span class="error-message">Please enter a valid email address</span>
+        }
       </div>
 
       <div class="form-group">
@@ -64,21 +70,18 @@
           class="form-textarea"
           [class.invalid]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
         ></textarea>
+        @if (contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
+          <span class="error-message">Don't forget to add a message</span>
+        }
       </div>
 
       <div class="submit-button-wrapper">
         <app-text-arrow-button
           [buttonText]="submitButtonText"
-          [disabled]="contactForm.invalid || isSubmitting"
+          [isLoading]="isSubmitting"
           (buttonClick)="onSubmit()"
         ></app-text-arrow-button>
       </div>
-
-      @if (submitMessage) {
-        <div class="submit-message" [class.success]="submitSuccess" [class.error]="!submitSuccess">
-          {{ submitMessage }}
-        </div>
-      }
     </form>
   </div>
 </section>

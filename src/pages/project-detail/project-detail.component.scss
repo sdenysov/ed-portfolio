@@ -23,7 +23,7 @@
       width: fit-content;
     }
 
-    &:hover {
+    &:hover:not(.disabled) {
       .text-button, .arrow-button {
         background: $main-color;
         color: $text-color-secondary;

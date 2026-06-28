@@ -94,10 +94,10 @@
 
 .fullscreen-menu {
   position: fixed;
-  top: 10rem; // Start below the header
+  top: 7.3rem; // Start below the header
   left: 0;
   width: 100vw;
-  height: calc(100vh - 10rem); // Only cover the area below the header
+  height: calc(100vh - 7.3rem); // Only cover the area below the header
   background: $bg-color;
   z-index: 1001; // Lower than header so header stays visible
   opacity: 0;
@@ -165,6 +165,14 @@
   opacity: 0;
   transform: translateY(-3rem);
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  
+  &:hover + .menu-separator {
+    transform: scaleY(1);
+    
+    &::before {
+      width: 100%;
+    }
+  }
 }
 
 .menu-content {
@@ -185,8 +193,32 @@
 .menu-separator {
   margin: $spacing-base 0;
   width: 100%;
-  height: $border-width;
+  height: 0.2rem;
   background: $main-color-020;
+  position: relative;
+  overflow: visible;
+  transform: scaleY(0.5);
+  transform-origin: center;
+  transition: transform $transition-fast;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: $main-color;
+    transition: width 0.7s ease-out;
+  }
+  
+  &:hover {
+    transform: scaleY(1);
+    
+    &::before {
+      width: 100%;
+    }
+  }
 }
 
 // Animate menu items in when menu is shown

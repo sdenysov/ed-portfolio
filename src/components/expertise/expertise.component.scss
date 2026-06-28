@@ -175,6 +175,11 @@
         background-size: contain;
         width: 4rem;
         height: 4rem;
+        transition: $transition-fast;
+      }
+
+      &:hover::after {
+        background-image: url('../../images/plus-hover.svg');
       }
 
       &:not(.collapsed)::after {

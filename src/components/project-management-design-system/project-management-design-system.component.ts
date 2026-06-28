@@ -33,6 +33,7 @@ export class ProjectManagementDesignSystemComponent {
     { text: '(Industry)', value: 'SaaS' },
     { text: '(Product type)', value: 'Project management app' },
     { text: '(Service)', value: 'Product design, interaction design, branding' },
+    { text: '(Tools & AI)', value: 'Figma, ChatGPT & Claude' },
     { text: '(Year)', value: '2025' }
   ]
   overviewImageSrc: string = 'images/project-management-design-system/project-management-overview.png'
