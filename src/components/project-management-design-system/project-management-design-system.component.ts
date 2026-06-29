@@ -1,23 +1,33 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {ProblemsComponent} from "./sub-components/problems/problems.component";
-import {GoalsComponent} from "./sub-components/goals/goals.component";
-import {MyRoleComponent} from "./sub-components/my-role/my-role.component";
-import {StylesTokensComponent} from "./sub-components/styles-tokens/styles-tokens.component";
-import {ComponentsComponent} from "./sub-components/components-section/components.component";
-import {OutcomesComponent} from "./sub-components/outcomes/outcomes.component";
-import {ExploreMoreComponent} from "../explore-more/explore-more.component";
-import {ProjectId} from "../projects-grid/projects.config";
-
-interface SubtitleItem {
-  text: string;
-  value: string;
-}
+import { StylesTokensComponent } from './sub-components/styles-tokens/styles-tokens.component';
+import { ComponentsComponent } from './sub-components/components-section/components.component';
+import { OutcomesComponent } from './sub-components/outcomes/outcomes.component';
+import { ExploreMoreComponent } from '../explore-more/explore-more.component';
+import { ProjectId } from '../projects-grid/projects.config';
+import {
+  ProjectCaseStudyHeaderComponent,
+  ProjectCaseStudyHeaderItem,
+  ProjectCaseStudyOverviewItem
+} from '../case-studies-common-components/project-case-study-header/project-case-study-header.component';
+import { ProjectProblemsComponent } from '../case-studies-common-components/project-problems/project-problems.component';
+import { ProjectGoalsComponent } from '../case-studies-common-components/project-goals/project-goals.component';
+import { ProjectMyRoleComponent } from '../case-studies-common-components/project-my-role/project-my-role.component';
 
 @Component({
   selector: 'app-project-management-design-system',
   standalone: true,
-  imports: [CommonModule, ProblemsComponent, GoalsComponent, MyRoleComponent, StylesTokensComponent, ComponentsComponent, OutcomesComponent, ExploreMoreComponent],
+  imports: [
+    CommonModule,
+    StylesTokensComponent,
+    ComponentsComponent,
+    OutcomesComponent,
+    ExploreMoreComponent,
+    ProjectCaseStudyHeaderComponent,
+    ProjectProblemsComponent,
+    ProjectGoalsComponent,
+    ProjectMyRoleComponent
+  ],
   templateUrl: './project-management-design-system.component.html',
   styleUrl: './project-management-design-system.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -25,11 +35,11 @@ interface SubtitleItem {
 export class ProjectManagementDesignSystemComponent {
   currentProjectId = ProjectId.PROJECT_MANAGEMENT;
   projectTitle: string = 'SaaS platform design system';
-  overviewSubtitleItem: SubtitleItem= {
+  overviewSubtitleItem: ProjectCaseStudyOverviewItem = {
     text: '(Overview)',
     value: 'As our product scaled across web and mobile, inconsistencies in UI slowed development and impacted user experience. I led the design system effort to create reusable foundations with tokens, accessibility baked in, and clear documentation for adoption.'
   }
-  subtitleItems: SubtitleItem[] = [
+  subtitleItems: ProjectCaseStudyHeaderItem[] = [
     { text: '(Industry)', value: 'SaaS' },
     { text: '(Product type)', value: 'Project management app' },
     { text: '(Service)', value: 'Product design, interaction design, branding' },

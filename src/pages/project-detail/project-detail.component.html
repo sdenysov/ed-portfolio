@@ -5,12 +5,12 @@
       (buttonClick)="onBackButtonClick()">
     </app-text-arrow-button>
     <div class="project-container">
-      <!-- Show ProjectManagementDesignSystemComponent if project ID matches -->
       @if (project.id === ProjectId.PROJECT_MANAGEMENT) {
         <app-project-management-design-system></app-project-management-design-system>
+      } @else if (project.id === ProjectId.ROUTIQ) {
+        <app-routiq></app-routiq>
       } @else {
         <!-- Default project content for other projects -->
-          <!-- Project Header -->
         <header class="project-header">
           <h1 class="project-title">{{ project.title }}</h1>
           <span class="project-type">{{ project.type }}</span>

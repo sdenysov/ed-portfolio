@@ -1,15 +1,19 @@
-<section class="project-management-design-system">
+<section class="routiq">
   <app-project-case-study-header
     [projectTitle]="projectTitle"
     [overviewItem]="overviewSubtitleItem"
     [subtitleItems]="subtitleItems">
   </app-project-case-study-header>
-  <img [src]="overviewImageSrc" alt='' class="overview-image img-fluid" />
+
+  <img [src]="overviewImageSrc" alt="" class="overview-image img-fluid" />
+
   <app-project-problems [projectId]="currentProjectId"></app-project-problems>
+
   <app-project-goals [projectId]="currentProjectId"></app-project-goals>
+
   <app-project-my-role [projectId]="currentProjectId"></app-project-my-role>
-  <app-styles-tokens></app-styles-tokens>
-  <app-components-section></app-components-section>
-  <app-outcomes></app-outcomes>
+
+  <app-research-discovery></app-research-discovery>
+
   <app-explore-more [currentProjectId]="currentProjectId"></app-explore-more>
 </section>

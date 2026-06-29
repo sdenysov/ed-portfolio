@@ -25,7 +25,12 @@ export enum SECTION {
   INPUT = ' INPUT',
   MODAL = ' MODAL',
   TABLE = ' TABLE',
-  TOAST = ' TOAST'
+  TOAST = ' TOAST',
+  RESEARCH_DISCOVERY = 'RESEARCH_DISCOVERY',
+  COMPETITOR_ANALYSIS = 'COMPETITOR_ANALYSIS',
+  SURVEY = 'SURVEY',
+  USER_PERSONAS = 'USER_PERSONAS',
+  RESEARCH_INFORMED_DESIGN = 'RESEARCH_INFORMED_DESIGN'
 }
 
 export const SECTION_HEADER_CONFIG: Record<SECTION, SectionHeaderConfig> = {
@@ -115,5 +120,20 @@ export const SECTION_HEADER_CONFIG: Record<SECTION, SectionHeaderConfig> = {
   },
   [SECTION.TOAST]: {
     title: '08. Toast'
+  },
+  [SECTION.RESEARCH_DISCOVERY]: {
+    title: 'Research & Discovery'
+  },
+  [SECTION.COMPETITOR_ANALYSIS]: {
+    title: '01. Competitor analysis'
+  },
+  [SECTION.SURVEY]: {
+    title: '02. Survey'
+  },
+  [SECTION.USER_PERSONAS]: {
+    title: '03. User personas'
+  },
+  [SECTION.RESEARCH_INFORMED_DESIGN]: {
+    title: '04. How research informed design'
   },
 };

@@ -1,0 +1,50 @@
+<section class="research-discovery">
+    <app-section-header [section]="SECTION.RESEARCH_DISCOVERY">
+        <div slot="subtitle" class="intro-text header-subtitle">
+            <p>{{ introText.paragraph1 }}</p>
+            <p>{{ introText.paragraph2 }}</p>
+        </div>
+    </app-section-header>
+
+  <!-- Competitor Analysis -->
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.COMPETITOR_ANALYSIS">
+      <p slot="subtitle" class="header-subtitle">{{ competitorAnalysis.subtitle }}</p>
+    </app-section-header>
+    <img [src]="competitorAnalysis.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+
+  <!-- Survey -->
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.SURVEY">
+      <p slot="subtitle" class="header-subtitle">{{ survey.subtitle }}</p>
+    </app-section-header>
+    <div class="images-container">
+      <img [src]="survey.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+      <img [src]="survey.contentImgSrc2" [alt]="" class="img-fluid subsection-image">
+    </div>
+  </div>
+
+  <!-- User Personas -->
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.USER_PERSONAS">
+      <p slot="subtitle" class="header-subtitle">{{ userPersonas.subtitle }}</p>
+    </app-section-header>
+    <div class="images-container">
+      <img [src]="userPersonas.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+      <img [src]="userPersonas.contentImgSrc2" [alt]="" class="img-fluid subsection-image">
+    </div>
+  </div>
+
+  <!-- How Research Informed Design -->
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.RESEARCH_INFORMED_DESIGN">
+    </app-section-header>
+    <p class="research-list-title">{{ researchInformedDesign.subtitle }}</p>
+    <ul class="research-list">
+      @for (item of researchInformedDesign.items; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+  </div>
+</section>

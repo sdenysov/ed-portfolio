@@ -145,15 +145,27 @@
   width: 100%;
 }
 
-@mixin design-system-section {
+// ========================================
+// CASE STUDY SECTION MIXINS
+// ========================================
+
+@mixin case-study-section {
   margin-top: 12.8rem;
+  padding-bottom: 12.8rem;
+  border-bottom: $border-width solid $main-color;
+
+  @include tablet {
+    margin-top: 6.4rem;
+    padding-bottom: 6.4rem;
+  }
 
   @include mobile {
-    margin-top: 7.2rem;
+    margin-top: 4rem;
+    padding-bottom: 4rem;
   }
 }
 
-@mixin design-system-section-title {
+@mixin case-study-section-title {
   text-wrap: auto;
   @include typography-base($font-weight-medium, 9.6rem);
 
@@ -166,7 +178,7 @@
   }
 }
 
-@mixin design-system-subsection-header-title {
+@mixin case-study-subsection-header-title {
   @include typography-base($font-weight-medium, 6.4rem);
 
   @include tablet {
@@ -179,8 +191,7 @@
   }
 }
 
-
-@mixin design-system-subsection-header-subtitle {
+@mixin case-study-subsection-header-subtitle {
   @include typography-base($font-weight-regular, 1.8rem, 3rem);
 
   @include mobile {
@@ -189,7 +200,7 @@
   }
 }
 
-@mixin design-system-content-item-header {
+@mixin case-study-content-item-header {
   @include typography-base($font-weight-medium, 2.4rem);
 
   @include tablet {
@@ -199,4 +210,45 @@
   @include mobile {
     @include typography-base($font-weight-medium, 1.2rem);
   }
+}
+
+@mixin case-study-subsection-container {
+  margin-top: 6.4rem;
+
+  @include mobile {
+    margin-top: 4rem;
+  }
+}
+
+@mixin case-study-subsection-image {
+  width: 100%;
+  margin-top: $spacing-base;
+
+  @include mobile {
+    margin-top: 0;
+  }
+}
+
+// ========================================
+// BACKWARD COMPATIBILITY ALIASES
+// ========================================
+
+@mixin design-system-section {
+  @include case-study-section;
+}
+
+@mixin design-system-section-title {
+  @include case-study-section-title;
+}
+
+@mixin design-system-subsection-header-title {
+  @include case-study-subsection-header-title;
+}
+
+@mixin design-system-subsection-header-subtitle {
+  @include case-study-subsection-header-subtitle;
+}
+
+@mixin design-system-content-item-header {
+  @include case-study-content-item-header;
 }

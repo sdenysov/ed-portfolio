@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import {projects, Project, ProjectId} from "../../components/projects-grid/projects.config";
-import {TextArrowButtonComponent, ProjectManagementDesignSystemComponent} from "../../components";
+import {TextArrowButtonComponent, ProjectManagementDesignSystemComponent, RoutiqComponent} from "../../components";
 import { PAGES } from '../../models/pages';
 import { Location } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -10,7 +10,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-project-detail',
   standalone: true,
-  imports: [CommonModule, RouterLink, TextArrowButtonComponent, ProjectManagementDesignSystemComponent],
+  imports: [CommonModule, RouterLink, TextArrowButtonComponent, ProjectManagementDesignSystemComponent, RoutiqComponent],
   templateUrl: './project-detail.component.html',
   styleUrl: './project-detail.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

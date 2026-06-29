@@ -1,0 +1,134 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.my-role {
+  @include design-system-section;
+  padding-bottom: 12.8rem;
+  border-bottom: $border-width solid $main-color;
+
+  @include tablet {
+    padding-bottom: 6.4rem;
+  }
+
+  @include mobile {
+    padding-bottom: 4rem;
+  }
+
+  ::ng-deep.section-header-title {
+    @include design-system-section-title;
+  }
+}
+
+.my-role-right-section {
+  align-self: end;
+  max-width: 40%;
+
+  .role-description {
+    @include typography-base($font-weight-regular, 1.8rem, 150%);
+    color: $main-color;
+    margin: 0;
+  }
+}
+
+.roles-container {
+  display: flex;
+  gap: $spacing-base;
+  margin-top: 11.5rem;
+
+  @include tablet {
+    margin-top: $spacing-base;
+    flex-wrap: wrap;
+  }
+
+  @include mobile {
+    gap: $spacing-small;
+  }
+}
+
+.role-row {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-base;
+  flex: 1 1 0;
+
+  @include mobile {
+    width: 100%;
+    gap: $spacing-small;
+  }
+}
+
+.role-circle {
+  width: 22.4rem;
+  height: 22.4rem;
+  background-color: $main-color;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  align-self: center;
+
+  @include mobile {
+    width: 17.2rem;
+    height: 17.2rem;
+  }
+}
+
+.role-title {
+  color: $text-color-secondary;
+  font-size: 9.6rem;
+  line-height: 1;
+
+  @include mobile {
+    font-size: 6.4rem;
+  }
+}
+
+.role-content {
+  width: 100%;
+}
+
+.role-name {
+  max-width: 32rem;
+  margin: 0;
+  @include typography-base($font-weight-regular, 1.8rem, 150%);
+  color: $main-color;
+
+  strong {
+    font-weight: $font-weight-medium;
+  }
+
+  @include mobile {
+    @include typography-base($font-weight-regular, 1.6rem, 150%);
+  }
+}
+
+@include tablet {
+  .my-role-right-section {
+    max-width: 48%;
+
+    .role-description {
+      @include typography-base($font-weight-regular, 1.6rem, 150%);
+    }
+  }
+
+  .role-row {
+    flex: 1 1 calc(50% - #{$spacing-base / 2});
+  }
+}
+
+@include mobile {
+  .my-role-right-section {
+    align-self: unset;
+    max-width: unset;
+
+    .role-description {
+      @include typography-base($font-weight-regular, 1.4rem, 150%);
+    }
+  }
+
+  .role-row {
+    flex: 1 1 100%;
+  }
+}
+
+// Made with Bob

@@ -1,0 +1,67 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// PROJECT GOALS COMPONENT
+// ========================================
+
+.goals {
+  @include design-system-section;
+
+  ::ng-deep.section-header-title {
+    @include design-system-section-title;
+  }
+}
+
+.goals-subtitle {
+  margin-top: $spacing-base;
+}
+
+.goals-list,
+.goals-copy {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  max-width: 70%;
+}
+
+.goal-item,
+.goal-paragraph {
+  @include typography-base($font-weight-regular, 1.8rem, 150%);
+  color: $main-color;
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@include tablet {
+  .goals-list,
+  .goals-copy {
+    gap: $spacing-xs;
+    max-width: 100%;
+  }
+
+  .goal-item,
+  .goal-paragraph {
+    @include typography-base($font-weight-regular, 1.6rem, 150%);
+  }
+}
+
+@include mobile {
+  .goals-subtitle {
+    margin-top: 3.2rem;
+  }
+
+  .goals-list,
+  .goals-copy {
+    gap: $spacing-small;
+  }
+
+  .goal-item,
+  .goal-paragraph {
+    @include typography-base($font-weight-regular, 1.4rem, 150%);
+  }
+}
+
+// Made with Bob

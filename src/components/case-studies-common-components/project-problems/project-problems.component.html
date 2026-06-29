@@ -1,0 +1,35 @@
+<section class="problems">
+  <app-section-header [section]="SECTION.PROBLEMS">
+    <div slot="subtitle" class="problems-subtitle">
+      @if (config.intro) {
+        <p class="problems-intro">{{ config.intro }}</p>
+      }
+
+      @if (projectId === ProjectId.PROJECT_MANAGEMENT && config.problems) {
+        <ul class="problems-list">
+          @for (problem of config.problems; track problem.title) {
+            <li class="problem-item">
+              <strong>{{ problem.title }}</strong> – {{ problem.description }}
+            </li>
+          }
+        </ul>
+      } @else if (projectId === ProjectId.ROUTIQ && config.paragraphs) {
+        <div class="problems-copy">
+          @for (paragraph of config.paragraphs; track paragraph) {
+            <p class="problem-paragraph">
+              {{ paragraph }}
+            </p>
+          }
+        </div>
+      }
+    </div>
+  </app-section-header>
+
+  @if (config.imageSrc) {
+    <img
+      [src]="config.imageSrc"
+      [alt]="config.imageAlt || ''"
+      class="problems-image img-fluid"
+    >
+  }
+</section>

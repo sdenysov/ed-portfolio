@@ -1,0 +1,106 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// PROJECT PROBLEMS COMPONENT
+// ========================================
+
+.problems {
+  @include design-system-section;
+
+  ::ng-deep.section-header-title {
+    @include design-system-section-title;
+  }
+}
+
+.problems-subtitle {
+  margin-top: $spacing-base;
+}
+
+.problems-intro {
+  @include typography-base($font-weight-medium, 1.8rem, 150%);
+  margin-bottom: $spacing-base;
+  color: $main-color;
+  max-width: 70%;
+}
+
+.problems-list,
+.problems-copy {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  max-width: 70%;
+}
+
+.problem-item,
+.problem-paragraph {
+  @include typography-base($font-weight-regular, 1.8rem, 150%);
+  color: $main-color;
+}
+
+.problem-item strong {
+  font-weight: $font-weight-medium;
+  color: $main-color;
+}
+
+.problems-image {
+  margin-top: 6.4rem;
+  width: 100%;
+
+  @include tablet {
+    margin-top: $spacing-base;
+  }
+
+  @include mobile {
+    margin-top: 0;
+  }
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@include tablet {
+  .problems-intro {
+    @include typography-base($font-weight-medium, 1.6rem, 150%);
+    margin-bottom: 2.4rem;
+    max-width: 100%;
+  }
+
+  .problems-list,
+  .problems-copy {
+    gap: $spacing-small;
+    max-width: 100%;
+  }
+
+  .problem-item,
+  .problem-paragraph {
+    @include typography-base($font-weight-regular, 1.6rem, 150%);
+  }
+}
+
+@include mobile {
+  .problems {
+    margin-top: 7.2rem;
+
+    ::ng-deep.section-header {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  .problems-subtitle {
+    margin-top: $spacing-base;
+  }
+
+  .problems-intro {
+    @include typography-base($font-weight-medium, 1.4rem, 150%);
+    margin-bottom: $spacing-small;
+  }
+
+  .problem-item,
+  .problem-paragraph {
+    @include typography-base($font-weight-regular, 1.4rem, 150%);
+  }
+}
+
+// Made with Bob

@@ -1,0 +1,17 @@
+<h1 class="project-title">{{ projectTitle }}</h1>
+
+<div class="project-subtitile">
+  <div class="project-overview">
+    <span>{{ overviewItem.text }}</span>
+    <p>{{ overviewItem.value }}</p>
+  </div>
+
+  <div class="project-subtitile-items">
+    @for (item of subtitleItems; track item.text) {
+      <div class="project-subtitle-item">
+        <span>{{ item.text }}</span>
+        <span>{{ item.value }}</span>
+      </div>
+    }
+  </div>
+</div>
