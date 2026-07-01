@@ -1,0 +1,40 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.interactive-prototype-usability-testing {
+  @include case-study-section;
+
+  ::ng-deep.section-header-title-section {
+    margin-bottom: 3.2rem;
+
+    .section-header-title {
+      @include case-study-section-title;
+    }
+  }
+}
+
+.header-subtitle.intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-small;
+  max-width: 60%;
+  @include typography-base($font-weight-regular, 1.8rem, 3rem);
+
+  @include tablet {
+    @include typography-base($font-weight-regular, 1.6rem, 2.6rem);
+    gap: $spacing-xs;
+    max-width: 100%;
+  }
+
+  @include mobile {
+    @include typography-base($font-weight-regular, 1.4rem, 2.4rem);
+    gap: $spacing-xs;
+    max-width: 100%;
+  }
+}
+
+.prototype-image {
+  @include case-study-subsection-image;
+}
+
+// Made with Bob

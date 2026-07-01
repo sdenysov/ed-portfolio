@@ -56,5 +56,3 @@ export class ProjectGoalsComponent {
     return this.goalsConfig[this.projectId];
   }
 }
-
-// Made with Bob

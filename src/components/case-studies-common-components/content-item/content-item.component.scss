@@ -1,0 +1,44 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.content-item {
+  margin-top: $spacing-base;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  @include mobile {
+    margin-top: $spacing-small;
+    gap: 1.2rem;
+  }
+}
+
+.content-item-header {
+  @include case-study-content-item-header;
+}
+
+.content-item-header-container {
+  display: flex;
+  justify-content: space-between;
+
+  @include mobile {
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+}
+
+.content-item-title {
+  max-width: 40%;
+  @include typography-base($font-weight-regular, 1.6rem, 2.4rem);
+
+  @include tablet {
+    @include typography-base($font-weight-medium, 1.4rem);
+  }
+
+  @include mobile {
+    max-width: unset;
+    @include typography-base($font-weight-regular, 1rem, 1.4rem);
+  }
+}
+
+// Made with Bob

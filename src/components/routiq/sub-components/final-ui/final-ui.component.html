@@ -1,0 +1,46 @@
+<section class="final-ui">
+    <app-section-header [section]="SECTION.FINAL_UI">
+        <p slot="subtitle" class="intro-text header-subtitle">{{ introText }}</p>
+    </app-section-header>
+
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.SIGN_UP_PERSONALIZED_ONBOARDING">
+      <p slot="subtitle" class="header-subtitle">{{ signUpPersonalizedOnboarding.subtitle }}</p>
+    </app-section-header>
+
+    @for (item of signUpPersonalizedOnboarding.contentItems; track item.name) {
+      <app-content-item [item]="item"></app-content-item>
+    }
+  </div>
+
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.TODAY_ROUTIQ">
+      <p slot="subtitle" class="header-subtitle">{{ todayRoutiq.subtitle }}</p>
+    </app-section-header>
+
+    <img [src]="todayRoutiq.image" [alt]="" class="img-fluid subsection-image">
+  </div>
+
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.ROUTINE_OVERVIEW_ROUTIQ">
+      <p slot="subtitle" class="header-subtitle">{{ routineOverviewRoutiq.subtitle }}</p>
+    </app-section-header>
+
+    <img [src]="routineOverviewRoutiq.image" [alt]="" class="img-fluid subsection-image">
+  </div>
+
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.CREATE_ROUTINE_FLOW_ROUTIQ">
+      <div slot="subtitle" class="header-subtitle">
+        <p>{{ createRoutineFlowRoutiq.subtitle }}</p>
+        <p>{{ createRoutineFlowRoutiq.description }}</p>
+      </div>
+    </app-section-header>
+
+    <div class="images-container">
+      @for (image of createRoutineFlowRoutiq.images; track image) {
+        <img [src]="image" [alt]="" class="img-fluid subsection-image">
+      }
+    </div>
+  </div>
+</section>

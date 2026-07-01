@@ -30,7 +30,7 @@
     </app-section-header>
 
     @for (item of configButton.buttonItems; track item.name) {
-      <ng-container [ngTemplateOutlet]="contentItemTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
+      <app-content-item [item]="item"></app-content-item>
     }
   </div>
 
@@ -41,7 +41,7 @@
     </app-section-header>
 
     @for (item of configControls.controlsItems; track item.name) {
-      <ng-container [ngTemplateOutlet]="contentItemTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
+      <app-content-item [item]="item"></app-content-item>
     }
   </div>
 
@@ -74,7 +74,7 @@
     </app-section-header>
 
     @for (item of configTable.tableItems; track item.name) {
-      <ng-container [ngTemplateOutlet]="contentItemTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
+      <app-content-item [item]="item"></app-content-item>
     }
   </div>
 
@@ -87,18 +87,3 @@
     <img [src]="configToast.contentImgSrc" [alt]="" class="img-fluid subsection-image">
   </div>
 </section>
-
-<!-- REUSABLE TEMPLATE -->
-<ng-template #contentItemTemplate let-item="item">
-  <div class="content-item">
-    <div class="content-item-header-container">
-      <h3 class="content-item-header">{{ item.name }}</h3>
-      @if (item.itemTitle) {
-        <p class="content-item-title">{{ item.itemTitle }}</p>
-      }
-    </div>
-    @for (image of item.images; track image) {
-      <img [src]="image" [alt]="" class="img-fluid content-item-image">
-    }
-  </div>
-</ng-template>

@@ -1,12 +1,13 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ContentItemComponent } from '../../../case-studies-common-components/content-item/content-item.component';
 import { SectionHeaderComponent } from '../../../section-header/section-header.component';
 import { SECTION } from '../../../section-header/section-header.config';
 
 @Component({
   selector: 'app-styles-tokens',
   standalone: true,
-  imports: [CommonModule, SectionHeaderComponent],
+  imports: [CommonModule, SectionHeaderComponent, ContentItemComponent],
   templateUrl: './styles-tokens.component.html',
   styleUrl: './styles-tokens.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

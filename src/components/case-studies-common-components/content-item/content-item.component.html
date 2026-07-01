@@ -1,0 +1,13 @@
+<div class="content-item">
+  <div class="content-item-header-container">
+    <h3 class="content-item-header">{{ item.name }}</h3>
+
+    @if (item.itemTitle) {
+      <p class="content-item-title">{{ item.itemTitle }}</p>
+    }
+  </div>
+
+  @for (image of item.images; track image) {
+    <img [src]="image" [alt]="" class="img-fluid content-item-image">
+  }
+</div>

@@ -1,0 +1,70 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ========================================
+// FINAL UI COMPONENT
+// ========================================
+
+.final-ui {
+  @include case-study-section;
+
+  ::ng-deep.section-header-title-section {
+    margin-bottom: 3.2rem;
+
+    .section-header-title {
+      @include case-study-section-title;
+    }
+  }
+}
+
+.header-subtitle.intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-small;
+  @include typography-base($font-weight-regular, 1.8rem, 3rem);
+
+  @include tablet {
+    @include typography-base($font-weight-regular, 1.6rem, 2.6rem);
+    gap: $spacing-xs;
+  }
+
+  @include mobile {
+    @include typography-base($font-weight-regular, 1.4rem, 2.4rem);
+    gap: $spacing-xs;
+  }
+}
+
+.subsection-container {
+  @include case-study-subsection-container;
+
+  ::ng-deep .section-header {
+    @include mobile {
+      margin-bottom: 2.4rem;
+    }
+
+    .section-header-title-section {
+      min-height: auto;
+    }
+
+    .section-header-title {
+      @include case-study-subsection-header-title;
+    }
+  }
+}
+
+.header-subtitle {
+  max-width: 60%;
+  @include case-study-subsection-header-subtitle;
+}
+
+.images-container {
+    display: flex;
+    gap: $spacing-base;
+    flex-direction: column;
+
+    @include mobile {
+      gap: $spacing-small;
+    }
+}
+
+// Made with Bob

@@ -13,7 +13,7 @@
   </app-section-header>
 
   @for (item of configColors.colors; track item.name) {
-    <ng-container [ngTemplateOutlet]="contentItemTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
+    <app-content-item [item]="item"></app-content-item>
   }
 
   <img [src]="accessibilityImgSrc" [alt]="" class="img-fluid accessibility-image">
@@ -28,7 +28,7 @@
     </app-section-header>
 
     @for (item of configTypography.typographyItems; track item.name) {
-      <ng-container [ngTemplateOutlet]="contentItemTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
+      <app-content-item [item]="item"></app-content-item>
     }
   </div>
 
@@ -62,13 +62,4 @@
     <img [src]="configIcons.contentImgSrc" [alt]="" class="img-fluid icons-image">
   </div>
 
-  <!-- REUSABLE TEMPLATE -->
-  <ng-template #contentItemTemplate let-item="item">
-    <div class="content-item">
-      <h3 class="content-item-header">{{ item.name }}</h3>
-      @for (image of item.images; track image) {
-        <img [src]="image" [alt]="" class="img-fluid content-item-image">
-      }
-    </div>
-  </ng-template>
 </section>

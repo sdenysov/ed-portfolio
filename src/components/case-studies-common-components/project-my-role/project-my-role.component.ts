@@ -94,5 +94,3 @@ export class ProjectMyRoleComponent {
     return this.configs[this.projectId];
   }
 }
-
-// Made with Bob

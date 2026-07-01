@@ -1,0 +1,18 @@
+<section class="ideation">
+    <app-section-header [section]="SECTION.IDEATION">
+        <div slot="subtitle" class="intro-text header-subtitle">
+            <p>{{ introText.paragraph1 }}</p>
+            <p>{{ introText.paragraph2 }}</p>
+        </div>
+    </app-section-header>
+
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.ROUTINE_BUILDER_DEPENDENCY_WORKFLOW">
+      <div slot="subtitle" class="header-subtitle">
+        <p>{{ routineBuilderDependencyWorkflow.subtitle }}</p>
+        <p>{{ routineBuilderDependencyWorkflow.description }}</p>
+      </div>
+    </app-section-header>
+    <img [src]="routineBuilderDependencyWorkflow.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+</section>

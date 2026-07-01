@@ -1,0 +1,42 @@
+<section class="component-library">
+    <app-section-header [section]="SECTION.COMPONENT_LIBRARY">
+        <p slot="subtitle" class="intro-text header-subtitle">{{ introText }}</p>
+    </app-section-header>
+
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.BUTTONS_ROUTIQ">
+      <p slot="subtitle" class="header-subtitle">{{ buttonsRoutiq.subtitle }}</p>
+    </app-section-header>
+    <img [src]="buttonsRoutiq.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.INPUTS_ROUTIQ">
+      <p slot="subtitle" class="header-subtitle">{{ inputsRoutiq.subtitle }}</p>
+    </app-section-header>
+    <img [src]="inputsRoutiq.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.NAVIGATION_ROUTIQ">
+      <p slot="subtitle" class="header-subtitle">{{ navigationRoutiq.subtitle }}</p>
+    </app-section-header>
+    <img [src]="navigationRoutiq.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.CARDS_ROUTIQ">
+      <p slot="subtitle" class="header-subtitle">{{ cardsRoutiq.subtitle }}</p>
+    </app-section-header>
+    <img [src]="cardsRoutiq.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+</section>
+
+<ng-template #contentItemTemplate let-item="item">
+    <div class="content-item">
+      <h3 class="content-item-header">{{ item.name }}</h3>
+      @for (image of item.images; track image) {
+        <img [src]="image" [alt]="" class="img-fluid content-item-image">
+      }
+    </div>
+  </ng-template>

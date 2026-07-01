@@ -80,5 +80,3 @@ export class ProjectProblemsComponent {
     return this.problemsConfig[this.projectId];
   }
 }
-
-// Made with Bob

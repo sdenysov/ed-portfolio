@@ -1,0 +1,53 @@
+<section class="brand-identity-design-system">
+    <app-section-header [section]="SECTION.BRAND_IDENTITY_DESIGN_SYSTEM">
+        <p slot="subtitle" class="intro-text header-subtitle">{{ introText }}</p>
+    </app-section-header>
+    <img [src]="overviewImageSrc" alt="" class="overview-image img-fluid" />
+
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.STYLES_AND_TOKENS">
+      <p slot="subtitle" class="header-subtitle">{{ stylesAndTokens.subtitle }}</p>
+    </app-section-header>
+  </div>
+
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.COLORS">
+        <div slot="subtitle" class="header-subtitle">
+          <p class="colors-intro">{{ colors.subtitle }}</p>
+          <p class="colors-intro">{{ colors.description }}</p>
+        </div>
+    </app-section-header>
+    <img [src]="colors.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+
+  <div class="subsection-container typography-container">
+    <app-section-header [section]="SECTION.TYPOGRAPHY_ROUTIQ">
+      <p slot="subtitle" class="header-subtitle typography-subtitle">{{ configTypography.subtitle }}</p>
+    </app-section-header>
+
+    @for (item of configTypography.typographyItems; track item.name) {
+      <app-content-item [item]="item"></app-content-item>
+    }
+  </div>
+
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.SPACING_SYSTEM_ROUTIQ">
+      <p slot="subtitle" class="header-subtitle">{{ spacingSystem.subtitle }}</p>
+    </app-section-header>
+    <img [src]="spacingSystem.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.CORNER_RADIUS_SYSTEM">
+      <p slot="subtitle" class="header-subtitle">{{ cornerRadiusSystem.subtitle }}</p>
+    </app-section-header>
+    <img [src]="cornerRadiusSystem.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+
+  <div class="subsection-container">
+    <app-section-header [section]="SECTION.ICONOGRAPHY">
+      <p slot="subtitle" class="header-subtitle">{{ iconography.subtitle }}</p>
+    </app-section-header>
+    <img [src]="iconography.contentImgSrc" [alt]="" class="img-fluid subsection-image">
+  </div>
+</section>

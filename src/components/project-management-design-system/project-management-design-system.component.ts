@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StylesTokensComponent } from './sub-components/styles-tokens/styles-tokens.component';
 import { ComponentsComponent } from './sub-components/components-section/components.component';
-import { OutcomesComponent } from './sub-components/outcomes/outcomes.component';
+import { OutcomesComponent } from '../case-studies-common-components/outcomes/outcomes.component';
 import { ExploreMoreComponent } from '../explore-more/explore-more.component';
 import { ProjectId } from '../projects-grid/projects.config';
 import {
